@@ -1,0 +1,13 @@
+node_modules/
+client/node_modules/
+client/dist/
+gaz.json
+gaz.db
+gaz.db-journal
+gaz.db-wal
+gaz.db-shm
+.env
+.env.local
+.DS_Store
+Thumbs.db
+*.log
