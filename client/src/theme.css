@@ -210,3 +210,21 @@ textarea{resize:vertical;min-height:60px}
 .toast{position:fixed;bottom:18px;right:18px;background:var(--dark);border:1px solid var(--border2);border-radius:8px;padding:10px 14px;z-index:300;font-size:13px;box-shadow:0 4px 20px rgba(0,0,0,.4)}
 .toast.success{border-color:var(--green)}
 .toast.error{border-color:var(--red)}
+
+/* Lock Screen */
+.lock-screen{position:fixed;inset:0;background:var(--dark2);display:flex;align-items:center;justify-content:center;z-index:999}
+.lock-box{display:flex;flex-direction:column;align-items:center;gap:1rem;padding:2rem;background:var(--surface);border-radius:16px;border:1px solid var(--border2);width:280px;max-width:90vw}
+.lock-logo{font-size:2.5rem}
+.lock-title{font-size:1.2rem;font-weight:700;color:var(--gold)}
+.lock-subtitle{font-size:13px;color:var(--text3)}
+.lock-dots{display:flex;gap:14px;margin:6px 0}
+.lock-dot{width:14px;height:14px;border-radius:50%;background:var(--dark3);border:2px solid var(--border2);transition:background .15s}
+.lock-dot.filled{background:var(--gold);border-color:var(--gold)}
+.lock-dots--error .lock-dot.filled{background:var(--red);border-color:var(--red)}
+.lock-error{font-size:12px;color:var(--red)}
+.lock-keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.lock-key{padding:14px 0;font-size:1.2rem;font-weight:600;background:var(--dark3);border:1px solid var(--border2);border-radius:10px;color:var(--text1);cursor:pointer;transition:background .12s}
+.lock-key:hover{background:var(--border2)}
+.lock-key:active{background:var(--gold);color:#000}
+.lock-key--empty{background:transparent;border-color:transparent;cursor:default;pointer-events:none}
+.lock-key--del{font-size:1rem}

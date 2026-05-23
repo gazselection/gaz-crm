@@ -86,6 +86,19 @@ export default function SettingsPage() {
               rows={2}
             />
           </div>
+          <div className="form-group">
+            <label className="form-label">Code PIN (verrou d'accès)</label>
+            <input
+              type="password"
+              value={(form as any).password || ''}
+              onChange={(e) => (set as any)('password', e.target.value)}
+              placeholder="1234"
+              maxLength={8}
+            />
+            <small style={{ color: 'var(--text3)', fontSize: 12 }}>
+              Code demandé à l'ouverture. Par défaut : 1234
+            </small>
+          </div>
           <div style={{ textAlign: 'right' }}>
             <button className="btn btn-gold" onClick={save} disabled={saving}>
               {saving ? 'Enregistrement…' : 'Enregistrer'}
@@ -117,22 +130,4 @@ export default function SettingsPage() {
                   {lbl} {y}
                 </a>
               );
-            })}
-          </div>
-        </div>
-      </div>
-
-      <div className="card">
-        <div className="card-header">
-          <div className="card-title">Base de données</div>
-        </div>
-        <div className="card-body" style={{ fontSize: 13, color: 'var(--text2)' }}>
-          <p>
-            Les données sont stockées dans le fichier <code>gaz.db</code> à la racine du projet.
-            Pour sauvegarder, copie ce fichier sur un disque externe ou un cloud.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
+            
