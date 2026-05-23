@@ -130,4 +130,22 @@ export default function SettingsPage() {
                   {lbl} {y}
                 </a>
               );
-            
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div className="card">
+        <div className="card-header">
+          <div className="card-title">Base de données</div>
+        </div>
+        <div className="card-body" style={{ fontSize: 13, color: 'var(--text2)' }}>
+          <p>
+            Les données sont stockées dans le fichier <code>gaz.db</code> à la racine du projet.
+            Pour sauvegarder, copie ce fichier sur un disque externe ou un cloud.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
