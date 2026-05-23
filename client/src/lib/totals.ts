@@ -8,11 +8,12 @@ export function totalFacture(f: Facture): number {
 }
 
 export function fmtEUR(n: number, decimals = 2): string {
-  const val = isNaN(n) ? 0 : n;
-  const fixed = val.toFixed(decimals);
-  const [intPart, decPart] = fixed.split('.');
-  const intFormatted = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-  return intFormatted + ',' + decPart + ' €';
+  return new Intl.NumberFormat('fr-FR', {
+    style: 'currency',
+    currency: 'EUR',
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
+  }).format(n);
 }
 
 export const fmtEUR0 = (n: number) => fmtEUR(n, 0);

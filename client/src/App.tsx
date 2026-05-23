@@ -3,7 +3,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Nav } from './components/Nav';
 import { Topbar } from './components/Topbar';
 import { Toast } from './components/Toast';
-import { LockScreen } from './components/LockScreen';
 import Dashboard from './pages/Dashboard';
 import Clients from './pages/Clients';
 import Factures from './pages/Factures';
@@ -14,15 +13,10 @@ export default function App() {
   const load = useStore((s) => s.load);
   const loaded = useStore((s) => s.loaded);
   const [navOpen, setNavOpen] = useState(false);
-  const [locked, setLocked] = useState(true);
 
   useEffect(() => {
     load().catch((e) => console.error('Loading failed:', e));
   }, [load]);
-
-  if (locked) {
-    return <LockScreen onUnlock={() => setLocked(false)} />;
-  }
 
   return (
     <div className="app">
