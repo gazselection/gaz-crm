@@ -8,14 +8,6 @@ interface Props {
   settings: Settings;
 }
 
-const STATUT_LABELS: Record<string, { label: string; color: string }> = {
-  payee: { label: 'PAYÉE', color: '#2ECC71' },
-  envoyee: { label: 'ENVOYÉE', color: '#3498DB' },
-  devis: { label: 'DEVIS', color: '#F39C12' },
-  impayee: { label: 'IMPAYÉE', color: '#E74C3C' },
-  annulee: { label: 'ANNULÉE', color: '#707070' }
-};
-
 const PAIEMENT_LABELS: Record<string, string> = {
   virement: 'Virement bancaire',
   wallet: 'Vivawallet',
@@ -30,14 +22,6 @@ const styles = StyleSheet.create({
   titleBox: { textAlign: 'right' },
   title: { fontSize: 22, fontWeight: 700, color: '#D4A017', marginBottom: 2 },
   num: { fontSize: 13, color: '#444', marginBottom: 6 },
-  statusPill: {
-    fontSize: 9,
-    fontWeight: 700,
-    padding: '3 8',
-    borderRadius: 12,
-    color: '#fff',
-    alignSelf: 'flex-end'
-  },
   blocks: { flexDirection: 'row', gap: 14, marginBottom: 14 },
   block: { flex: 1, padding: 10, border: '1pt solid #eaeaea', borderRadius: 6 },
   blockTitle: { fontSize: 8, color: '#888', textTransform: 'uppercase', marginBottom: 4, letterSpacing: 0.6 },
@@ -59,12 +43,13 @@ const styles = StyleSheet.create({
 });
 
 function fmt(n: number) {
-  return new Intl.NumberFormat('fr-FR', {
-    style: 'currency',
-    currency: 'EUR',
-    minimumFractionDigits: 2
-  }).format(n);
+  const val = isNaN(n) ? 0 : n;
+  const fixed = val.toFixed(2);
+  const [intPart, decPart] = fixed.split('.');
+  const intFormatted = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  return intFormatted + ',' + decPart + ' €';
 }
+
 function fmtDate(d: string) {
   if (!d) return '';
   try { return new Date(d).toLocaleDateString('fr-FR'); } catch { return d; }
@@ -73,7 +58,6 @@ function fmtDate(d: string) {
 export function FacturePDF({ facture, client, settings }: Props) {
   const sumLignes = facture.lignes.reduce((s, l) => s + Number(l.prix || 0), 0);
   const totalHT = totalFacture(facture);
-  const status = STATUT_LABELS[facture.statut] || { label: facture.statut.toUpperCase(), color: '#888' };
   const isDevis = facture.type === 'devis';
 
   return (
@@ -85,9 +69,6 @@ export function FacturePDF({ facture, client, settings }: Props) {
             <Text style={styles.title}>{isDevis ? 'DEVIS' : 'FACTURE'}</Text>
             <Text style={styles.num}>N° {facture.num}</Text>
             <Text style={{ fontSize: 10, color: '#666' }}>Date : {fmtDate(facture.date)}</Text>
-            <View style={{ marginTop: 6, alignItems: 'flex-end' }}>
-              <Text style={[styles.statusPill, { backgroundColor: status.color }]}>{status.label}</Text>
-            </View>
           </View>
         </View>
 

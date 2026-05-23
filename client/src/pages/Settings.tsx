@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useStore } from '../store';
 import { api, csvUrl } from '../api';
 import type { Settings } from '../types';
+import { LOCK_KEY, DEFAULT_PWD } from '../components/LockScreen';
 
 export default function SettingsPage() {
   const settings = useStore((s) => s.settings);
@@ -11,6 +12,8 @@ export default function SettingsPage() {
 
   const [form, setForm] = useState<Settings>(settings);
   const [saving, setSaving] = useState(false);
+  const [pwdForm, setPwdForm] = useState({ current: '', next: '', confirm: '' });
+  const [pwdMsg, setPwdMsg] = useState<{ text: string; ok: boolean } | null>(null);
 
   useEffect(() => setForm(settings), [settings]);
 
@@ -20,6 +23,29 @@ export default function SettingsPage() {
 
   function set<K extends keyof Settings>(k: K, v: Settings[K]) {
     setForm((f) => ({ ...f, [k]: v }));
+  }
+
+  function changePwd() {
+    const stored = localStorage.getItem(LOCK_KEY) || DEFAULT_PWD;
+    if (pwdForm.current !== stored) {
+      setPwdMsg({ text: 'Mot de passe actuel incorrect', ok: false });
+      setTimeout(() => setPwdMsg(null), 3000);
+      return;
+    }
+    if (pwdForm.next.length < 4) {
+      setPwdMsg({ text: 'Le nouveau mot de passe doit faire au moins 4 caractères', ok: false });
+      setTimeout(() => setPwdMsg(null), 3000);
+      return;
+    }
+    if (pwdForm.next !== pwdForm.confirm) {
+      setPwdMsg({ text: 'Les mots de passe ne correspondent pas', ok: false });
+      setTimeout(() => setPwdMsg(null), 3000);
+      return;
+    }
+    localStorage.setItem(LOCK_KEY, pwdForm.next);
+    setPwdForm({ current: '', next: '', confirm: '' });
+    setPwdMsg({ text: 'Mot de passe modifié avec succès', ok: true });
+    setTimeout(() => setPwdMsg(null), 3000);
   }
 
   async function save() {
@@ -96,6 +122,52 @@ export default function SettingsPage() {
 
       <div className="card">
         <div className="card-header">
+          <div className="card-title">Mot de passe</div>
+        </div>
+        <div className="card-body">
+          <div className="form-row">
+            <div className="form-group">
+              <label className="form-label">Mot de passe actuel</label>
+              <input
+                type="password"
+                value={pwdForm.current}
+                onChange={(e) => setPwdForm((p) => ({ ...p, current: e.target.value }))}
+              />
+            </div>
+          </div>
+          <div className="form-row">
+            <div className="form-group">
+              <label className="form-label">Nouveau mot de passe</label>
+              <input
+                type="password"
+                value={pwdForm.next}
+                onChange={(e) => setPwdForm((p) => ({ ...p, next: e.target.value }))}
+              />
+            </div>
+            <div className="form-group">
+              <label className="form-label">Confirmer</label>
+              <input
+                type="password"
+                value={pwdForm.confirm}
+                onChange={(e) => setPwdForm((p) => ({ ...p, confirm: e.target.value }))}
+              />
+            </div>
+          </div>
+          {pwdMsg && (
+            <div style={{ fontSize: 13, fontWeight: 600, color: pwdMsg.ok ? '#2ECC71' : '#E74C3C', marginBottom: 10 }}>
+              {pwdMsg.text}
+            </div>
+          )}
+          <div style={{ textAlign: 'right' }}>
+            <button className="btn btn-gold" onClick={changePwd}>
+              Changer le mot de passe
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="card">
+        <div className="card-header">
           <div className="card-title">Export CSV — déclaration URSSAF</div>
         </div>
         <div className="card-body">
@@ -105,7 +177,7 @@ export default function SettingsPage() {
           </p>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             <a className="btn btn-gold" href={csvUrl()}>
-              ⬇ Tout exporter
+              Tout exporter
             </a>
             {moisList.map((m) => {
               const [y, mo] = m.split('-');
