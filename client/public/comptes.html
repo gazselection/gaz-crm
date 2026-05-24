@@ -891,7 +891,7 @@ function buildMonthFilters(){
   document.getElementById('month-filters').innerHTML = ms.map(function(m){
     const active = filterMonth===m ? ' active' : '';
     const label  = m==='all' ? 'Tous' : (MONTH_LABELS[m]||m);
-    return '<button class="filter-btn'+active+'" onclick="setMonth(\'' + m + '\',this">'+label+'</button>';
+    return '<button class="filter-btn'+active+'" onclick="setMonth(\'' + m + '\',this)">'+label+'</button>';
   }).join('');
 }
 function setMonth(m,el){
@@ -936,8 +936,8 @@ function renderTable(){
         '<td class="mono" style="text-align:right;color:var(--muted)">'+infHtml+'</td>'+
         '<td class="mono" style="text-align:right"><span class="'+colorVal(o.benef)+'">'+fmt(o.benef)+'</span></td>'+
         '<td style="white-space:nowrap">'+
-          '<button class="btn-icon edit" onclick="openEditModal(\'' + o.id + '\'" title="Modifier les montants">✏</button>'+
-          '<button class="btn btn-danger" style="padding:3px 8px;font-size:11px;margin-left:2px" onclick="deleteOrder(\'' + o.id + '\'">×</button>'+
+          '<button class="btn-icon edit" onclick="openEditModal(\'' + o.id + '\')" title="Modifier les montants">✏</button>'+
+          '<button class="btn btn-danger" style="padding:3px 8px;font-size:11px;margin-left:2px" onclick="deleteOrder(\'' + o.id + '\')">×</button>'+
         '</td>'+
       '</tr>';
     }).join('');
