@@ -725,7 +725,7 @@ function addOrder(){
 function buildMonthFilters(){
   const ms = ['all',...months()];
   document.getElementById('month-filters').innerHTML = ms.map(m=>`
-    <button class="filter-btn${filterMonth===m?' active':''" onclick="setMonth('${m}',this)">
+    <button class="filter-btn${filterMonth===m?' active':''}" onclick="setMonth('${m}',this)">
       ${m==='all'?'Tous':MONTH_LABELS[m]||m}
     </button>`).join('');
 }
