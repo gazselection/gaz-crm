@@ -82,7 +82,6 @@ nav::-webkit-scrollbar{display:none}
 .filter-btn{background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:.4rem .75rem;color:var(--muted);font-size:12px;letter-spacing:.5px;transition:.15s}
 .filter-btn.active{background:var(--gold-dim);border-color:var(--gold);color:var(--gold)}
 .filter-btn:hover{border-color:var(--dim)}
-
 .table-wrap{background:var(--s1);border:1px solid var(--border);border-radius:10px;overflow:auto}
 table{width:100%;border-collapse:collapse;min-width:700px}
 th{padding:.6rem 1rem;text-align:left;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap}
@@ -100,6 +99,7 @@ tr:hover td{background:rgba(255,255,255,.02)}
 /* FORM */
 .form-section{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.5rem}
 .form-title{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--gold);margin-bottom:1rem}
+.form-sub{font-family:'Bebas Neue',sans-serif;font-size:.8rem;letter-spacing:2px;color:var(--muted);margin-bottom:.6rem;margin-top:.9rem}
 .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
 @media(min-width:600px){.form-grid.cols3{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:800px){.form-grid.cols4{grid-template-columns:repeat(4,1fr)}}
@@ -108,12 +108,28 @@ tr:hover td{background:rgba(255,255,255,.02)}
 label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
 input[type=text],input[type=number],input[type=date],select{background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:.5rem .75rem;color:var(--text);font-size:13px;width:100%}
 input:focus,select:focus{outline:none;border-color:var(--gold-dim)}
+input[readonly]{background:var(--s3);border-color:transparent;color:var(--gold)}
 select option{background:var(--s2)}
 .btn{padding:.6rem 1.25rem;border-radius:8px;border:none;font-size:13px;font-weight:500;letter-spacing:.5px;transition:.15s}
 .btn-gold{background:var(--gold);color:#000}.btn-gold:hover{opacity:.9}
 .btn-ghost{background:var(--s2);border:1px solid var(--border);color:var(--text)}.btn-ghost:hover{border-color:var(--dim)}
 .btn-danger{background:rgba(224,62,62,.15);border:1px solid rgba(224,62,62,.3);color:var(--red)}.btn-danger:hover{background:rgba(224,62,62,.25)}
 .btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+
+/* PRODUCTS GRID */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.4rem;padding:.75rem;background:var(--s2);border:1px solid var(--border);border-radius:8px;max-height:220px;overflow-y:auto}
+.prod-cell{display:flex;flex-direction:column;gap:.2rem}
+.prod-cell label{font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:default}
+.prod-cell label span{color:var(--dim);font-family:'DM Mono',monospace;font-size:9px}
+.prod-cell input{background:var(--s3);border:1px solid var(--border);border-radius:5px;padding:.3rem .4rem;color:var(--text);font-size:12px;font-family:'DM Mono',monospace;width:100%}
+.prod-cell input:focus{outline:none;border-color:var(--gold-dim)}
+.prod-cell.has-val label{color:var(--text)}
+.prod-cell.has-val input{border-color:var(--gold-dim);background:rgba(201,162,39,.08)}
+.calc-row{display:flex;gap:1.5rem;padding:.5rem .75rem;background:var(--s2);border:1px solid var(--border);border-radius:8px;font-size:12px;flex-wrap:wrap;align-items:center}
+.calc-row span{color:var(--muted)}
+.calc-row b{font-family:'DM Mono',monospace;color:var(--gold)}
+.calc-row.benef-row b.pos{color:var(--green)}
+.calc-row.benef-row b.neg{color:var(--red)}
 
 /* FRAIS FIXES */
 .ff-list{list-style:none}
@@ -136,6 +152,19 @@ select option{background:var(--s2)}
 .alert-red{background:rgba(224,62,62,.1);border:1px solid rgba(224,62,62,.3);color:var(--red)}
 .alert-green{background:rgba(39,174,114,.1);border:1px solid rgba(39,174,114,.3);color:var(--green)}
 
+/* PRODUITS CATALOG */
+.prod-catalog{display:grid;gap:.5rem}
+.prod-cat-title{font-family:'Bebas Neue',sans-serif;font-size:.85rem;letter-spacing:2px;color:var(--muted);padding:.5rem 0 .25rem;border-bottom:1px solid var(--border);margin-bottom:.25rem}
+.prod-list-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.5rem;margin-bottom:1rem}
+.prod-card{background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:.75rem;display:flex;align-items:center;gap:.75rem}
+.prod-card-info{flex:1}
+.prod-card-name{font-size:13px;font-weight:500;margin-bottom:.15rem}
+.prod-card-cat{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.prod-card-price{display:flex;align-items:center;gap:.4rem}
+.prod-price-input{width:80px;text-align:right;font-family:'DM Mono',monospace;background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:.3rem .5rem;color:var(--gold);font-size:13px}
+.prod-price-input:focus{outline:none;border-color:var(--gold-dim)}
+.prod-unit{font-size:11px;color:var(--muted)}
+
 /* SECTION TITLE */
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;color:var(--text);margin-bottom:.75rem;margin-top:1.5rem}
 .section-title:first-child{margin-top:0}
@@ -147,14 +176,11 @@ select option{background:var(--s2)}
 .sum-bar span.r b{color:var(--red)}
 .sum-bar span.a b{color:var(--amber)}
 
-/* TOOLTIP / EMPTY */
+/* EMPTY */
 .empty{text-align:center;padding:3rem;color:var(--dim);font-size:13px}
 
 /* SETTINGS */
 .settings-grid{display:grid;gap:1rem;max-width:400px}
-.settings-row{display:flex;align-items:center;gap:1rem}
-.settings-row label{flex:1;font-size:13px;color:var(--text)}
-.settings-row input{width:120px;text-align:right}
 </style>
 </head>
 <body>
@@ -164,10 +190,8 @@ select option{background:var(--s2)}
   <div class="pin-logo">GAZ<span>SELECTION</span></div>
   <div style="font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase">COMPTABILITÉ 2026</div>
   <div class="pin-dots" id="pin-dots">
-    <div class="pin-dot" id="d0"></div>
-    <div class="pin-dot" id="d1"></div>
-    <div class="pin-dot" id="d2"></div>
-    <div class="pin-dot" id="d3"></div>
+    <div class="pin-dot" id="d0"></div><div class="pin-dot" id="d1"></div>
+    <div class="pin-dot" id="d2"></div><div class="pin-dot" id="d3"></div>
   </div>
   <div class="pin-keypad" id="keypad"></div>
   <div class="pin-error" id="pin-error"></div>
@@ -183,11 +207,12 @@ select option{background:var(--s2)}
     <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)" id="hdr-date"></div>
   </header>
   <nav>
-    <button class="tab-btn active" onclick="showTab('dashboard')">Dashboard</button>
-    <button class="tab-btn" onclick="showTab('commandes')">Commandes</button>
-    <button class="tab-btn" onclick="showTab('frais')">Frais Fixes</button>
-    <button class="tab-btn" onclick="showTab('bilan')">Bilan</button>
-    <button class="tab-btn" onclick="showTab('settings')">Paramètres</button>
+    <button class="tab-btn active" onclick="showTab('dashboard',this)">Dashboard</button>
+    <button class="tab-btn" onclick="showTab('commandes',this)">Commandes</button>
+    <button class="tab-btn" onclick="showTab('produits',this)">Produits</button>
+    <button class="tab-btn" onclick="showTab('frais',this)">Frais Fixes</button>
+    <button class="tab-btn" onclick="showTab('bilan',this)">Bilan</button>
+    <button class="tab-btn" onclick="showTab('settings',this)">Paramètres</button>
   </nav>
 
   <!-- DASHBOARD -->
@@ -202,10 +227,12 @@ select option{background:var(--s2)}
   <div class="page" id="p-commandes">
     <div class="form-section" id="form-add">
       <div class="form-title">+ NOUVELLE COMMANDE</div>
+
+      <!-- Infos de base -->
       <div class="form-grid cols4">
         <div class="form-group"><label>Date</label><input type="date" id="f-date"></div>
         <div class="form-group"><label>Nom</label><input type="text" id="f-nom" placeholder="Dupont"></div>
-        <div class="form-group"><label>Prénom</label><input type="text" id="f-prenom" placeholder="Jean"></div>
+        <div class="form-group"><label>Prénom / Note</label><input type="text" id="f-prenom" placeholder="Jean"></div>
         <div class="form-group"><label>Type</label>
           <select id="f-type">
             <option value="particulier">Particulier</option>
@@ -214,13 +241,44 @@ select option{background:var(--s2)}
             <option value="echantillon">Échantillon</option>
           </select>
         </div>
-        <div class="form-group"><label>CA (vente) €</label><input type="number" step="0.01" id="f-ca" placeholder="0.00"></div>
-        <div class="form-group"><label>Prix de revient €</label><input type="number" step="0.01" id="f-revient" placeholder="0.00"></div>
-        <div class="form-group"><label>Frais Wallet €</label><input type="number" step="0.01" id="f-wallet" placeholder="0.00"></div>
-        <div class="form-group"><label>Frais Influenceur €</label><input type="number" step="0.01" id="f-inf" placeholder="0.00"></div>
+      </div>
+
+      <!-- Produits -->
+      <div class="form-sub">PRODUITS (saisir quantité en grammes)</div>
+      <div class="prod-grid" id="prod-form-grid"></div>
+      <div class="calc-row" style="margin-top:.5rem">
+        <span>Prix de revient produits :</span><b id="calc-revient">0,00 €</b>
+        <span style="margin-left:auto;font-size:11px;color:var(--dim)" id="prod-detail"></span>
+      </div>
+
+      <!-- Conditionnement -->
+      <div class="form-sub">CONDITIONNEMENT & ENVOI</div>
+      <div class="form-grid cols4">
+        <div class="form-group"><label>Carton €</label><input type="number" step="0.01" id="f-carton" placeholder="1.20" oninput="liveCalc()"></div>
+        <div class="form-group"><label>Pochon (nb × 0,70€)</label><input type="number" step="1" min="0" id="f-pochon" placeholder="0" oninput="liveCalc()"></div>
+        <div class="form-group"><label>JAR €</label><input type="number" step="0.01" id="f-jar" placeholder="0.00" oninput="liveCalc()"></div>
+        <div class="form-group"><label>Stickers €</label><input type="number" step="0.01" id="f-stickers" placeholder="0.00" oninput="liveCalc()"></div>
+        <div class="form-group"><label>Preroll €</label><input type="number" step="0.01" id="f-preroll" placeholder="0.00" oninput="liveCalc()"></div>
+        <div class="form-group"><label>Pot €</label><input type="number" step="0.01" id="f-pot" placeholder="0.00" oninput="liveCalc()"></div>
+        <div class="form-group"><label>Frais livraison €</label><input type="number" step="0.01" id="f-livraison" placeholder="4.10" oninput="liveCalc()"></div>
+        <div class="form-group"><label>Prix d'envoi total</label><input type="text" id="calc-envoi" readonly placeholder="0,00 €"></div>
+      </div>
+
+      <!-- Financier -->
+      <div class="form-sub">FINANCIER</div>
+      <div class="form-grid cols4">
+        <div class="form-group"><label>CA (prix de vente) €</label><input type="number" step="0.01" id="f-ca" placeholder="0.00" oninput="liveCalc()"></div>
+        <div class="form-group"><label>Frais Wallet €</label><input type="number" step="0.01" id="f-wallet" placeholder="0.00" oninput="liveCalc()"></div>
+        <div class="form-group"><label>Frais Influenceur €</label><input type="number" step="0.01" id="f-inf" placeholder="0.00" oninput="liveCalc()"></div>
+        <div class="form-group"><label>URSSAF (auto)</label><input type="text" id="calc-urssaf" readonly placeholder="0,00 €"></div>
+      </div>
+      <div class="calc-row benef-row" style="margin-top:.5rem">
+        <span>Bénéfice estimé :</span><b id="calc-benef">—</b>
+        <span style="margin-left:1rem">= CA − Revient − Envoi − URSSAF − Wallet − Infl.</span>
       </div>
       <div class="btn-row">
-        <button class="btn btn-gold" onclick="addOrder()">Ajouter</button>
+        <button class="btn btn-gold" onclick="addOrder()">Ajouter la commande</button>
+        <button class="btn btn-ghost" onclick="clearForm()">Effacer</button>
         <span id="form-msg" style="font-size:12px;color:var(--muted);align-self:center"></span>
       </div>
     </div>
@@ -247,6 +305,18 @@ select option{background:var(--s2)}
     </div>
   </div>
 
+  <!-- PRODUITS -->
+  <div class="page" id="p-produits">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem">
+      <div>
+        <div class="section-title" style="margin:0">CATALOGUE PRODUITS</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:.25rem">Prix de revient par gramme — utilisés pour le calcul automatique des commandes</div>
+      </div>
+      <button class="btn btn-ghost" onclick="resetProducts()" style="font-size:12px">Réinitialiser prix</button>
+    </div>
+    <div id="produits-catalog"></div>
+  </div>
+
   <!-- FRAIS FIXES -->
   <div class="page" id="p-frais">
     <div class="form-section">
@@ -257,7 +327,6 @@ select option{background:var(--s2)}
       </div>
       <div class="btn-row"><button class="btn btn-gold" onclick="addFF()">Ajouter</button></div>
     </div>
-
     <div class="form-section">
       <div class="form-title">POSTES ACTIFS</div>
       <ul class="ff-list" id="ff-list"></ul>
@@ -279,11 +348,11 @@ select option{background:var(--s2)}
     <div class="bilan-table" style="margin-bottom:1.5rem">
       <table>
         <thead><tr>
-          <th>Mois</th><th style="text-align:right">Commandes</th>
+          <th>Mois</th><th style="text-align:right">Cmdes</th>
           <th style="text-align:right">CA</th><th style="text-align:right">Revient</th>
           <th style="text-align:right">Marge brute</th><th style="text-align:right">URSSAF</th>
           <th style="text-align:right">Frais fixes</th><th style="text-align:right">Bén. net</th>
-          <th style="text-align:right">Provision impôts</th>
+          <th style="text-align:right">Prov. impôts</th>
         </tr></thead>
         <tbody id="bilan-body"></tbody>
         <tfoot id="bilan-foot"></tfoot>
@@ -298,22 +367,10 @@ select option{background:var(--s2)}
     <div class="form-section" style="max-width:500px">
       <div class="form-title">PARAMÈTRES</div>
       <div class="settings-grid">
-        <div class="form-group">
-          <label>Code PIN</label>
-          <input type="password" id="s-pin" maxlength="8" placeholder="1234" style="max-width:120px">
-        </div>
-        <div class="form-group">
-          <label>Seuil AE annuel (€)</label>
-          <input type="number" id="s-seuil" value="77700">
-        </div>
-        <div class="form-group">
-          <label>Taux URSSAF (%)</label>
-          <input type="number" id="s-urssaf-rate" value="12.3" step="0.1">
-        </div>
-        <div class="form-group">
-          <label>Taux provision impôts (%)</label>
-          <input type="number" id="s-impots-rate" value="25" step="0.5">
-        </div>
+        <div class="form-group"><label>Code PIN</label><input type="password" id="s-pin" maxlength="8" placeholder="1234" style="max-width:120px"></div>
+        <div class="form-group"><label>Seuil AE annuel (€)</label><input type="number" id="s-seuil" value="77700"></div>
+        <div class="form-group"><label>Taux URSSAF (%)</label><input type="number" id="s-urssaf-rate" value="12.3" step="0.1"></div>
+        <div class="form-group"><label>Taux provision impôts (%)</label><input type="number" id="s-impots-rate" value="25" step="0.5"></div>
       </div>
       <div class="btn-row">
         <button class="btn btn-gold" onclick="saveSettings()">Enregistrer</button>
@@ -322,7 +379,7 @@ select option{background:var(--s2)}
     </div>
     <div class="form-section" style="max-width:500px">
       <div class="form-title">DONNÉES</div>
-      <div style="font-size:13px;color:var(--muted);margin-bottom:1rem">Les commandes sont sauvegardées dans le localStorage du navigateur.</div>
+      <div style="font-size:13px;color:var(--muted);margin-bottom:1rem">Les commandes et les prix produits sont sauvegardés dans le localStorage du navigateur.</div>
       <div class="btn-row">
         <button class="btn btn-ghost" onclick="exportData()">Exporter JSON</button>
         <button class="btn btn-danger" onclick="resetData()">Réinitialiser données</button>
@@ -334,6 +391,54 @@ select option{background:var(--s2)}
 <script>
 // ===================== DATA =====================
 const SEED = [{"id":"JAN-001","date":"2026-01-01","nom":"Girault","prenom":"Cyril","type":"particulier","ca":52.97,"revient":4.77,"urssaf":6.52,"wallet":1.56,"inf":0,"benef":35.33},{"id":"JAN-002","date":"2026-01-02","nom":"La Foncedalle","prenom":"","type":"boutique_cbd","ca":300.0,"revient":85.0,"urssaf":36.9,"wallet":0,"inf":0,"benef":166.41},{"id":"JAN-003","date":"2026-01-11","nom":"Delville","prenom":"Elodie","type":"particulier","ca":36.49,"revient":2.96,"urssaf":4.49,"wallet":1.14,"inf":0,"benef":23.11},{"id":"JAN-004","date":"2026-01-12","nom":"La foncedalle","prenom":"","type":"boutique_cbd","ca":400.0,"revient":164.0,"urssaf":49.2,"wallet":0,"inf":0,"benef":175.1},{"id":"JAN-005","date":"2026-01-13","nom":"Sousa","prenom":"Miguel","type":"particulier","ca":86.23,"revient":6.62,"urssaf":10.61,"wallet":3.97,"inf":0,"benef":40.64},{"id":"JAN-006","date":"2026-01-14","nom":"THE DREAM","prenom":"","type":"boutique_cbd","ca":60.0,"revient":10.0,"urssaf":7.38,"wallet":0,"inf":0,"benef":29.62},{"id":"JAN-007","date":"2026-01-15","nom":"VAPOLAND","prenom":"","type":"boutique_cbd","ca":255.0,"revient":152.5,"urssaf":31.36,"wallet":5.79,"inf":0,"benef":52.84},{"id":"JAN-008","date":"2026-01-16","nom":"LA Moula","prenom":"CBD","type":"boutique_cbd","ca":350.0,"revient":81.0,"urssaf":43.05,"wallet":0,"inf":0,"benef":214.25},{"id":"JAN-009","date":"2026-01-17","nom":"Tiago","prenom":"Julio","type":"particulier","ca":30.59,"revient":4.5,"urssaf":3.76,"wallet":0.99,"inf":0,"benef":15.04},{"id":"JAN-010","date":"2026-01-17","nom":"Nicolas","prenom":"Leroy","type":"particulier","ca":56.29,"revient":11.83,"urssaf":6.92,"wallet":1.64,"inf":0,"benef":29.89},{"id":"JAN-011","date":"2026-01-18","nom":"David","prenom":"Paul","type":"particulier","ca":91.94,"revient":9.72,"urssaf":11.31,"wallet":2.55,"inf":0,"benef":64.26},{"id":"JAN-012","date":"2026-01-19","nom":"Calm","prenom":"Leaf","type":"boutique_cbd","ca":3080.0,"revient":1840.0,"urssaf":378.84,"wallet":257.26,"inf":0,"benef":581.15},{"id":"JAN-013","date":"2026-01-19","nom":"So","prenom":"hempy","type":"boutique_cbd","ca":2280.0,"revient":1845.25,"urssaf":280.44,"wallet":0,"inf":0,"benef":154.31},{"id":"JAN-014","date":"2026-01-19","nom":"Fernandes","prenom":"Lester","type":"particulier","ca":99.97,"revient":9.85,"urssaf":12.3,"wallet":2.75,"inf":0,"benef":69.97},{"id":"JAN-015","date":"2026-01-21","nom":"La Foncedalle","prenom":"","type":"boutique_cbd","ca":500.0,"revient":171.72,"urssaf":61.5,"wallet":0,"inf":0,"benef":255.08},{"id":"JAN-016","date":"2026-01-23","nom":"Michel","prenom":"Damien","type":"particulier","ca":55.96,"revient":6.84,"urssaf":6.88,"wallet":1.63,"inf":0,"benef":30.71},{"id":"JAN-017","date":"2026-01-25","nom":"Soum","prenom":"Basile","type":"particulier","ca":69.97,"revient":9.5,"urssaf":8.61,"wallet":1.99,"inf":0,"benef":43.87},{"id":"JAN-018","date":"2026-01-26","nom":"Dehert","prenom":"Ruud","type":"boutique_cbd","ca":40.0,"revient":14.45,"urssaf":4.92,"wallet":0,"inf":0,"benef":4.43},{"id":"JAN-019","date":"2026-01-27","nom":"Canei","prenom":"Faustin","type":"particulier","ca":44.98,"revient":8.72,"urssaf":5.53,"wallet":1.35,"inf":0,"benef":24.22},{"id":"JAN-020","date":"2026-01-29","nom":"","prenom":"","type":"particulier","ca":51.95,"revient":3.38,"urssaf":6.39,"wallet":1.53,"inf":0,"benef":40.65},{"id":"JAN-021","date":"2026-01-29","nom":"Jardin","prenom":"Antigoone","type":"boutique_cbd","ca":60.0,"revient":0.0,"urssaf":7.38,"wallet":0,"inf":0,"benef":48.42},{"id":"JAN-022","date":"2026-01-29","nom":"Nelly","prenom":"Voisin","type":"particulier","ca":339.0,"revient":59.67,"urssaf":41.7,"wallet":7.63,"inf":0,"benef":215.4},{"id":"JAN-023","date":"2026-01-29","nom":"Briard","prenom":"Kevin","type":"particulier","ca":112.99,"revient":18.1,"urssaf":13.9,"wallet":3.08,"inf":0,"benef":71.91},{"id":"JAN-024","date":"2026-01-29","nom":"Loutil","prenom":"Samson","type":"particulier","ca":41.95,"revient":6.08,"urssaf":5.16,"wallet":1.28,"inf":0,"benef":25.33},{"id":"JAN-025","date":"2026-01-30","nom":"Tendance","prenom":"Nature","type":"boutique_cbd","ca":10.0,"revient":18.18,"urssaf":1.23,"wallet":0,"inf":0,"benef":-15.71},{"id":"JAN-026","date":"2026-01-31","nom":"Fournier","prenom":"Anthony","type":"particulier","ca":58.99,"revient":11.22,"urssaf":7.26,"wallet":1.71,"inf":0,"benef":32.5},{"id":"JAN-027","date":"2026-01-31","nom":"Sosa","prenom":"Miguel","type":"particulier","ca":91.15,"revient":12.98,"urssaf":11.21,"wallet":4.18,"inf":0,"benef":32.73},{"id":"FEV-001","date":"2026-02-01","nom":"Frederic","prenom":"garcia","type":"particulier","ca":59.96,"revient":7.22,"urssaf":7.38,"wallet":1.73,"inf":0,"benef":35.94},{"id":"FEV-002","date":"2026-02-02","nom":"Zushi","prenom":"Blo","type":"particulier","ca":168.19,"revient":12.59,"urssaf":20.69,"wallet":4.48,"inf":0,"benef":120.44},{"id":"FEV-003","date":"2026-02-06","nom":"Frédéric","prenom":"Garcia","type":"particulier","ca":64.98,"revient":10.31,"urssaf":7.99,"wallet":1.86,"inf":0,"benef":37.52},{"id":"FEV-004","date":"2026-02-09","nom":"Medhi","prenom":"Redjil","type":"particulier","ca":169.95,"revient":26.24,"urssaf":20.9,"wallet":4.0,"inf":0,"benef":110.71},{"id":"FEV-005","date":"2026-02-11","nom":"Nathan","prenom":"Bachelet","type":"particulier","ca":95.89,"revient":16.61,"urssaf":11.79,"wallet":2.65,"inf":9.59,"benef":44.94},{"id":"FEV-006","date":"2026-02-11","nom":"Kevin","prenom":"Soumat","type":"particulier","ca":54.98,"revient":7.22,"urssaf":6.76,"wallet":1.61,"inf":0,"benef":33.09},{"id":"FEV-007","date":"2026-02-12","nom":"Louis","prenom":"Leseigne","type":"particulier","ca":64.98,"revient":10.0,"urssaf":7.99,"wallet":1.86,"inf":0,"benef":38.83},{"id":"FEV-008","date":"2026-02-14","nom":"Anthony","prenom":"Fournier","type":"particulier","ca":58.99,"revient":10.15,"urssaf":7.26,"wallet":1.71,"inf":0,"benef":33.69},{"id":"FEV-009","date":"2026-02-16","nom":"Frédéric","prenom":"Garcia","type":"particulier","ca":4.99,"revient":8.94,"urssaf":0.61,"wallet":1.86,"inf":0,"benef":-13.61},{"id":"FEV-010","date":"2026-02-17","nom":"Elodie","prenom":"Delville","type":"particulier","ca":36.49,"revient":4.1,"urssaf":4.49,"wallet":1.14,"inf":3.65,"benef":15.92},{"id":"FEV-011","date":"2026-02-19","nom":"Melvin","prenom":"Reign","type":"particulier","ca":69.98,"revient":8.15,"urssaf":8.61,"wallet":1.99,"inf":0,"benef":44.04},{"id":"FEV-012","date":"2026-02-20","nom":"","prenom":"","type":"particulier","ca":20.0,"revient":0.0,"urssaf":2.46,"wallet":0,"inf":0,"benef":17.54},{"id":"FEV-013","date":"2026-02-21","nom":"NC","prenom":"DISTRIBUTION","type":"boutique_cbd","ca":20.0,"revient":19.6,"urssaf":2.46,"wallet":0,"inf":0,"benef":-8.25},{"id":"FEV-014","date":"2026-02-21","nom":"Julien","prenom":"Martin","type":"particulier","ca":74.99,"revient":20.27,"urssaf":9.22,"wallet":0,"inf":0,"benef":36.61},{"id":"FEV-015","date":"2026-02-22","nom":"Brixiam","prenom":"Farms (IT)","type":"boutique_cbd","ca":20.0,"revient":11.03,"urssaf":2.46,"wallet":0,"inf":0,"benef":-6.19},{"id":"FEV-016","date":"2026-02-22","nom":"Faustin","prenom":"Canei","type":"particulier","ca":89.98,"revient":19.45,"urssaf":11.07,"wallet":2.5,"inf":0,"benef":49.6},{"id":"FEV-017","date":"2026-02-23","nom":"Cyril","prenom":"Girault","type":"particulier","ca":45.96,"revient":4.27,"urssaf":5.65,"wallet":1.38,"inf":0,"benef":29.87},{"id":"FEV-018","date":"2026-02-25","nom":"Basile","prenom":"Soom","type":"particulier","ca":74.97,"revient":10.97,"urssaf":9.22,"wallet":2.11,"inf":0,"benef":47.88},{"id":"FEV-019","date":"2026-02-25","nom":"Erwan","prenom":"Rouet","type":"particulier","ca":154.98,"revient":20.0,"urssaf":19.06,"wallet":4.98,"inf":0,"benef":105.35},{"id":"FEV-020","date":"2026-02-26","nom":"La Poche","prenom":"Verte","type":"boutique_cbd","ca":810.0,"revient":500.0,"urssaf":99.63,"wallet":0,"inf":0,"benef":197.48},{"id":"FEV-021","date":"2026-02-26","nom":"GOLD LEAF","prenom":"H TOWN","type":"boutique_cbd","ca":1440.0,"revient":798.0,"urssaf":177.12,"wallet":120.0,"inf":0,"benef":321.88},{"id":"FEV-022","date":"2026-02-26","nom":"Elite","prenom":"CBD","type":"boutique_cbd","ca":360.0,"revient":156.0,"urssaf":44.28,"wallet":0,"inf":0,"benef":150.02},{"id":"MAR-001","date":"2026-03-02","nom":"Anthony","prenom":"Fournier","type":"particulier","ca":67.99,"revient":9.0,"urssaf":8.36,"wallet":2.03,"inf":0,"benef":42.3},{"id":"MAR-002","date":"2026-03-04","nom":"Augustin","prenom":"Jules","type":"particulier","ca":39.98,"revient":9.28,"urssaf":4.92,"wallet":1.23,"inf":0,"benef":19.71},{"id":"MAR-003","date":"2026-03-09","nom":"Valentin","prenom":"Lorenz","type":"particulier","ca":72.99,"revient":18.91,"urssaf":8.98,"wallet":2.06,"inf":0,"benef":37.94},{"id":"MAR-004","date":"2026-03-10","nom":"Seed's","prenom":"experience","type":"boutique_cbd","ca":775.0,"revient":418.0,"urssaf":95.33,"wallet":0,"inf":0,"benef":261.68},{"id":"MAR-005","date":"2026-03-10","nom":"Jerome","prenom":"Pastorino","type":"particulier","ca":454.96,"revient":63.18,"urssaf":55.96,"wallet":11.77,"inf":0,"benef":309.86},{"id":"MAR-006","date":"2026-03-10","nom":"VITAVI","prenom":"","type":"boutique_cbd","ca":239.0,"revient":174.2,"urssaf":29.4,"wallet":5.44,"inf":0,"benef":21.17},{"id":"MAR-007","date":"2026-03-10","nom":"Mehdi","prenom":"Redjil","type":"particulier","ca":145.24,"revient":30.41,"urssaf":17.86,"wallet":3.9,"inf":0,"benef":87.97},{"id":"MAR-008","date":"2026-03-12","nom":"Valentin","prenom":"lorthoire","type":"particulier","ca":48.99,"revient":18.32,"urssaf":6.03,"wallet":1.45,"inf":0,"benef":15.2},{"id":"MAR-009","date":"2026-03-12","nom":"Cyril","prenom":"Delvaque","type":"particulier","ca":124.94,"revient":17.25,"urssaf":15.37,"wallet":3.38,"inf":0,"benef":79.04},{"id":"MAR-010","date":"2026-03-13","nom":"Basile","prenom":"Soom","type":"particulier","ca":114.98,"revient":21.85,"urssaf":14.14,"wallet":3.13,"inf":0,"benef":69.26},{"id":"MAR-011","date":"2026-03-13","nom":"AMSTERDAM","prenom":"31","type":"boutique_cbd","ca":1370.0,"revient":836.0,"urssaf":168.51,"wallet":0,"inf":0,"benef":332.19},{"id":"MAR-012","date":"2026-03-13","nom":"SAS","prenom":"DOOBIES","type":"boutique_cbd","ca":550.0,"revient":313.0,"urssaf":67.65,"wallet":0,"inf":0,"benef":155.96},{"id":"MAR-013","date":"2026-03-14","nom":"Romeo","prenom":"lebeouf","type":"particulier","ca":59.98,"revient":8.2,"urssaf":7.38,"wallet":1.73,"inf":0,"benef":35.68},{"id":"MAR-014","date":"2026-03-16","nom":"Ellies","prenom":"Foudad","type":"particulier","ca":41.96,"revient":4.16,"urssaf":5.16,"wallet":1.28,"inf":0,"benef":23.96},{"id":"MAR-015","date":"2026-03-17","nom":"Ambrine","prenom":"Aleinou","type":"particulier","ca":134.97,"revient":17.71,"urssaf":16.6,"wallet":3.64,"inf":0,"benef":76.22},{"id":"MAR-016","date":"2026-03-17","nom":"CASA DI","prenom":"CANAPA","type":"boutique_cbd","ca":1425.0,"revient":869.5,"urssaf":175.28,"wallet":0,"inf":0,"benef":353.24},{"id":"MAR-017","date":"2026-03-18","nom":"NC Distrib","prenom":"","type":"particulier","ca":470.0,"revient":251.0,"urssaf":57.81,"wallet":0,"inf":0,"benef":150.4},{"id":"MAR-018","date":"2026-03-18","nom":"Client","prenom":"Google","type":"particulier","ca":72.98,"revient":9.85,"urssaf":8.98,"wallet":1.81,"inf":0,"benef":50.64},{"id":"MAR-019","date":"2026-03-18","nom":"Lucas","prenom":"DN","type":"particulier","ca":50.0,"revient":8.05,"urssaf":6.15,"wallet":1.31,"inf":0,"benef":29.39},{"id":"MAR-020","date":"2026-03-18","nom":"Vapourz","prenom":"LOUNG","type":"boutique_cbd","ca":2440.0,"revient":1664.5,"urssaf":300.12,"wallet":160.0,"inf":0,"benef":288.38},{"id":"MAR-021","date":"2026-03-19","nom":"ART OF","prenom":"WELLNESS","type":"boutique_cbd","ca":450.0,"revient":272.0,"urssaf":55.35,"wallet":0,"inf":0,"benef":112.86},{"id":"MAR-022","date":"2026-03-21","nom":"erwan","prenom":"Rouet","type":"particulier","ca":204.97,"revient":41.7,"urssaf":25.21,"wallet":5.42,"inf":0,"benef":124.04},{"id":"MAR-023","date":"2026-03-22","nom":"Ruben","prenom":"Madore","type":"particulier","ca":71.95,"revient":8.32,"urssaf":8.85,"wallet":2.04,"inf":0,"benef":45.64},{"id":"MAR-024","date":"2026-03-23","nom":"Arnoeld","prenom":"Aden","type":"particulier","ca":64.97,"revient":15.62,"urssaf":7.99,"wallet":1.86,"inf":0,"benef":33.39},{"id":"MAR-025","date":"2026-03-25","nom":"Yannick","prenom":"Jourdan","type":"particulier","ca":174.95,"revient":20.35,"urssaf":21.52,"wallet":4.65,"inf":0,"benef":123.13},{"id":"MAR-026","date":"2026-03-25","nom":"CBD BY","prenom":"CASA","type":"particulier","ca":270.0,"revient":156.0,"urssaf":33.21,"wallet":0,"inf":0,"benef":47.6},{"id":"MAR-027","date":"2026-03-25","nom":"Basile","prenom":"Soom","type":"particulier","ca":211.23,"revient":55.28,"urssaf":25.98,"wallet":5.58,"inf":0,"benef":109.79},{"id":"MAR-028","date":"2026-03-26","nom":"Merlier","prenom":"Theo","type":"particulier","ca":10.0,"revient":17.48,"urssaf":1.23,"wallet":0,"inf":0,"benef":-15.2},{"id":"MAR-029","date":"2026-03-26","nom":"Faustin","prenom":"Canei","type":"particulier","ca":97.48,"revient":25.95,"urssaf":11.99,"wallet":2.69,"inf":0,"benef":49.39},{"id":"MAR-030","date":"2026-03-27","nom":"Anthony","prenom":"Fournier","type":"particulier","ca":46.24,"revient":8.2,"urssaf":5.69,"wallet":1.38,"inf":0,"benef":24.87},{"id":"MAR-031","date":"2026-03-30","nom":"Coffe","prenom":"Bouledog","type":"boutique_cbd","ca":290.0,"revient":180.0,"urssaf":35.67,"wallet":0,"inf":0,"benef":64.54},{"id":"MAR-032","date":"2026-03-30","nom":"Mehdi","prenom":"Redjil","type":"particulier","ca":87.49,"revient":22.2,"urssaf":10.76,"wallet":2.43,"inf":0,"benef":47.7},{"id":"MAR-033","date":"2026-03-30","nom":"Corentin","prenom":"Pinel","type":"particulier","ca":119.48,"revient":15.56,"urssaf":14.7,"wallet":3.24,"inf":0,"benef":78.38},{"id":"AVR-001","date":"2026-04-01","nom":"Vanhuisse","prenom":"Corentin","type":"particulier","ca":270.0,"revient":164.83,"urssaf":33.21,"wallet":0,"inf":0,"benef":37.77},{"id":"AVR-002","date":"2026-04-01","nom":"Échantillons X2","prenom":"","type":"echantillon","ca":23.0,"revient":20.54,"urssaf":2.83,"wallet":0,"inf":0,"benef":-22.95},{"id":"AVR-003","date":"2026-04-06","nom":"Soler","prenom":"Alexis","type":"particulier","ca":-37.98,"revient":3.28,"urssaf":-4.67,"wallet":1.9,"inf":0,"benef":-43.59},{"id":"AVR-004","date":"2026-04-07","nom":"Gourdain","prenom":"Alexandra","type":"particulier","ca":130.49,"revient":17.0,"urssaf":16.05,"wallet":3.52,"inf":0,"benef":66.62},{"id":"AVR-005","date":"2026-04-07","nom":"Lesseine","prenom":"Louis","type":"particulier","ca":314.97,"revient":65.5,"urssaf":38.74,"wallet":8.21,"inf":0,"benef":193.92},{"id":"AVR-006","date":"2026-04-07","nom":"Beaubrun","prenom":"Tom","type":"particulier","ca":44.97,"revient":4.78,"urssaf":5.53,"wallet":1.35,"inf":0,"benef":26.21},{"id":"AVR-007","date":"2026-04-07","nom":"Chasseing","prenom":"Aloïs","type":"particulier","ca":109.97,"revient":12.14,"urssaf":13.53,"wallet":3.0,"inf":0,"benef":75.2},{"id":"AVR-008","date":"2026-04-07","nom":"Pochon Vert","prenom":"","type":"particulier","ca":160.0,"revient":86.0,"urssaf":19.68,"wallet":0,"inf":0,"benef":40.53},{"id":"AVR-009","date":"2026-04-07","nom":"CBD by Casa","prenom":"","type":"particulier","ca":462.5,"revient":320.5,"urssaf":56.89,"wallet":0,"inf":0,"benef":72.62},{"id":"AVR-010","date":"2026-04-07","nom":"H Corse","prenom":"G2Kush 25g→Acc","type":"particulier","ca":200.0,"revient":77.75,"urssaf":24.6,"wallet":0,"inf":0,"benef":92.55},{"id":"AVR-011","date":"2026-04-07","nom":"TS Store","prenom":"","type":"particulier","ca":340.0,"revient":203.0,"urssaf":41.82,"wallet":0,"inf":0,"benef":84.39},{"id":"AVR-012","date":"2026-04-08","nom":"Hessami","prenom":"Dariush","type":"particulier","ca":301.62,"revient":67.04,"urssaf":37.1,"wallet":11.4,"inf":0,"benef":161.09},{"id":"AVR-013","date":"2026-04-08","nom":"ADN Premium","prenom":"Paiement carte","type":"particulier","ca":195.0,"revient":144.75,"urssaf":23.98,"wallet":7.74,"inf":0,"benef":7.74},{"id":"AVR-014","date":"2026-04-09","nom":"Gelly","prenom":"Michel","type":"particulier","ca":49.97,"revient":3.14,"urssaf":6.15,"wallet":1.48,"inf":0,"benef":31.1},{"id":"AVR-015","date":"2026-04-09","nom":"Czyzak","prenom":"Sacha","type":"particulier","ca":126.15,"revient":18.3,"urssaf":15.52,"wallet":3.41,"inf":0,"benef":81.46},{"id":"AVR-016","date":"2026-04-09","nom":"Green Witch","prenom":"Herboriste","type":"particulier","ca":10.0,"revient":13.63,"urssaf":1.23,"wallet":0.62,"inf":0,"benef":-11.97},{"id":"AVR-017","date":"2026-04-10","nom":"Papa","prenom":"Alessandro","type":"particulier","ca":116.79,"revient":11.3,"urssaf":14.37,"wallet":4.72,"inf":0,"benef":61.41},{"id":"AVR-018","date":"2026-04-10","nom":"Uban CBD","prenom":"UK","type":"particulier","ca":20.0,"revient":16.64,"urssaf":2.46,"wallet":0.9,"inf":0,"benef":-18.98},{"id":"AVR-019","date":"2026-04-11","nom":"Evans","prenom":"Kieran","type":"particulier","ca":56.23,"revient":3.87,"urssaf":6.92,"wallet":2.33,"inf":0,"benef":20.13},{"id":"AVR-020","date":"2026-04-12","nom":"Rouet-Bosc","prenom":"Erwan","type":"particulier","ca":154.98,"revient":21.5,"urssaf":19.06,"wallet":4.15,"inf":0,"benef":104.17},{"id":"AVR-021","date":"2026-04-15","nom":"Lesseine","prenom":"Louis","type":"particulier","ca":114.98,"revient":22.0,"urssaf":14.14,"wallet":3.13,"inf":0,"benef":70.61},{"id":"AVR-022","date":"2026-04-15","nom":"Candyland Pots","prenom":"7 pots 5g Candyland","type":"particulier","ca":94.5,"revient":59.5,"urssaf":11.62,"wallet":0,"inf":0,"benef":15.38},{"id":"AVR-023","date":"2026-04-15","nom":"Commande Web","prenom":"","type":"particulier","ca":50.0,"revient":9.7,"urssaf":6.15,"wallet":0,"inf":0,"benef":33.45},{"id":"AVR-024","date":"2026-04-17","nom":"Azzedine","prenom":"","type":"particulier","ca":210.0,"revient":90.0,"urssaf":25.83,"wallet":0,"inf":0,"benef":83.38},{"id":"AVR-025","date":"2026-04-17","nom":"Terroir CBD","prenom":"Échantillons","type":"echantillon","ca":30.0,"revient":32.67,"urssaf":3.69,"wallet":0,"inf":0,"benef":-27.56},{"id":"AVR-026","date":"2026-04-17","nom":"MHA+Dispencherbe","prenom":"","type":"particulier","ca":15.0,"revient":15.64,"urssaf":1.84,"wallet":0,"inf":0,"benef":-8.97},{"id":"AVR-027","date":"2026-04-18","nom":"Franzke","prenom":"Constantin","type":"particulier","ca":49.98,"revient":5.6,"urssaf":6.15,"wallet":1.48,"inf":0,"benef":24.35},{"id":"AVR-028","date":"2026-04-20","nom":"Redjil","prenom":"Mehdi","type":"particulier","ca":78.59,"revient":14.12,"urssaf":9.67,"wallet":2.21,"inf":0,"benef":45.49},{"id":"AVR-029","date":"2026-04-20","nom":"Delville","prenom":"Elodie — Caramel Kush 5g→Acc","type":"particulier","ca":31.23,"revient":3.0,"urssaf":3.84,"wallet":1.0,"inf":0,"benef":16.79},{"id":"AVR-030","date":"2026-04-20","nom":"Choukroun","prenom":"Jeremy","type":"particulier","ca":84.99,"revient":24.57,"urssaf":10.45,"wallet":2.37,"inf":0,"benef":40.49},{"id":"AVR-031","date":"2026-04-20","nom":"Ploquin","prenom":"Deva — Espèces hors wallet","type":"particulier","ca":30.0,"revient":6.85,"urssaf":3.69,"wallet":0,"inf":0,"benef":16.46},{"id":"AVR-032","date":"2026-04-23","nom":"Soum","prenom":"Basile","type":"particulier","ca":249.97,"revient":71.7,"urssaf":30.75,"wallet":6.56,"inf":0,"benef":131.17},{"id":"AVR-033","date":"2026-04-23","nom":"Pugliese","prenom":"Lisandro","type":"particulier","ca":74.96,"revient":8.9,"urssaf":9.22,"wallet":2.11,"inf":0,"benef":46.13},{"id":"AVR-034","date":"2026-04-23","nom":"Caneï","prenom":"Faustin","type":"particulier","ca":114.98,"revient":48.3,"urssaf":14.14,"wallet":3.13,"inf":0,"benef":40.95},{"id":"AVR-035","date":"2026-04-24","nom":"Serres à Colas","prenom":"","type":"particulier","ca":208.7,"revient":90.0,"urssaf":25.67,"wallet":0,"inf":0,"benef":82.24},{"id":"AVR-036","date":"2026-04-25","nom":"Sweet H","prenom":"Espèces — Lemon Cheese 100g→Acc(~10€)","type":"particulier","ca":235.0,"revient":118.25,"urssaf":28.91,"wallet":0,"inf":0,"benef":87.84},{"id":"AVR-037","date":"2026-04-26","nom":"Woodward","prenom":"Jack","type":"particulier","ca":50.99,"revient":6.5,"urssaf":6.27,"wallet":2.14,"inf":0,"benef":17.09},{"id":"AVR-038","date":"2026-04-27","nom":"Bommet","prenom":"Adrien","type":"particulier","ca":94.98,"revient":9.96,"urssaf":11.68,"wallet":2.62,"inf":0,"benef":54.73},{"id":"AVR-039","date":"2026-04-27","nom":"Seed's Experience","prenom":"","type":"particulier","ca":725.0,"revient":410.0,"urssaf":89.17,"wallet":0,"inf":0,"benef":225.82},{"id":"AVR-040","date":"2026-04-27","nom":"Planta Verte","prenom":"Échantillons","type":"echantillon","ca":30.0,"revient":30.5,"urssaf":3.69,"wallet":0,"inf":0,"benef":-18.09},{"id":"AVR-041","date":"2026-04-27","nom":"Dépôt Seed's","prenom":"Dépôt vente 29 prerolls","type":"particulier","ca":49.3,"revient":0.0,"urssaf":6.06,"wallet":0,"inf":0,"benef":14.24},{"id":"AVR-042","date":"2026-04-28","nom":"CBD Carnon","prenom":"Espèces hors wallet — Gova 5€","type":"particulier","ca":140.0,"revient":87.0,"urssaf":17.22,"wallet":0,"inf":0,"benef":35.78},{"id":"AVR-043","date":"2026-04-29","nom":"Smoke Shop","prenom":"Dépôt","type":"particulier","ca":17.0,"revient":0.0,"urssaf":2.09,"wallet":0,"inf":0,"benef":4.91},{"id":"AVR-044","date":"2026-04-30","nom":"Musée Fumeur","prenom":"Cannabia 2.5g→Acc","type":"particulier","ca":410.0,"revient":196.99,"urssaf":50.43,"wallet":0,"inf":0,"benef":141.38}];
+
+const DEFAULT_PRODUCTS = [
+  // Fleurs principales
+  {id:'lamponi',     name:'Lamponi',          price:0.82, cat:'Fleurs'},
+  {id:'lemon_candy', name:'Lemon Candy',       price:0.82, cat:'Fleurs'},
+  {id:'motorbreath', name:'Motorbreath',       price:0.90, cat:'Fleurs'},
+  {id:'sherblato',   name:'Sherblato',         price:0.78, cat:'Fleurs'},
+  {id:'piatella',    name:'Piatella',          price:0.82, cat:'Fleurs'},
+  {id:'cali_cream',  name:'Cali Cream',        price:0.82, cat:'Fleurs'},
+  {id:'bubbaloo',    name:'Bubbaloo',          price:0.74, cat:'Fleurs'},
+  {id:'twisterps',   name:'Twisterps',         price:0.81, cat:'Fleurs'},
+  {id:'mousse',      name:'Mousse',            price:0.80, cat:'Fleurs'},
+  {id:'mousse2',     name:'Mousse 2',          price:0.80, cat:'Fleurs'},
+  {id:'strawberry',  name:'Strawberry',        price:0.80, cat:'Fleurs'},
+  {id:'biscotti',    name:'Biscotti',          price:0.80, cat:'Fleurs'},
+  {id:'wpff',        name:'WPFF',             price:0.85, cat:'Fleurs'},
+  {id:'ozk',         name:'OZK',              price:0.90, cat:'Fleurs'},
+  {id:'living_soil', name:'Living Soil',       price:0.90, cat:'Fleurs'},
+  {id:'alien_phantom',name:'Alien-Phantom',   price:0.82, cat:'Fleurs'},
+  {id:'blue_cheese', name:'Blue Cheese',       price:0.82, cat:'Fleurs'},
+  {id:'budder_v',    name:'Budder V',          price:0.82, cat:'Fleurs'},
+  {id:'zkittlez',    name:'Zkittlez',          price:0.82, cat:'Fleurs'},
+  {id:'gelato41',    name:'Gelato 41',         price:0.90, cat:'Fleurs'},
+  {id:'bubble_diesel',name:'Bubble Diesel',   price:0.90, cat:'Fleurs'},
+  {id:'tropicana',   name:'Tropicana Cookies', price:0.90, cat:'Fleurs'},
+  {id:'wedding_cake',name:'Wedding Cake',      price:0.82, cat:'Fleurs'},
+  // Premium
+  {id:'acapulco',    name:'Acapulco Gold',     price:1.80, cat:'Premium'},
+  {id:'jealousy',    name:'Jealousy',          price:1.325,cat:'Premium'},
+  {id:'white_rhino', name:'White Rhino',       price:1.70, cat:'Premium'},
+  {id:'candyland',   name:'Candyland',         price:1.70, cat:'Premium'},
+  {id:'purple_lemon',name:'Purple Lemonade',   price:1.00, cat:'Premium'},
+  {id:'allium_og',   name:'Allium OG',         price:1.27, cat:'Premium'},
+  {id:'strawnana',   name:'Strawnana',         price:1.27, cat:'Premium'},
+  {id:'it9',         name:'IT #9',             price:1.27, cat:'Premium'},
+  {id:'phantom_og',  name:'Phantom OG',        price:1.65, cat:'Premium'},
+  // Hash
+  {id:'hash34',      name:'Hash 34',           price:0.90, cat:'Hash'},
+  {id:'gelato_res',  name:'Gelato Résine',     price:0.82, cat:'Hash'},
+  // CBG / Spécial
+  {id:'ozk_cbg',     name:'OZK CBG',          price:1.27, cat:'CBG'},
+  // Petites quantités
+  {id:'mango_sb',    name:'Mango SB',          price:0.20, cat:'Petits prix'},
+  {id:'small_buds',  name:'Small Buds',        price:0.20, cat:'Petits prix'},
+  {id:'trim',        name:'Trim',              price:0.15, cat:'Petits prix'},
+  // Autres (€ directs, pas /g)
+  {id:'accessoires', name:'Accessoires',       price:1.00, cat:'Autres', direct:true},
+];
 
 const DEFAULT_FF = [
   {id:'ff1',nom:'Shopify',montant:150},
@@ -352,44 +457,49 @@ const MONTH_LABELS = {
 
 // ===================== STATE =====================
 let orders = [];
+let products = [];
 let fraisFixes = [];
 let settings = {pin:'1234', seuil:77700, urssafRate:12.3, impotsRate:25};
 let filterMonth = 'all';
 
 function load(){
   const o = localStorage.getItem('gaz_orders');
+  const p = localStorage.getItem('gaz_products');
   const f = localStorage.getItem('gaz_ff');
   const s = localStorage.getItem('gaz_settings');
-  orders = o ? JSON.parse(o) : JSON.parse(JSON.stringify(SEED));
+  orders   = o ? JSON.parse(o) : JSON.parse(JSON.stringify(SEED));
+  products = p ? JSON.parse(p) : JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
   fraisFixes = f ? JSON.parse(f) : JSON.parse(JSON.stringify(DEFAULT_FF));
   if(s) settings = {...settings, ...JSON.parse(s)};
 }
 function save(){
-  localStorage.setItem('gaz_orders', JSON.stringify(orders));
-  localStorage.setItem('gaz_ff', JSON.stringify(fraisFixes));
+  localStorage.setItem('gaz_orders',   JSON.stringify(orders));
+  localStorage.setItem('gaz_products', JSON.stringify(products));
+  localStorage.setItem('gaz_ff',       JSON.stringify(fraisFixes));
   localStorage.setItem('gaz_settings', JSON.stringify(settings));
 }
 
 // ===================== HELPERS =====================
-const fmt = (n, decimals=2) => {
+const fmt = (n, d=2) => {
   if(n===null||n===undefined||isNaN(n)) return '—';
   const v = typeof n==='string'?parseFloat(n):n;
-  return v.toLocaleString('fr-FR', {minimumFractionDigits:decimals, maximumFractionDigits:decimals}) + ' €';
+  return v.toLocaleString('fr-FR',{minimumFractionDigits:d,maximumFractionDigits:d})+' €';
 };
 const fmtK = n => Math.abs(n)>=1000 ? (n/1000).toFixed(1).replace('.',',')+'k €' : fmt(n);
 const colorVal = n => n>0?'pos':n<0?'neg':'';
 const months = () => [...new Set(orders.map(o=>o.date.slice(0,7)))].sort();
+const v = id => parseFloat(document.getElementById(id)?.value)||0;
 
-function calcMonthStats(monthOrders, ffMonthly){
-  const ca = monthOrders.reduce((s,o)=>s+o.ca,0);
-  const revient = monthOrders.reduce((s,o)=>s+o.revient,0);
-  const urssaf = monthOrders.reduce((s,o)=>s+o.urssaf,0);
-  const wallet = monthOrders.reduce((s,o)=>s+o.wallet,0);
-  const inf = monthOrders.reduce((s,o)=>s+o.inf,0);
-  const benefBrut = monthOrders.reduce((s,o)=>s+o.benef,0);
-  const benefNet = benefBrut - ffMonthly;
-  const impots = Math.max(0, benefNet * settings.impotsRate/100);
-  return {ca,revient,urssaf,wallet,inf,benefBrut,benefNet,impots,n:monthOrders.length};
+function calcMonthStats(mo, ff){
+  const ca        = mo.reduce((s,o)=>s+o.ca,0);
+  const revient   = mo.reduce((s,o)=>s+o.revient,0);
+  const urssaf    = mo.reduce((s,o)=>s+o.urssaf,0);
+  const wallet    = mo.reduce((s,o)=>s+o.wallet,0);
+  const inf       = mo.reduce((s,o)=>s+o.inf,0);
+  const benefBrut = mo.reduce((s,o)=>s+o.benef,0);
+  const benefNet  = benefBrut - ff;
+  const impots    = Math.max(0, benefNet * settings.impotsRate/100);
+  return {ca,revient,urssaf,wallet,inf,benefBrut,benefNet,impots,n:mo.length};
 }
 
 // ===================== PIN =====================
@@ -397,27 +507,24 @@ let pinInput = '';
 function buildKeypad(){
   const kp = document.getElementById('keypad');
   kp.innerHTML = '';
-  const keys = ['1','2','3','4','5','6','7','8','9','','0','⌫'];
-  keys.forEach(k=>{
+  ['1','2','3','4','5','6','7','8','9','','0','⌫'].forEach(k=>{
     const btn = document.createElement('button');
-    btn.className='pin-btn';
-    btn.textContent=k;
-    if(k==='') btn.disabled=true, btn.style.background='transparent', btn.style.border='none';
+    btn.className='pin-btn'; btn.textContent=k;
+    if(k==='') btn.disabled=true, btn.style.cssText='background:transparent;border:none';
     btn.onclick=()=>pinKey(k);
     kp.appendChild(btn);
   });
 }
 function pinKey(k){
-  const err = document.getElementById('pin-error');
-  err.textContent='';
-  if(k==='⌫'){pinInput=pinInput.slice(0,-1);}
-  else if(pinInput.length<4){pinInput+=k;}
+  document.getElementById('pin-error').textContent='';
+  if(k==='⌫') pinInput=pinInput.slice(0,-1);
+  else if(pinInput.length<4) pinInput+=k;
   updateDots(false);
   if(pinInput.length===4) setTimeout(checkPin,80);
 }
 function updateDots(isError){
   for(let i=0;i<4;i++){
-    const d = document.getElementById('d'+i);
+    const d=document.getElementById('d'+i);
     d.className='pin-dot'+(isError?' error':pinInput.length>i?' filled':'');
   }
 }
@@ -434,44 +541,38 @@ function checkPin(){
 }
 
 // ===================== TABS =====================
-function showTab(t){
+function showTab(t, el){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('p-'+t).classList.add('active');
-  event.currentTarget.classList.add('active');
-  if(t==='commandes') renderTable();
-  if(t==='frais') renderFF();
-  if(t==='bilan') renderBilan();
-  if(t==='settings') loadSettings();
+  (el||event?.currentTarget)?.classList.add('active');
+  if(t==='commandes') { renderTable(); buildMonthFilters(); }
+  if(t==='produits')  renderProducts();
+  if(t==='frais')     renderFF();
+  if(t==='bilan')     renderBilan();
+  if(t==='settings')  loadSettings();
 }
 
 // ===================== DASHBOARD =====================
 function renderDashboard(){
   const ffTotal = fraisFixes.reduce((s,f)=>s+f.montant,0);
-  const activeMonths = months();
-  const allStats = activeMonths.map(m=>{
-    return calcMonthStats(orders.filter(o=>o.date.startsWith(m)), ffTotal);
-  });
-  const totCA = allStats.reduce((s,x)=>s+x.ca,0);
-  const totBenefBrut = allStats.reduce((s,x)=>s+x.benefBrut,0);
+  const ms = months();
+  const allStats = ms.map(m=>calcMonthStats(orders.filter(o=>o.date.startsWith(m)), ffTotal));
+  const totCA       = allStats.reduce((s,x)=>s+x.ca,0);
   const totBenefNet = allStats.reduce((s,x)=>s+x.benefNet,0);
-  const totURSSAF = allStats.reduce((s,x)=>s+x.urssaf,0);
-  const totImpots = allStats.reduce((s,x)=>s+x.impots,0);
-  const seuilPct = Math.min(100,(totCA/settings.seuil*100));
+  const totURSSAF   = allStats.reduce((s,x)=>s+x.urssaf,0);
+  const totImpots   = allStats.reduce((s,x)=>s+x.impots,0);
+  const seuilPct    = Math.min(100,(totCA/settings.seuil*100));
+  const seuilColor  = seuilPct>=90?'red':seuilPct>=70?'amber':'gold';
 
-  // Header date
   document.getElementById('hdr-date').textContent = new Date().toLocaleDateString('fr-FR',{day:'2-digit',month:'long',year:'numeric'}).toUpperCase();
 
-  // KPIs
   document.getElementById('kpi-grid').innerHTML = `
     <div class="kpi gold"><div class="kpi-label">CA Cumulé</div><div class="kpi-value gold">${fmtK(totCA)}</div><div class="kpi-sub">${orders.length} commandes</div></div>
     <div class="kpi green"><div class="kpi-label">Bénéfice Net</div><div class="kpi-value green">${fmtK(totBenefNet)}</div><div class="kpi-sub">Après frais fixes</div></div>
-    <div class="kpi amber"><div class="kpi-label">URSSAF dû</div><div class="kpi-value amber">${fmtK(totURSSAF)}</div><div class="kpi-sub">12,3% du CA</div></div>
-    <div class="kpi red"><div class="kpi-label">Provision impôts</div><div class="kpi-value red">${fmtK(totImpots)}</div><div class="kpi-sub">${settings.impotsRate}% bén. net</div></div>
-  `;
+    <div class="kpi amber"><div class="kpi-label">URSSAF dû</div><div class="kpi-value amber">${fmtK(totURSSAF)}</div><div class="kpi-sub">12,3 % du CA</div></div>
+    <div class="kpi red"><div class="kpi-label">Provision impôts</div><div class="kpi-value red">${fmtK(totImpots)}</div><div class="kpi-sub">${settings.impotsRate} % bén. net</div></div>`;
 
-  // Progress
-  const seuilColor = seuilPct>=90?'red':seuilPct>=70?'amber':'gold';
   document.getElementById('prog-section').innerHTML = `
     <div class="prog-title">SEUIL AUTO-ENTREPRENEUR</div>
     <div class="prog-row">
@@ -480,13 +581,11 @@ function renderDashboard(){
       <div class="prog-pct">${seuilPct.toFixed(1)}%</div>
     </div>
     <div style="font-size:12px;color:var(--muted);margin-top:.5rem">
-      ${fmt(totCA)} / ${fmt(settings.seuil)} — Restant : <span style="color:var(--${seuilColor})">${fmt(settings.seuil-totCA)}</span>
-    </div>
-  `;
+      ${fmt(totCA)} / ${fmt(settings.seuil,0)} — Restant : <span style="color:var(--${seuilColor})">${fmt(settings.seuil-totCA)}</span>
+    </div>`;
 
-  // Month cards
-  document.getElementById('month-grid').innerHTML = activeMonths.map((m,i)=>{
-    const s = allStats[i];
+  document.getElementById('month-grid').innerHTML = ms.map((m,i)=>{
+    const s=allStats[i];
     return `<div class="month-card">
       <div class="month-card-title">${MONTH_LABELS[m]||m}</div>
       <div class="month-row"><span>CA</span><span>${fmt(s.ca,0)}</span></div>
@@ -498,16 +597,140 @@ function renderDashboard(){
   }).join('');
 }
 
-// ===================== COMMANDES =====================
+// ===================== COMMANDES — FORM =====================
+function buildProductForm(){
+  const grid = document.getElementById('prod-form-grid');
+  if(!grid) return;
+  grid.innerHTML = products.map(p=>`
+    <div class="prod-cell" id="pc-${p.id}">
+      <label title="${p.name} — ${p.price.toFixed(3)} €/g">${p.name} <span>${p.direct?'€ direct':p.price.toFixed(3)+' €/g'}</span></label>
+      <input type="number" step="${p.direct?'0.01':'0.5'}" min="0" id="pf-${p.id}"
+        placeholder="${p.direct?'0.00':'0'}" oninput="liveCalc();updateProdCell('${p.id}')">
+    </div>`).join('');
+}
+
+function updateProdCell(id){
+  const inp = document.getElementById('pf-'+id);
+  const cell = document.getElementById('pc-'+id);
+  if(inp && cell){
+    const hasVal = parseFloat(inp.value)>0;
+    cell.classList.toggle('has-val', hasVal);
+  }
+}
+
+function liveCalc(){
+  // Prix de revient from products
+  let revient = 0;
+  const details = [];
+  products.forEach(p=>{
+    const qty = parseFloat(document.getElementById('pf-'+p.id)?.value)||0;
+    if(qty>0){
+      const cost = p.direct ? qty : qty * p.price;
+      revient += cost;
+      details.push(`${p.name}: ${p.direct?qty+'€':qty+'g × '+p.price.toFixed(3)+'€'}`);
+    }
+  });
+  document.getElementById('calc-revient').textContent = fmt(revient);
+  document.getElementById('prod-detail').textContent = details.slice(0,3).join(' | ')+(details.length>3?' + ...':'');
+
+  // Prix d'envoi
+  const carton   = v('f-carton');
+  const pochon   = v('f-pochon') * 0.70;
+  const jar      = v('f-jar');
+  const stickers = v('f-stickers');
+  const preroll  = v('f-preroll');
+  const pot      = v('f-pot');
+  const livraison= v('f-livraison');
+  const prixEnvoi = carton+pochon+jar+stickers+preroll+pot+livraison;
+  document.getElementById('calc-envoi').value = fmt(prixEnvoi);
+
+  // URSSAF
+  const ca = v('f-ca');
+  const urssaf = ca * settings.urssafRate/100;
+  document.getElementById('calc-urssaf').value = fmt(urssaf);
+
+  // Bénéfice
+  const wallet = v('f-wallet');
+  const inf    = v('f-inf');
+  const benef  = ca - revient - prixEnvoi - urssaf - wallet - inf;
+  const bEl = document.getElementById('calc-benef');
+  bEl.textContent = isNaN(benef)||ca===0 ? '—' : fmt(benef);
+  bEl.className = ca>0 ? colorVal(benef) : '';
+}
+
+function clearForm(){
+  ['f-date','f-nom','f-prenom','f-ca','f-wallet','f-inf',
+   'f-carton','f-pochon','f-jar','f-stickers','f-preroll','f-pot','f-livraison'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.value='';
+  });
+  products.forEach(p=>{
+    const el=document.getElementById('pf-'+p.id); if(el) el.value='';
+    const cell=document.getElementById('pc-'+p.id); if(cell) cell.classList.remove('has-val');
+  });
+  ['calc-revient','calc-envoi','calc-urssaf','calc-benef','prod-detail'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){if(id==='calc-revient') el.textContent='0,00 €'; else if(id==='calc-benef') el.textContent='—'; else if(id==='prod-detail') el.textContent=''; else el.value='';}
+  });
+}
+
+function addOrder(){
+  const date = document.getElementById('f-date').value;
+  const nom  = document.getElementById('f-nom').value.trim();
+  const ca   = v('f-ca');
+  if(!date||!nom||ca===0){
+    document.getElementById('form-msg').textContent='Date, nom et CA sont requis.';
+    return;
+  }
+
+  // Recalculate all values
+  let revient=0;
+  products.forEach(p=>{
+    const qty=parseFloat(document.getElementById('pf-'+p.id)?.value)||0;
+    if(qty>0) revient += p.direct?qty:qty*p.price;
+  });
+  const carton  = v('f-carton');
+  const pochon  = v('f-pochon')*0.70;
+  const jar     = v('f-jar');
+  const stk     = v('f-stickers');
+  const preroll = v('f-preroll');
+  const pot     = v('f-pot');
+  const livr    = v('f-livraison');
+  const prixEnvoi = carton+pochon+jar+stk+preroll+pot+livr;
+  const urssaf  = ca * settings.urssafRate/100;
+  const wallet  = v('f-wallet');
+  const inf     = v('f-inf');
+  const benef   = ca - revient - prixEnvoi - urssaf - wallet - inf;
+
+  const r = (x) => Math.round(x*100)/100;
+  orders.push({
+    id: 'MAN-'+Date.now(),
+    date, nom,
+    prenom: document.getElementById('f-prenom').value.trim(),
+    type:   document.getElementById('f-type').value,
+    ca:      r(ca),
+    revient: r(revient + prixEnvoi),  // total cost (produits + envoi)
+    urssaf:  r(urssaf),
+    wallet:  r(wallet),
+    inf:     r(inf),
+    benef:   r(benef),
+  });
+  save();
+  document.getElementById('form-msg').textContent='✓ Commande ajoutée';
+  clearForm();
+  setTimeout(()=>document.getElementById('form-msg').textContent='',2500);
+  buildMonthFilters(); renderTable(); renderDashboard();
+}
+
+// ===================== COMMANDES — TABLE =====================
 function buildMonthFilters(){
   const ms = ['all',...months()];
   document.getElementById('month-filters').innerHTML = ms.map(m=>`
-    <button class="filter-btn${filterMonth===m?' active':''}" onclick="setMonth('${m}',this)">
+    <button class="filter-btn${filterMonth===m?' active':''" onclick="setMonth('${m}',this)">
       ${m==='all'?'Tous':MONTH_LABELS[m]||m}
     </button>`).join('');
 }
-function setMonth(m, el){
-  filterMonth = m;
+function setMonth(m,el){
+  filterMonth=m;
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
   renderTable();
@@ -515,28 +738,25 @@ function setMonth(m, el){
 function renderTable(){
   const q = document.getElementById('search-cmd').value.toLowerCase();
   const filtered = orders.filter(o=>{
-    const matchMonth = filterMonth==='all' || o.date.startsWith(filterMonth);
-    const matchQ = !q || (o.nom+' '+o.prenom).toLowerCase().includes(q);
+    const matchMonth = filterMonth==='all'||o.date.startsWith(filterMonth);
+    const matchQ = !q||(o.nom+' '+o.prenom).toLowerCase().includes(q);
     return matchMonth && matchQ;
   });
-
-  const totCA = filtered.reduce((s,o)=>s+o.ca,0);
+  const totCA    = filtered.reduce((s,o)=>s+o.ca,0);
   const totBenef = filtered.reduce((s,o)=>s+o.benef,0);
-  const totURSSAF = filtered.reduce((s,o)=>s+o.urssaf,0);
+  const totURSSAF= filtered.reduce((s,o)=>s+o.urssaf,0);
   document.getElementById('sum-bar').innerHTML = `
     <span>${filtered.length} commandes</span>
     <span>CA : <b>${fmt(totCA)}</b></span>
     <span class="g">Bénéfice : <b>${fmt(totBenef)}</b></span>
-    <span class="a">URSSAF : <b>${fmt(totURSSAF)}</b></span>
-  `;
-
+    <span class="a">URSSAF : <b>${fmt(totURSSAF)}</b></span>`;
   if(!filtered.length){
-    document.getElementById('cmd-body').innerHTML = '<tr><td colspan="10" class="empty">Aucune commande trouvée</td></tr>';
+    document.getElementById('cmd-body').innerHTML='<tr><td colspan="10" class="empty">Aucune commande trouvée</td></tr>';
     return;
   }
-
-  document.getElementById('cmd-body').innerHTML = filtered.sort((a,b)=>b.date.localeCompare(a.date)).map(o=>`
-    <tr>
+  document.getElementById('cmd-body').innerHTML = filtered
+    .sort((a,b)=>b.date.localeCompare(a.date))
+    .map(o=>`<tr>
       <td class="mono">${o.date.split('-').reverse().join('/')}</td>
       <td>${o.nom}${o.prenom?' <span style="color:var(--muted)">'+o.prenom+'</span>':''}</td>
       <td><span class="badge ${o.type}">${typeLabel(o.type)}</span></td>
@@ -554,40 +774,55 @@ function typeLabel(t){
 }
 function deleteOrder(id){
   if(!confirm('Supprimer cette commande ?')) return;
-  orders = orders.filter(o=>o.id!==id);
+  orders=orders.filter(o=>o.id!==id);
   save(); renderTable(); renderDashboard();
 }
 
-function addOrder(){
-  const date=document.getElementById('f-date').value;
-  const nom=document.getElementById('f-nom').value.trim();
-  const ca=parseFloat(document.getElementById('f-ca').value)||0;
-  const revient=parseFloat(document.getElementById('f-revient').value)||0;
-  const wallet=parseFloat(document.getElementById('f-wallet').value)||0;
-  const inf=parseFloat(document.getElementById('f-inf').value)||0;
-  if(!date||!nom||ca===0){
-    document.getElementById('form-msg').textContent='Date, nom et CA sont requis.';
-    return;
-  }
-  const urssaf = ca * settings.urssafRate/100;
-  const benef = ca - revient - urssaf - wallet - inf;
-  const newId = 'MAN-'+Date.now();
-  orders.push({
-    id:newId, date, nom,
-    prenom:document.getElementById('f-prenom').value.trim(),
-    type:document.getElementById('f-type').value,
-    ca:Math.round(ca*100)/100,
-    revient:Math.round(revient*100)/100,
-    urssaf:Math.round(urssaf*100)/100,
-    wallet:Math.round(wallet*100)/100,
-    inf:Math.round(inf*100)/100,
-    benef:Math.round(benef*100)/100,
+// ===================== PRODUITS CATALOG =====================
+function renderProducts(){
+  const cats = [...new Set(DEFAULT_PRODUCTS.map(p=>p.cat))];
+  let html = '';
+  cats.forEach(cat=>{
+    const ps = products.filter(p=>p.cat===cat);
+    if(!ps.length) return;
+    html += `<div>
+      <div class="prod-cat-title">${cat}</div>
+      <div class="prod-list-grid">
+        ${ps.map(p=>`
+          <div class="prod-card">
+            <div class="prod-card-info">
+              <div class="prod-card-name">${p.name}</div>
+              <div class="prod-card-cat">${p.direct?'€ direct (pas €/g)':cat}</div>
+            </div>
+            <div class="prod-card-price">
+              <input class="prod-price-input" type="number" step="0.001" value="${p.price}"
+                onchange="updateProductPrice('${p.id}',this.value)" title="Modifier le prix">
+              <span class="prod-unit">${p.direct?'€':'€/g'}</span>
+            </div>
+          </div>`).join('')}
+      </div>
+    </div>`;
   });
-  save();
-  document.getElementById('form-msg').textContent='✓ Ajouté';
-  ['f-nom','f-prenom','f-ca','f-revient','f-wallet','f-inf'].forEach(id=>document.getElementById(id).value='');
-  setTimeout(()=>document.getElementById('form-msg').textContent='',2000);
-  buildMonthFilters(); renderTable(); renderDashboard();
+  document.getElementById('produits-catalog').innerHTML = html;
+}
+
+function updateProductPrice(id, val){
+  const p = products.find(x=>x.id===id);
+  if(p){
+    p.price = parseFloat(val)||p.price;
+    save();
+    // Update form label too
+    const lbl = document.querySelector(`#pc-${id} label span`);
+    if(lbl) lbl.textContent = p.direct?'€ direct':p.price.toFixed(3)+' €/g';
+    // Refresh live calc
+    liveCalc();
+  }
+}
+
+function resetProducts(){
+  if(!confirm('Réinitialiser tous les prix aux valeurs par défaut ?')) return;
+  products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+  save(); renderProducts(); buildProductForm(); liveCalc();
 }
 
 // ===================== FRAIS FIXES =====================
@@ -598,9 +833,9 @@ function renderFF(){
       <span class="ff-nom">${f.nom}</span>
       <span class="ff-mont">${fmt(f.montant)}</span>
       <button class="ff-del" onclick="deleteFF('${f.id}')">✕</button>
-    </li>`).join('') || '<li class="ff-item" style="color:var(--dim)">Aucun frais fixe</li>';
+    </li>`).join('')||'<li class="ff-item" style="color:var(--dim)">Aucun frais fixe</li>';
   document.getElementById('ff-total').textContent = fmt(total);
-  document.getElementById('ff-annual').textContent = fmt(total*12) + ' / an';
+  document.getElementById('ff-annual').textContent = fmt(total*12)+' / an';
 }
 function addFF(){
   const nom=document.getElementById('ff-nom').value.trim();
@@ -613,7 +848,7 @@ function addFF(){
 }
 function deleteFF(id){
   if(!confirm('Supprimer ce poste ?')) return;
-  fraisFixes = fraisFixes.filter(f=>f.id!==id);
+  fraisFixes=fraisFixes.filter(f=>f.id!==id);
   save(); renderFF(); renderDashboard();
 }
 
@@ -622,30 +857,26 @@ function renderBilan(){
   const ffTotal = fraisFixes.reduce((s,f)=>s+f.montant,0);
   const ms = months();
   let totCA=0,totRev=0,totURSSAF=0,totFF=0,totBenef=0,totImpots=0,totN=0;
-  
-  const alerts = [];
   const seuilPct = (orders.reduce((s,o)=>s+o.ca,0)/settings.seuil)*100;
-  if(seuilPct>=80) alerts.push(`<div class="alert alert-${seuilPct>=90?'red':'amber'}">⚠ Seuil AE atteint à ${seuilPct.toFixed(1)}% — ${fmt(settings.seuil - orders.reduce((s,o)=>s+o.ca,0))} restant avant le plafond de ${fmt(settings.seuil,0)}.</div>`);
+  const alerts = seuilPct>=80 ? [`<div class="alert alert-${seuilPct>=90?'red':'amber'}">⚠ Seuil AE atteint à ${seuilPct.toFixed(1)} % — ${fmt(settings.seuil-orders.reduce((s,o)=>s+o.ca,0))} restant avant ${fmt(settings.seuil,0)}.</div>`] : [];
   document.getElementById('bilan-alerts').innerHTML = alerts.join('');
 
   const rows = ms.map(m=>{
-    const s = calcMonthStats(orders.filter(o=>o.date.startsWith(m)), ffTotal);
+    const s=calcMonthStats(orders.filter(o=>o.date.startsWith(m)),ffTotal);
     totCA+=s.ca; totRev+=s.revient; totURSSAF+=s.urssaf; totFF+=ffTotal;
     totBenef+=s.benefNet; totImpots+=s.impots; totN+=s.n;
-    const margeBrute = s.ca - s.revient;
     return `<tr>
       <td>${MONTH_LABELS[m]||m}</td>
       <td class="mono" style="text-align:right">${s.n}</td>
       <td class="mono" style="text-align:right;color:var(--gold)">${fmt(s.ca)}</td>
       <td class="mono" style="text-align:right;color:var(--muted)">${fmt(s.revient)}</td>
-      <td class="mono" style="text-align:right">${fmt(margeBrute)}</td>
+      <td class="mono" style="text-align:right">${fmt(s.ca-s.revient)}</td>
       <td class="mono" style="text-align:right;color:var(--amber)">${fmt(s.urssaf)}</td>
       <td class="mono" style="text-align:right;color:var(--muted)">${fmt(ffTotal)}</td>
       <td class="mono" style="text-align:right"><span class="${colorVal(s.benefNet)}">${fmt(s.benefNet)}</span></td>
       <td class="mono" style="text-align:right;color:var(--red)">${fmt(s.impots)}</td>
     </tr>`;
   });
-
   document.getElementById('bilan-body').innerHTML = rows.join('');
   document.getElementById('bilan-foot').innerHTML = `<tr class="bilan-foot">
     <td>TOTAL</td>
@@ -658,45 +889,42 @@ function renderBilan(){
     <td class="mono" style="text-align:right"><span class="${colorVal(totBenef)}">${fmt(totBenef)}</span></td>
     <td class="mono" style="text-align:right;color:var(--red)">${fmt(totImpots)}</td>
   </tr>`;
-
   document.getElementById('bilan-kpi').innerHTML = `
     <div class="kpi gold"><div class="kpi-label">CA Total</div><div class="kpi-value gold">${fmtK(totCA)}</div></div>
     <div class="kpi green"><div class="kpi-label">Bénéfice net</div><div class="kpi-value green">${fmtK(totBenef)}</div></div>
     <div class="kpi amber"><div class="kpi-label">URSSAF total</div><div class="kpi-value amber">${fmtK(totURSSAF)}</div></div>
-    <div class="kpi red"><div class="kpi-label">Provision impôts</div><div class="kpi-value red">${fmtK(totImpots)}</div></div>
-  `;
+    <div class="kpi red"><div class="kpi-label">Provision impôts</div><div class="kpi-value red">${fmtK(totImpots)}</div></div>`;
 }
 
 // ===================== SETTINGS =====================
 function loadSettings(){
-  document.getElementById('s-pin').value = settings.pin||'1234';
-  document.getElementById('s-seuil').value = settings.seuil||77700;
-  document.getElementById('s-urssaf-rate').value = settings.urssafRate||12.3;
-  document.getElementById('s-impots-rate').value = settings.impotsRate||25;
+  document.getElementById('s-pin').value       = settings.pin||'1234';
+  document.getElementById('s-seuil').value     = settings.seuil||77700;
+  document.getElementById('s-urssaf-rate').value= settings.urssafRate||12.3;
+  document.getElementById('s-impots-rate').value= settings.impotsRate||25;
 }
 function saveSettings(){
-  settings.pin = document.getElementById('s-pin').value || '1234';
-  settings.seuil = parseFloat(document.getElementById('s-seuil').value)||77700;
+  settings.pin        = document.getElementById('s-pin').value||'1234';
+  settings.seuil      = parseFloat(document.getElementById('s-seuil').value)||77700;
   settings.urssafRate = parseFloat(document.getElementById('s-urssaf-rate').value)||12.3;
   settings.impotsRate = parseFloat(document.getElementById('s-impots-rate').value)||25;
   save();
-  const msg = document.getElementById('settings-msg');
+  const msg=document.getElementById('settings-msg');
   msg.textContent='✓ Enregistré';
   setTimeout(()=>msg.textContent='',2000);
 }
 function exportData(){
-  const blob = new Blob([JSON.stringify({orders,fraisFixes,settings},null,2)],{type:'application/json'});
-  const a = document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download='gaz_compta_export.json';
-  a.click();
+  const blob=new Blob([JSON.stringify({orders,products,fraisFixes,settings},null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download='gaz_compta_export.json'; a.click();
 }
 function resetData(){
   if(!confirm('⚠ Réinitialiser toutes les données ? Les commandes ajoutées manuellement seront perdues.')) return;
-  orders = JSON.parse(JSON.stringify(SEED));
+  orders     = JSON.parse(JSON.stringify(SEED));
+  products   = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
   fraisFixes = JSON.parse(JSON.stringify(DEFAULT_FF));
   save(); renderAll();
-  alert('Données réinitialisées aux données de base (Jan-Avr 2026).');
+  alert('Données réinitialisées (Jan–Avr 2026).');
 }
 
 // ===================== RENDER ALL =====================
@@ -704,6 +932,7 @@ function renderAll(){
   renderDashboard();
   buildMonthFilters();
   renderTable();
+  buildProductForm();
 }
 
 // ===================== INIT =====================
