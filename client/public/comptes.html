@@ -339,40 +339,30 @@ select option{background:var(--s2)}
   </div>
 
   <!-- FRAIS FIXES -->
-  <div class="page" id="p-frais">
-    <div class="form-section">
-      <div class="form-title">SÉLECTIONNER UN MOIS</div>
-      <div style="font-size:12px;color:var(--muted);margin-bottom:.75rem">Les frais sont configurables mois par mois. Le modèle global est utilisé par défaut.</div>
-      <div class="ff-month-tabs" id="ff-month-tabs"></div>
-      <div id="ff-status-note" class="ff-status-note" style="display:none"></div>
-    </div>
-    <div class="form-section">
-      <div class="form-title" id="ff-section-title">AJOUTER UN FRAIS</div>
-      <div class="form-grid cols3">
-        <div class="form-group full" style="grid-column:1/3"><label>Nom du poste</label><input type="text" id="ff-nom" placeholder="ex: Shopify"></div>
-        <div class="form-group"><label>Montant €</label><input type="number" step="0.01" id="ff-mont" placeholder="0.00"></div>
+    <div class="page" id="p-frais">
+      <div class="form-section">
+        <div class="form-title">FRAIS FIXES PAR MOIS</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:.75rem">Sélectionne un mois pour saisir ou modifier ses frais.</div>
+        <div class="filter-btns" id="ff-month-tabs"></div>
       </div>
-      <div class="btn-row"><button class="btn btn-gold" onclick="addFF()">Ajouter</button></div>
-    </div>
-    <div class="form-section">
-      <div class="form-title" id="ff-list-title">POSTES ACTIFS</div>
-      <ul class="ff-list" id="ff-list"></ul>
-      <div style="display:flex;justify-content:space-between;padding:.75rem 1rem;border-top:1px solid var(--border);margin-top:.5rem">
-        <span style="font-size:13px;color:var(--muted)">Total mensuel</span>
-        <span style="font-family:'DM Mono',monospace;font-size:15px;color:var(--gold)" id="ff-total">—</span>
-      </div>
-      <div style="display:flex;justify-content:space-between;padding:.5rem 1rem">
-        <span style="font-size:12px;color:var(--muted)">Projection annuelle</span>
-        <span style="font-family:'DM Mono',monospace;font-size:13px;color:var(--muted)" id="ff-annual">—</span>
-      </div>
-      <div class="btn-row" id="ff-month-actions" style="display:none">
-        <button class="btn btn-ghost" onclick="copyFromGlobal()" style="font-size:12px">Copier depuis modèle global</button>
-        <button class="btn btn-danger" onclick="resetToGlobal()" style="font-size:12px">Supprimer config. mois</button>
+      <div class="form-section" id="ff-content" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+          <div class="form-title" style="margin:0" id="ff-month-label">—</div>
+          <button class="btn btn-ghost" onclick="addFFRow()" style="font-size:12px;padding:.35rem .8rem">+ Ligne</button>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 100px 32px;gap:.4rem;margin-bottom:.4rem;padding:0 .25rem">
+          <span style="font-size:11px;color:var(--dim);letter-spacing:.5px">POSTE</span>
+          <span style="font-size:11px;color:var(--dim);letter-spacing:.5px;text-align:right">MONTANT</span>
+          <span></span>
+        </div>
+        <div id="ff-rows"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem .25rem;border-top:1px solid var(--border);margin-top:.5rem">
+          <span style="font-size:13px;color:var(--muted)">Total mensuel</span>
+          <span class="mono" style="font-size:15px;color:var(--gold)" id="ff-total">—</span>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- BILAN -->
+    <!-- BILAN -->
   <div class="page" id="p-bilan">
     <div id="bilan-alerts"></div>
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap;gap:.5rem">
@@ -1121,120 +1111,84 @@ function resetProducts(){
 }
 
 // ===================== FRAIS FIXES =====================
-function buildFFMonthTabs(){
-  const ms=months();
-  const all=[null,...ms];
-  document.getElementById('ff-month-tabs').innerHTML=all.map(function(m){
-    const label=m===null?'Modèle global':(MONTH_LABELS[m]||m);
-    const active=selectedFFMonth===m?' active':'';
-    const hasCustom=m!==null && monthlyFF[m]!==undefined;
-    const dot=hasCustom?' ●':'';
-    return '<button class="ff-month-btn'+active+'" onclick="selectFFMonth('+(m?"'"+m+"'":'null')+')">'+label+dot+'</button>';
-  }).join('');
-}
-function selectFFMonth(m){
-  selectedFFMonth=m;
-  buildFFMonthTabs();
-  renderFF();
-}
+  const escHtml = s => (s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
-function renderFF(){
-  const isGlobal=selectedFFMonth===null;
-  const hasCustom=!isGlobal && monthlyFF[selectedFFMonth]!==undefined;
-  const label=isGlobal?'Modèle global':(MONTH_LABELS[selectedFFMonth]||selectedFFMonth);
-
-  document.getElementById('ff-section-title').textContent='AJOUTER — '+label;
-  document.getElementById('ff-list-title').textContent='POSTES — '+label;
-
-  const statusNote=document.getElementById('ff-status-note');
-  const monthActions=document.getElementById('ff-month-actions');
-
-  if(!isGlobal && !hasCustom){
-    statusNote.style.display='block';
-    const ffTotal=fraisFixes.reduce((s,f)=>s+f.montant,0);
-    statusNote.innerHTML='ℹ Utilise le modèle global ('+fraisFixes.length+' postes, '+fmt(ffTotal)+'/mois). '+
-      '<button class="btn btn-ghost" style="font-size:11px;padding:.2rem .6rem;margin-left:.5rem" onclick="customizeMonthFF()">Personnaliser ce mois</button>';
-    monthActions.style.display='none';
-  } else {
-    statusNote.style.display='none';
-    monthActions.style.display=isGlobal?'none':'flex';
+  function buildFFMonthTabs(){
+    const ms = months();
+    if(!ms.length){
+      document.getElementById('ff-month-tabs').innerHTML = '<span style="font-size:12px;color:var(--muted)">Aucune commande — les mois apparaîtront ici.</span>';
+      return;
+    }
+    document.getElementById('ff-month-tabs').innerHTML = ms.map(function(m){
+      const active = selectedFFMonth===m ? ' active' : '';
+      return '<button class="filter-btn'+active+'" onclick="selectFFMonth(''+m+'')">'+( MONTH_LABELS[m]||m)+'</button>';
+    }).join('');
   }
 
-  const ffList=isGlobal?fraisFixes:(monthlyFF[selectedFFMonth]||[]);
-  const scope=isGlobal?'global':selectedFFMonth;
-
-  document.getElementById('ff-list').innerHTML=ffList.map(function(f){
-    return '<li class="ff-item">'+
-      '<span class="ff-nom">'+f.nom+'</span>'+
-      '<input type="number" step="0.01" value="'+f.montant+'" style="width:80px;background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:.3rem .5rem;color:var(--gold);font-size:13px" '+
-        'data-ff-scope="'+scope+'" data-ff-id="'+f.id+'" onchange="updateFFItem(this)" oninput="updateFFItem(this)">'+
-      '<span style="font-size:11px;color:var(--muted)">€</span>'+
-      '<button class="ff-del" data-ff-id="'+f.id+'" onclick="deleteFF(this)">✕</button>'+
-    '</li>';
-  }).join('')||'<li class="ff-item" style="color:var(--dim)">Aucun frais fixe</li>';
-
-  const total=ffList.reduce((s,f)=>s+f.montant,0);
-  document.getElementById('ff-total').textContent=fmt(total);
-  document.getElementById('ff-annual').textContent=fmt(total*12)+' / an';
-}
-
-function addFF(){
-  const nom=document.getElementById('ff-nom').value.trim();
-  const mont=parseFloat(document.getElementById('ff-mont').value)||0;
-  if(!nom||!mont) return;
-  const item={id:'ff'+Date.now(),nom,montant:mont};
-  if(selectedFFMonth===null){
-    fraisFixes.push(item);
-  } else {
-    if(!monthlyFF[selectedFFMonth]) monthlyFF[selectedFFMonth]=JSON.parse(JSON.stringify(fraisFixes)).map(function(f,i){ return {...f,id:'ffm_'+Date.now()+'_'+i}; });
-    monthlyFF[selectedFFMonth].push(item);
+  function selectFFMonth(m){
+    selectedFFMonth = m;
+    buildFFMonthTabs();
+    renderFF();
   }
-  document.getElementById('ff-nom').value='';
-  document.getElementById('ff-mont').value='';
-  save(); renderFF(); renderDashboard();
-}
 
-function deleteFF(el){
-  if(!confirm('Supprimer ce poste ?')) return;
-  const id=el.dataset.ffId;
-  if(selectedFFMonth===null){
-    fraisFixes=fraisFixes.filter(f=>f.id!==id);
-  } else if(monthlyFF[selectedFFMonth]){
-    monthlyFF[selectedFFMonth]=monthlyFF[selectedFFMonth].filter(f=>f.id!==id);
+  function renderFF(){
+    const content = document.getElementById('ff-content');
+    if(!selectedFFMonth){ content.style.display='none'; return; }
+    content.style.display = '';
+    document.getElementById('ff-month-label').textContent = (MONTH_LABELS[selectedFFMonth]||selectedFFMonth).toUpperCase();
+    if(monthlyFF[selectedFFMonth] === undefined){
+      const base = JSON.parse(JSON.stringify(fraisFixes)).map(function(f,i){
+        return {id:'ffm_'+selectedFFMonth+'_'+i, nom:f.nom, montant:f.montant};
+      });
+      while(base.length < 8) base.push({id:'ffm_'+selectedFFMonth+'_'+base.length+'_'+Date.now(), nom:'', montant:0});
+      monthlyFF[selectedFFMonth] = base;
+      save();
+    }
+    const rows = monthlyFF[selectedFFMonth];
+    document.getElementById('ff-rows').innerHTML = rows.map(function(f){
+      return '<div style="display:grid;grid-template-columns:1fr 100px 32px;gap:.4rem;align-items:center;margin-bottom:.35rem">'+
+        '<input type="text" value="'+escHtml(f.nom)+'" placeholder="ex: Shopify" '+
+          'style="background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:.4rem .6rem;color:var(--fg);font-size:13px;width:100%" '+
+          'oninput="updateFFNom(''+f.id+'',this.value)">'+
+        '<input type="number" value="'+(f.montant||'')+'" placeholder="0" step="0.01" '+
+          'style="background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:.4rem .6rem;color:var(--gold);font-size:13px;text-align:right;width:100%" '+
+          'oninput="updateFFMontant(''+f.id+'',this.value)">'+
+        '<button class="btn-icon del" onclick="deleteFFRow(''+f.id+'')" title="Supprimer" style="font-size:14px;padding:.2rem">✕</button>'+
+      '</div>';
+    }).join('');
+    renderFFTotal();
   }
-  save(); renderFF(); renderDashboard();
-}
 
-function updateFFItem(el){
-  const id=el.dataset.ffId, scope=el.dataset.ffScope;
-  const val=parseFloat(el.value)||0;
-  if(scope==='global'){
-    const f=fraisFixes.find(x=>x.id===id); if(f) f.montant=val;
-  } else if(monthlyFF[scope]){
-    const f=monthlyFF[scope].find(x=>x.id===id); if(f) f.montant=val;
+  function renderFFTotal(){
+    if(!selectedFFMonth || !monthlyFF[selectedFFMonth]) return;
+    const total = monthlyFF[selectedFFMonth].reduce(function(s,f){ return s+(parseFloat(f.montant)||0); }, 0);
+    document.getElementById('ff-total').textContent = fmt(total);
   }
-  save(); renderDashboard();
-}
 
-function customizeMonthFF(){
-  if(!selectedFFMonth) return;
-  monthlyFF[selectedFFMonth]=JSON.parse(JSON.stringify(fraisFixes)).map(function(f,i){
-    return {...f, id:'ffm_'+selectedFFMonth+'_'+i};
-  });
-  save(); buildFFMonthTabs(); renderFF();
-}
-function copyFromGlobal(){
-  if(!selectedFFMonth) return;
-  if(!confirm('Remplacer les frais de ce mois par le modèle global ?')) return;
-  customizeMonthFF();
-}
-function resetToGlobal(){
-  if(!selectedFFMonth) return;
-  if(!confirm('Supprimer la configuration spécifique de ce mois et utiliser le modèle global ?')) return;
-  delete monthlyFF[selectedFFMonth];
-  save(); buildFFMonthTabs(); renderFF();
-}
+  function updateFFNom(id, val){
+    if(!selectedFFMonth || !monthlyFF[selectedFFMonth]) return;
+    const row = monthlyFF[selectedFFMonth].find(function(f){ return f.id===id; });
+    if(row){ row.nom = val; save(); }
+  }
 
+  function updateFFMontant(id, val){
+    if(!selectedFFMonth || !monthlyFF[selectedFFMonth]) return;
+    const row = monthlyFF[selectedFFMonth].find(function(f){ return f.id===id; });
+    if(row){ row.montant = parseFloat(val)||0; save(); renderFFTotal(); renderDashboard(); }
+  }
+
+  function addFFRow(){
+    if(!selectedFFMonth) return;
+    if(!monthlyFF[selectedFFMonth]) monthlyFF[selectedFFMonth] = [];
+    monthlyFF[selectedFFMonth].push({id:'ffr_'+Date.now(), nom:'', montant:0});
+    save(); renderFF();
+  }
+
+  function deleteFFRow(id){
+    if(!selectedFFMonth || !monthlyFF[selectedFFMonth]) return;
+    monthlyFF[selectedFFMonth] = monthlyFF[selectedFFMonth].filter(function(f){ return f.id!==id; });
+    save(); renderFF(); renderDashboard();
+  }
 // ===================== BILAN =====================
 function renderBilan(){
   const ms=months();
