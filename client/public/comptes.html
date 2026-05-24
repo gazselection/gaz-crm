@@ -203,7 +203,10 @@ select option{background:var(--s2)}
       <div class="logo">GAZ<span>SELECTION</span></div>
       <div class="header-sub">Comptabilité 2026</div>
     </div>
-    <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)" id="hdr-date"></div>
+    <div style="display:flex;align-items:center;gap:.75rem">
+      <button class="btn btn-ghost" id="undo-btn" onclick="undo()" title="Annuler (Ctrl+Z)" style="font-size:11px;padding:.3rem .6rem;opacity:.4;cursor:not-allowed" disabled>↩ Annuler</button>
+      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)" id="hdr-date"></div>
+    </div>
   </header>
   <nav>
     <button class="tab-btn active" onclick="showTab('dashboard',this)">Dashboard</button>
@@ -404,8 +407,10 @@ select option{background:var(--s2)}
     <div class="form-section" style="max-width:500px">
       <div class="form-title">DONNÉES</div>
       <div style="font-size:13px;color:var(--muted);margin-bottom:1rem">Commandes, produits et frais sauvegardés dans le localStorage du navigateur.</div>
-      <div class="btn-row">
-        <button class="btn btn-ghost" onclick="exportData()">Exporter JSON</button>
+      <div class="btn-row" style="flex-wrap:wrap;gap:.5rem">
+        <button class="btn btn-ghost" onclick="exportData()">⬇ Exporter JSON</button>
+        <button class="btn btn-ghost" onclick="document.getElementById('import-file').click()">⬆ Importer JSON</button>
+        <input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(event)">
         <button class="btn btn-danger" onclick="resetData()">Réinitialiser données</button>
       </div>
     </div>
@@ -521,6 +526,7 @@ let filterMonth = 'all';
 let selectedFFMonth = null; // null = modèle global
 let editingOrderId = null;
 let editingOrderMode = 'add'; // 'add' or 'edit'
+let undoStack = [];    // max 20 états
 
 function load(){
   const o  = localStorage.getItem('gaz_orders');
@@ -535,6 +541,11 @@ function load(){
   if(s) settings = {...settings, ...JSON.parse(s)};
 }
 function save(){
+  // Snapshot pour undo (max 20)
+  undoStack.push(JSON.stringify({orders,products,fraisFixes,monthlyFF,settings}));
+  if(undoStack.length > 20) undoStack.shift();
+  const ubtn = document.getElementById('undo-btn');
+  if(ubtn){ ubtn.disabled=false; ubtn.style.opacity='1'; ubtn.style.cursor='pointer'; }
   localStorage.setItem('gaz_orders',     JSON.stringify(orders));
   localStorage.setItem('gaz_products',   JSON.stringify(products));
   localStorage.setItem('gaz_ff',         JSON.stringify(fraisFixes));
@@ -1270,6 +1281,48 @@ function exportData(){
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
   a.download='gaz_compta_export.json'; a.click();
 }
+function importData(e){
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev){
+    try {
+      const data = JSON.parse(ev.target.result);
+      if(!confirm('⚠ Importer ces données va remplacer toutes les données actuelles. Continuer ?')) return;
+      if(data.orders)     orders     = data.orders;
+      if(data.products)   products   = data.products;
+      if(data.fraisFixes) fraisFixes = data.fraisFixes;
+      if(data.monthlyFF)  monthlyFF  = data.monthlyFF;
+      if(data.settings)   settings   = {...settings, ...data.settings};
+      save(); renderAll();
+      alert('✓ Import réussi !');
+    } catch(err) {
+      alert('Erreur : fichier JSON invalide.\n' + err.message);
+    }
+    e.target.value = '';
+  };
+  reader.readAsText(file);
+}
+function undo(){
+  if(!undoStack.length) return;
+  const snap = JSON.parse(undoStack.pop());
+  orders     = snap.orders;
+  products   = snap.products;
+  fraisFixes = snap.fraisFixes;
+  monthlyFF  = snap.monthlyFF;
+  settings   = snap.settings;
+  localStorage.setItem('gaz_orders',     JSON.stringify(orders));
+  localStorage.setItem('gaz_products',   JSON.stringify(products));
+  localStorage.setItem('gaz_ff',         JSON.stringify(fraisFixes));
+  localStorage.setItem('gaz_monthly_ff', JSON.stringify(monthlyFF));
+  localStorage.setItem('gaz_settings',   JSON.stringify(settings));
+  renderAll();
+  const ubtn = document.getElementById('undo-btn');
+  if(ubtn && !undoStack.length){ ubtn.disabled=true; ubtn.style.opacity='.4'; ubtn.style.cursor='not-allowed'; }
+}
+document.addEventListener('keydown', function(e){
+  if((e.ctrlKey||e.metaKey) && e.key==='z'){ e.preventDefault(); undo(); }
+});
 function resetData(){
   if(!confirm('⚠ Réinitialiser toutes les données ?')) return;
   orders=JSON.parse(JSON.stringify(SEED));
