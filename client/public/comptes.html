@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GAZ Selection â ComptabilitÃ© 2026</title>
+<title>GAZ Selection — Comptabilité 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0e0e0e;--s1:#161616;--s2:#1e1e1e;--s3:#252525;--border:#2a2a2a;--gold:#c9a227;--gold-dim:#7a5f10;--red:#e03e3e;--amber:#e07c1a;--blue:#2d7dd2;--green:#27ae72;--text:#f0ede6;--muted:#888;--dim:#444}
@@ -162,7 +162,7 @@ select option{background:var(--s2)}
 <!-- PIN LOCK -->
 <div id="pin-lock">
   <div class="pin-logo">GAZ<span>SELECTION</span></div>
-  <div style="font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase">COMPTABILITÃ 2026</div>
+  <div style="font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase">COMPTABILITÉ 2026</div>
   <div class="pin-dots" id="pin-dots">
     <div class="pin-dot" id="d0"></div>
     <div class="pin-dot" id="d1"></div>
@@ -178,7 +178,7 @@ select option{background:var(--s2)}
   <header>
     <div>
       <div class="logo">GAZ<span>SELECTION</span></div>
-      <div class="header-sub">ComptabilitÃ© 2026</div>
+      <div class="header-sub">Comptabilité 2026</div>
     </div>
     <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)" id="hdr-date"></div>
   </header>
@@ -187,7 +187,7 @@ select option{background:var(--s2)}
     <button class="tab-btn" onclick="showTab('commandes')">Commandes</button>
     <button class="tab-btn" onclick="showTab('frais')">Frais Fixes</button>
     <button class="tab-btn" onclick="showTab('bilan')">Bilan</button>
-    <button class="tab-btn" onclick="showTab('settings')">ParamÃ¨tres</button>
+    <button class="tab-btn" onclick="showTab('settings')">Paramètres</button>
   </nav>
 
   <!-- DASHBOARD -->
@@ -205,19 +205,19 @@ select option{background:var(--s2)}
       <div class="form-grid cols4">
         <div class="form-group"><label>Date</label><input type="date" id="f-date"></div>
         <div class="form-group"><label>Nom</label><input type="text" id="f-nom" placeholder="Dupont"></div>
-        <div class="form-group"><label>PrÃ©nom</label><input type="text" id="f-prenom" placeholder="Jean"></div>
+        <div class="form-group"><label>Prénom</label><input type="text" id="f-prenom" placeholder="Jean"></div>
         <div class="form-group"><label>Type</label>
           <select id="f-type">
             <option value="particulier">Particulier</option>
             <option value="boutique_cbd">Boutique CBD</option>
             <option value="influenceur">Influenceur</option>
-            <option value="echantillon">Ãchantillon</option>
+            <option value="echantillon">Échantillon</option>
           </select>
         </div>
-        <div class="form-group"><label>CA (vente) â¬</label><input type="number" step="0.01" id="f-ca" placeholder="0.00"></div>
-        <div class="form-group"><label>Prix de revient â¬</label><input type="number" step="0.01" id="f-revient" placeholder="0.00"></div>
-        <div class="form-group"><label>Frais Wallet â¬</label><input type="number" step="0.01" id="f-wallet" placeholder="0.00"></div>
-        <div class="form-group"><label>Frais Influenceur â¬</label><input type="number" step="0.01" id="f-inf" placeholder="0.00"></div>
+        <div class="form-group"><label>CA (vente) €</label><input type="number" step="0.01" id="f-ca" placeholder="0.00"></div>
+        <div class="form-group"><label>Prix de revient €</label><input type="number" step="0.01" id="f-revient" placeholder="0.00"></div>
+        <div class="form-group"><label>Frais Wallet €</label><input type="number" step="0.01" id="f-wallet" placeholder="0.00"></div>
+        <div class="form-group"><label>Frais Influenceur €</label><input type="number" step="0.01" id="f-inf" placeholder="0.00"></div>
       </div>
       <div class="btn-row">
         <button class="btn btn-gold" onclick="addOrder()">Ajouter</button>
@@ -226,7 +226,7 @@ select option{background:var(--s2)}
     </div>
 
     <div class="table-header">
-      <input type="text" class="search-box" id="search-cmd" placeholder="ð Rechercher un client..." oninput="renderTable()">
+      <input type="text" class="search-box" id="search-cmd" placeholder="🔍 Rechercher un client..." oninput="renderTable()">
       <div class="filter-btns" id="month-filters"></div>
     </div>
     <div class="sum-bar" id="sum-bar"></div>
@@ -239,7 +239,7 @@ select option{background:var(--s2)}
           <th style="text-align:right">URSSAF</th>
           <th style="text-align:right">Wallet</th>
           <th style="text-align:right">Inf.</th>
-          <th style="text-align:right">BÃ©nÃ©fice</th>
+          <th style="text-align:right">Bénéfice</th>
           <th></th>
         </tr></thead>
         <tbody id="cmd-body"></tbody>
@@ -253,7 +253,7 @@ select option{background:var(--s2)}
       <div class="form-title">AJOUTER UN FRAIS FIXE</div>
       <div class="form-grid cols3">
         <div class="form-group full" style="grid-column:1/3"><label>Nom du poste</label><input type="text" id="ff-nom" placeholder="ex: Shopify"></div>
-        <div class="form-group"><label>Montant mensuel â¬</label><input type="number" step="0.01" id="ff-mont" placeholder="0.00"></div>
+        <div class="form-group"><label>Montant mensuel €</label><input type="number" step="0.01" id="ff-mont" placeholder="0.00"></div>
       </div>
       <div class="btn-row"><button class="btn btn-gold" onclick="addFF()">Ajouter</button></div>
     </div>
@@ -263,11 +263,11 @@ select option{background:var(--s2)}
       <ul class="ff-list" id="ff-list"></ul>
       <div style="display:flex;justify-content:space-between;padding:.75rem 1rem;border-top:1px solid var(--border);margin-top:.5rem">
         <span style="font-size:13px;color:var(--muted)">Total mensuel</span>
-        <span style="font-family:'DM Mono',monospace;font-size:15px;color:var(--gold)" id="ff-total">â</span>
+        <span style="font-family:'DM Mono',monospace;font-size:15px;color:var(--gold)" id="ff-total">—</span>
       </div>
       <div style="display:flex;justify-content:space-between;padding:.5rem 1rem">
         <span style="font-size:12px;color:var(--muted)">Projection annuelle</span>
-        <span style="font-family:'DM Mono',monospace;font-size:13px;color:var(--muted)" id="ff-annual">â</span>
+        <span style="font-family:'DM Mono',monospace;font-size:13px;color:var(--muted)" id="ff-annual">—</span>
       </div>
     </div>
   </div>
@@ -282,8 +282,8 @@ select option{background:var(--s2)}
           <th>Mois</th><th style="text-align:right">Commandes</th>
           <th style="text-align:right">CA</th><th style="text-align:right">Revient</th>
           <th style="text-align:right">Marge brute</th><th style="text-align:right">URSSAF</th>
-          <th style="text-align:right">Frais fixes</th><th style="text-align:right">BÃ©n. net</th>
-          <th style="text-align:right">Provision impÃ´ts</th>
+          <th style="text-align:right">Frais fixes</th><th style="text-align:right">Bén. net</th>
+          <th style="text-align:right">Provision impôts</th>
         </tr></thead>
         <tbody id="bilan-body"></tbody>
         <tfoot id="bilan-foot"></tfoot>
@@ -296,14 +296,14 @@ select option{background:var(--s2)}
   <!-- SETTINGS -->
   <div class="page" id="p-settings">
     <div class="form-section" style="max-width:500px">
-      <div class="form-title">PARAMÃTRES</div>
+      <div class="form-title">PARAMÈTRES</div>
       <div class="settings-grid">
         <div class="form-group">
           <label>Code PIN</label>
           <input type="password" id="s-pin" maxlength="8" placeholder="1234" style="max-width:120px">
         </div>
         <div class="form-group">
-          <label>Seuil AE annuel (â¬)</label>
+          <label>Seuil AE annuel (€)</label>
           <input type="number" id="s-seuil" value="77700">
         </div>
         <div class="form-group">
@@ -311,7 +311,7 @@ select option{background:var(--s2)}
           <input type="number" id="s-urssaf-rate" value="12.3" step="0.1">
         </div>
         <div class="form-group">
-          <label>Taux provision impÃ´ts (%)</label>
+          <label>Taux provision impôts (%)</label>
           <input type="number" id="s-impots-rate" value="25" step="0.5">
         </div>
       </div>
@@ -321,11 +321,11 @@ select option{background:var(--s2)}
       </div>
     </div>
     <div class="form-section" style="max-width:500px">
-      <div class="form-title">DONNÃES</div>
-      <div style="font-size:13px;color:var(--muted);margin-bottom:1rem">Les commandes sont sauvegardÃ©es dans le localStorage du navigateur.</div>
+      <div class="form-title">DONNÉES</div>
+      <div style="font-size:13px;color:var(--muted);margin-bottom:1rem">Les commandes sont sauvegardées dans le localStorage du navigateur.</div>
       <div class="btn-row">
         <button class="btn btn-ghost" onclick="exportData()">Exporter JSON</button>
-        <button class="btn btn-danger" onclick="resetData()">RÃ©initialiser donnÃ©es</button>
+        <button class="btn btn-danger" onclick="resetData()">Réinitialiser données</button>
       </div>
     </div>
   </div>
@@ -333,21 +333,21 @@ select option{background:var(--s2)}
 
 <script>
 // ===================== DATA =====================
-const SEED = [{"id":"JAN-001","date":"2026-01-01","nom":"Girault","prenom":"Cyril","type":"particulier","ca":52.97,"revient":4.77,"urssaf":6.52,"wallet":1.56,"inf":0,"benef":35.33},{"id":"JAN-002","date":"2026-01-02","nom":"La Foncedalle","prenom":"","type":"boutique_cbd","ca":300.0,"revient":85.0,"urssaf":36.9,"wallet":0,"inf":0,"benef":166.41},{"id":"JAN-003","date":"2026-01-11","nom":"Delville","prenom":"Elodie","type":"particulier","ca":36.49,"revient":2.96,"urssaf":4.49,"wallet":1.14,"inf":0,"benef":23.11},{"id":"JAN-004","date":"2026-01-12","nom":"La foncedalle","prenom":"","type":"boutique_cbd","ca":400.0,"revient":164.0,"urssaf":49.2,"wallet":0,"inf":0,"benef":175.1},{"id":"JAN-005","date":"2026-01-13","nom":"Sousa","prenom":"Miguel","type":"particulier","ca":86.23,"revient":6.62,"urssaf":10.61,"wallet":3.97,"inf":0,"benef":40.64},{"id":"JAN-006","date":"2026-01-14","nom":"THE DREAM","prenom":"","type":"boutique_cbd","ca":60.0,"revient":10.0,"urssaf":7.38,"wallet":0,"inf":0,"benef":29.62},{"id":"JAN-007","date":"2026-01-15","nom":"VAPOLAND","prenom":"","type":"boutique_cbd","ca":255.0,"revient":152.5,"urssaf":31.36,"wallet":5.79,"inf":0,"benef":52.84},{"id":"JAN-008","date":"2026-01-16","nom":"LA Moula","prenom":"CBD","type":"boutique_cbd","ca":350.0,"revient":81.0,"urssaf":43.05,"wallet":0,"inf":0,"benef":214.25},{"id":"JAN-009","date":"2026-01-17","nom":"Tiago","prenom":"Julio","type":"particulier","ca":30.59,"revient":4.5,"urssaf":3.76,"wallet":0.99,"inf":0,"benef":15.04},{"id":"JAN-010","date":"2026-01-17","nom":"Nicolas","prenom":"Leroy","type":"particulier","ca":56.29,"revient":11.83,"urssaf":6.92,"wallet":1.64,"inf":0,"benef":29.89},{"id":"JAN-011","date":"2026-01-18","nom":"David","prenom":"Paul","type":"particulier","ca":91.94,"revient":9.72,"urssaf":11.31,"wallet":2.55,"inf":0,"benef":64.26},{"id":"JAN-012","date":"2026-01-19","nom":"Calm","prenom":"Leaf","type":"boutique_cbd","ca":3080.0,"revient":1840.0,"urssaf":378.84,"wallet":257.26,"inf":0,"benef":581.15},{"id":"JAN-013","date":"2026-01-19","nom":"So","prenom":"hempy","type":"boutique_cbd","ca":2280.0,"revient":1845.25,"urssaf":280.44,"wallet":0,"inf":0,"benef":154.31},{"id":"JAN-014","date":"2026-01-19","nom":"Fernandes","prenom":"Lester","type":"particulier","ca":99.97,"revient":9.85,"urssaf":12.3,"wallet":2.75,"inf":0,"benef":69.97},{"id":"JAN-015","date":"2026-01-21","nom":"La Foncedalle","prenom":"","type":"boutique_cbd","ca":500.0,"revient":171.72,"urssaf":61.5,"wallet":0,"inf":0,"benef":255.08},{"id":"JAN-016","date":"2026-01-23","nom":"Michel","prenom":"Damien","type":"particulier","ca":55.96,"revient":6.84,"urssaf":6.88,"wallet":1.63,"inf":0,"benef":30.71},{"id":"JAN-017","date":"2026-01-25","nom":"Soum","prenom":"Basile","type":"particulier","ca":69.97,"revient":9.5,"urssaf":8.61,"wallet":1.99,"inf":0,"benef":43.87},{"id":"JAN-018","date":"2026-01-26","nom":"Dehert","prenom":"Ruud","type":"boutique_cbd","ca":40.0,"revient":14.45,"urssaf":4.92,"wallet":0,"inf":0,"benef":4.43},{"id":"JAN-019","date":"2026-01-27","nom":"Canei","prenom":"Faustin","type":"particulier","ca":44.98,"revient":8.72,"urssaf":5.53,"wallet":1.35,"inf":0,"benef":24.22},{"id":"JAN-020","date":"2026-01-29","nom":"","prenom":"","type":"particulier","ca":51.95,"revient":3.38,"urssaf":6.39,"wallet":1.53,"inf":0,"benef":40.65},{"id":"JAN-021","date":"2026-01-29","nom":"Jarjin","prenom":"Antigoone","type":"boutique_cbd","ca":60.0,"revient":0.0,"urssaf":7.38,"wallet":0,"inf":0,"benef":48.42},{"id":"JAN-022","date":"2026-01-29","nom":"Nelly","prenom":"Voisin","type":"particulier","ca":339.0,"revient":59.67,"urssaf":41.7,"wallet":7.63,"inf":0,"benef":215.4},{"id":"JAN-023","date":"2026-01-29","nom":"Briard","prenom":"Kevin","type":"particulier","ca":112.99,"revient":18.1,"urssaf":13.9,"wallet":3.08,"inf":0,"benef":71.91},{"id":"JAN-024","date":"2026-01-29","nom":"Loutil","prenom":"Samson","type":"particulier","ca":41.95,"revient":6.08,"urssaf":5.16,"wallet":1.28,"inf":0,"benef":25.33},{"id":"JAN-025","date":"2026-01-30","nom":"Tendance","prenom":"Nature","type":"boutique_cbd","ca":10.0,"revient":18.18,"urssaf":1.23,"wallet":0,"inf":0,"benef":-15.71},{"id":"JAN-026","date":"2026-01-31","nom":"Fournier","prenom":"Anthony","type":"particulier","ca":58.99,"revient":11.22,"urssaf":7.26,"wallet":1.71,"inf":0,"benef":32.5},{"id":"JAN-027","date":"2026-01-31","nom":"Sosa","prenom":"Miguel","type":"particulier","ca":91.15,"revient":12.98,"urssaf":11.21,"wallet":4.18,"inf":0,"benef":32.73},{"id":"FEV-001","date":"2026-02-01","nom":"Frederic","prenom":"garcia","type":"particulier","ca":59.96,"revient":7.22,"urssaf":7.38,"wallet":1.73,"inf":0,"benef":35.94},{"id":"FEV-002","date":"2026-02-02","nom":"Zushi","prenom":"Blo","type":"particulier","ca":168.19,"revient":12.59,"urssaf":20.69,"wallet":4.48,"inf":0,"benef":120.44},{"id":"FEV-003","date":"2026-02-06","nom":"FrÃ©dÃ©ric","prenom":"Garcia","type":"particulier","ca":64.98,"revient":10.31,"urssaf":7.99,"wallet":1.86,"inf":0,"benef":37.52},{"id":"FEV-004","date":"2026-02-09","nom":"Medhi","prenom":"Redjil","type":"particulier","ca":169.95,"revient":26.24,"urssaf":20.9,"wallet":4.0,"inf":0,"benef":110.71},{"id":"FEV-005","date":"2026-02-11","nom":"Nathan","prenom":"Bachelet","type":"particulier","ca":95.89,"revient":16.61,"urssaf":11.79,"wallet":2.65,"inf":9.59,"benef":44.94},{"id":"FEV-006","date":"2026-02-11","nom":"Kevin","prenom":"Soumat","type":"particulier","ca":54.98,"revient":7.22,"urssaf":6.76,"wallet":1.61,"inf":0,"benef":33.09},{"id":"FEV-007","date":"2026-02-12","nom":"Louis","prenom":"Leseigne","type":"particulier","ca":64.98,"revient":10.0,"urssaf":7.99,"wallet":1.86,"inf":0,"benef":38.83},{"id":"FEV-008","date":"2026-02-14","nom":"Anthony","prenom":"Fournier","type":"particulier","ca":58.99,"revient":10.15,"urssaf":7.26,"wallet":1.71,"inf":0,"benef":33.69},{"id":"FEV-009","date":"2026-02-16","nom":"FrÃ©dÃ©ric","prenom":"Garcia","type":"particulier","ca":4.99,"revient":8.94,"urssaf":0.61,"wallet":1.86,"inf":0,"benef":-13.61},{"id":"FEV-010","date":"2026-02-17","nom":"Elodie","prenom":"Delville","type":"particulier","ca":36.49,"revient":4.1,"urssaf":4.49,"wallet":1.14,"inf":3.65,"benef":15.92},{"id":"FEV-011","date":"2026-02-19","nom":"Melvin","prenom":"Reign","type":"particulier","ca":69.98,"revient":8.15,"urssaf":8.61,"wallet":1.99,"inf":0,"benef":44.04},{"id":"FEV-012","date":"2026-02-20","nom":"","prenom":"","type":"particulier","ca":20.0,"revient":0.0,"urssaf":2.46,"wallet":0,"inf":0,"benef":17.54},{"id":"FEV-013","date":"2026-02-21","nom":"NC","prenom":"DISTRIBUTION","type":"boutique_cbd","ca":20.0,"revient":19.6,"urssaf":2.46,"wallet":0,"inf":0,"benef":-8.25},{"id":"FEV-014","date":"2026-02-21","nom":"Julien","prenom":"Martin","type":"particulier","ca":74.99,"revient":20.27,"urssaf":9.22,"wallet":0,"inf":0,"benef":36.61},{"id":"FEV-015","date":"2026-02-22","nom":"Brixiam","prenom":"Farms (IT)","type":"boutique_cbd","ca":20.0,"revient":11.03,"urssaf":2.46,"wallet":0,"inf":0,"benef":-6.19},{"id":"FEV-016","date":"2026-02-22","nom":"Faustin","prenom":"Canei","type":"particulier","ca":89.98,"revient":19.45,"urssaf":11.07,"wallet":2.5,"inf":0,"benef":49.6},{"id":"FEV-017","date":"2026-02-23","nom":"Cyril","prenom":"Girault","type":"particulier","ca":45.96,"revient":4.27,"urssaf":5.65,"wallet":1.38,"inf":0,"benef":29.87},{"id":"FEV-018","date":"2026-02-25","nom":"Basile","prenom":"Soom","type":"particulier","ca":74.97,"revient":10.97,"urssaf":9.22,"wallet":2.11,"inf":0,"benef":47.88},{"id":"FEV-019","date":"2026-02-25","nom":"Erwan","prenom":"Rouet","type":"particulier","ca":154.98,"revient":20.0,"urssaf":19.06,"wallet":4.98,"inf":0,"benef":105.35},{"id":"FEV-020","date":"2026-02-26","nom":"La Poche","prenom":"Verte","type":"boutique_cbd","ca":810.0,"revient":500.0,"urssaf":99.63,"wallet":0,"inf":0,"benef":197.48},{"id":"FEV-021","date":"2026-02-26","nom":"GOLD LEAF","prenom":"H TOWN","type":"boutique_cbd","ca":1440.0,"revient":798.0,"urssaf":177.12,"wallet":120.0,"inf":0,"benef":321.88},{"id":"FEV-022","date":"2026-02-26","nom":"Elite","prenom":"CBD","type":"boutique_cbd","ca":360.0,"revient":156.0,"urssaf":44.28,"wallet":0,"inf":0,"benef":150.02},{"id":"MAR-001","date":"2026-03-02","nom":"Anthony","prenom":"Fournier","type":"particulier","ca":67.99,"revient":9.0,"urssaf":8.36,"wallet":2.03,"inf":0,"benef":42.3},{"id":"MAR-002","date":"2026-03-04","nom":"Augustin","prenom":"Jules","type":"particulier","ca":39.98,"revient":9.28,"urssaf":4.92,"wallet":1.23,"inf":0,"benef":19.71},{"id":"MAR-003","date":"2026-03-09","nom":"Valentin","prenom":"Lorenz","type":"particulier","ca":72.99,"revient":18.91,"urssaf":8.98,"wallet":2.06,"inf":0,"benef":37.94},{"id":"MAR-004","date":"2026-03-10","nom":"Seed's","prenom":"experience","type":"boutique_cbd","ca":775.0,"revient":418.0,"urssaf":95.33,"wallet":0,"inf":0,"benef":261.68},{"id":"MAR-005","date":"2026-03-10","nom":"Jerome","prenom":"Pastorino","type":"particulier","ca":454.96,"revient":63.18,"urssaf":55.96,"wallet":11.77,"inf":0,"benef":309.86},{"id":"MAR-006","date":"2026-03-10","nom":"VITAVI","prenom":"","type":"boutique_cbd","ca":239.0,"revient":174.2,"urssaf":29.4,"wallet":5.44,"inf":0,"benef":21.17},{"id":"MAR-007","date":"2026-03-10","nom":"Mehdi","prenom":"Redjil","type":"particulier","ca":145.24,"revient":30.41,"urssaf":17.86,"wallet":3.9,"inf":0,"benef":87.97},{"id":"MAR-008","date":"2026-03-12","nom":"Valentin","prenom":"lorthoire","type":"particulier","ca":48.99,"revient":18.32,"urssaf":6.03,"wallet":1.45,"inf":0,"benef":15.2},{"id":"MAR-009","date":"2026-03-12","nom":"Cyril","prenom":"Delvaque","type":"particulier","ca":124.94,"revient":17.25,"urssaf":15.37,"wallet":3.38,"inf":0,"benef":79.04},{"id":"MAR-010","date":"2026-03-13","nom":"Basile","prenom":"Soom","type":"particulier","ca":114.98,"revient":21.85,"urssaf":14.14,"wallet":3.13,"inf":0,"benef":69.26},{"id":"MAR-011","date":"2026-03-13","nom":"AMSTERDAM","prenom":"31","type":"boutique_cbd","ca":1370.0,"revient":836.0,"urssaf":168.51,"wallet":0,"inf":0,"benef":332.19},{"id":"MAR-012","date":"2026-03-13","nom":"SAS","prenom":"DOOBIES","type":"boutique_cbd","ca":550.0,"revient":313.0,"urssaf":67.65,"wallet":0,"inf":0,"benef":155.96},{"id":"MAR-013","date":"2026-03-14","nom":"Romeo","prenom":"lebeouf","type":"particulier","ca":59.98,"revient":8.2,"urssaf":7.38,"wallet":1.73,"inf":0,"benef":35.68},{"id":"MAR-014","date":"2026-03-16","nom":"Ellies","prenom":"Foudad","type":"particulier","ca":41.96,"revient":4.16,"urssaf":5.16,"wallet":1.28,"inf":0,"benef":23.96},{"id":"MAR-015","date":"2026-03-17","nom":"Ambrine","prenom":"Aleinou","type":"particulier","ca":134.97,"revient":17.71,"urssaf":16.6,"wallet":3.64,"inf":0,"benef":76.22},{"id":"MAR-016","date":"2026-03-17","nom":"CASA DI","prenom":"CANAPA","type":"boutique_cbd","ca":1425.0,"revient":869.5,"urssaf":175.28,"wallet":0,"inf":0,"benef":353.24},{"id":"MAR-017","date":"2026-03-18","nom":"NC Distrib","prenom":"","type":"particulier","ca":470.0,"revient":251.0,"urssaf":57.81,"wallet":0,"inf":0,"benef":150.4},{"id":"MAR-018","date":"2026-03-18","nom":"Client","prenom":"Google","type":"particulier","ca":72.98,"revient":9.85,"urssaf":8.98,"wallet":1.81,"inf":0,"benef":50.64},{"id":"MAR-019","date":"2026-03-18","nom":"Lucas","prenom":"DN","type":"particulier","ca":50.0,"revient":8.05,"urssaf":6.15,"wallet":1.31,"inf":0,"benef":29.39},{"id":"MAR-020","date":"2026-03-18","nom":"Vapourz","prenom":"LOUNG","type":"boutique_cbd","ca":2440.0,"revient":1664.5,"urssaf":300.12,"wallet":160.0,"inf":0,"benef":288.38},{"id":"MAR-021","date":"2026-03-19","nom":"ART OF","prenom":"WELLNESS","type":"boutique_cbd","ca":450.0,"revient":272.0,"urssaf":55.35,"wallet":0,"inf":0,"benef":112.86},{"id":"MAR-022","date":"2026-03-21","nom":"erwan","prenom":"Rouet","type":"particulier","ca":204.97,"revient":41.7,"urssaf":25.21,"wallet":5.42,"inf":0,"benef":124.04},{"id":"MAR-023","date":"2026-03-22","nom":"Ruben","prenom":"Madore","type":"particulier","ca":71.95,"revient":8.32,"urssaf":8.85,"wallet":2.04,"inf":0,"benef":45.64},{"id":"MAR-024","date":"2026-03-23","nom":"Arnoeld","prenom":"Aden","type":"particulier","ca":64.97,"revient":15.62,"urssaf":7.99,"wallet":1.86,"inf":0,"benef":33.39},{"id":"MAR-025","date":"2026-03-25","nom":"Yannick","prenom":"Jourdan","type":"particulier","ca":174.95,"revient":20.35,"urssaf":21.52,"wallet":4.65,"inf":0,"benef":123.13},{"id":"MAR-026","date":"2026-03-25","nom":"CBD BY","prenom":"CASA","type":"particulier","ca":270.0,"revient":156.0,"urssaf":33.21,"wallet":0,"inf":0,"benef":47.6},{"id":"MAR-027","date":"2026-03-25","nom":"Basile","prenom":"Soom","type":"particulier","ca":211.23,"revient":55.28,"urssaf":25.98,"wallet":5.58,"inf":0,"benef":109.79},{"id":"MAR-028","date":"2026-03-26","nom":"Merlier","prenom":"Theo","type":"particulier","ca":10.0,"revient":17.48,"urssaf":1.23,"wallet":0,"inf":0,"benef":-15.2},{"id":"MAR-029","date":"2026-03-26","nom":"Faustin","prenom":"Canei","type":"particulier","ca":97.48,"revient":25.95,"urssaf":11.99,"wallet":2.69,"inf":0,"benef":49.39},{"id":"MAR-030","date":"2026-03-27","nom":"Anthony","prenom":"Fournier","type":"particulier","ca":46.24,"revient":8.2,"urssaf":5.69,"wallet":1.38,"inf":0,"benef":24.87},{"id":"MAR-031","date":"2026-03-30","nom":"Coffe","prenom":"Bouledog","type":"boutique_cbd","ca":290.0,"revient":180.0,"urssaf":35.67,"wallet":0,"inf":0,"benef":64.54},{"id":"MAR-032","date":"2026-03-30","nom":"Mehdi","prenom":"Redjil","type":"particulier","ca":87.49,"revient":22.2,"urssaf":10.76,"wallet":2.43,"inf":0,"benef":47.7},{"id":"MAR-033","date":"2026-03-30","nom":"Corentin","prenom":"Pinel","type":"particulier","ca":119.48,"revient":15.56,"urssaf":14.7,"wallet":3.24,"inf":0,"benef":78.38},{"id":"AVR-001","date":"2026-04-01","nom":"Vanhuisse","prenom":"Corentin","type":"particulier","ca":270.0,"revient":164.83,"urssaf":33.21,"wallet":0,"inf":0,"benef":37.77},{"id":"AVR-002","date":"2026-04-01","nom":"Ãchantillons X2","prenom":"","type":"echantillon","ca":23.0,"revient":20.54,"urssaf":2.83,"wallet":0,"inf":0,"benef":-22.95},{"id":"AVR-003","date":"2026-04-06","nom":"Soler","prenom":"Alexis","type":"particulier","ca":-37.98,"revient":3.28,"urssaf":-4.67,"wallet":1.9,"inf":0,"benef":-43.59},{"id":"AVR-004","date":"2026-04-07","nom":"Goordain","prenom":"Alexandra","type":"particulier","ca":130.49,"revient":17.0,"urssaf":16.05,"wallet":3.52,"inf":0,"benef":66.62},{"id":"AVR-005","date":"2026-04-07","nom":"Lesseine","prenom":"Louis","type":"particulier","ca":314.97,"revient":65.5,"urssaf":38.74,"wallet":8.21,"inf":0,"benef":193.92},{"id":"AVR-006","date":"2026-04-07","nom":"Beaubrun","prenom":"Tom","type":"particulier","ca":44.97,"revient":4.78,"urssaf":5.53,"wallet":1.35,"inf":0,"benef":26.21},{"id":"AVR-007","date":"2026-04-07","nom":"Chasseing","prenom":"AloÃ¯s","type":"particulier","ca":109.97,"revient":12.14,"urssaf":13.53,"wallet":3.0,"inf":0,"benef":75.2},{"id":"AVR-008","date":"2026-04-07","nom":"Pochon Vert","prenom":"","type":"particulier","ca":160.0,"revient":86.0,"urssaf":19.68,"wallet":0,"inf":0,"benef":40.53},{"id":"AVR-009","date":"2026-04-07","nom":"CBD by Casa","prenom":"","type":"particulier","ca":462.5,"revient":320.5,"urssaf":56.89,"wallet":0,"inf":0,"benef":72.62},{"id":"AVR-010","date":"2026-04-07","nom":"H Corse","prenom":"G2Kush 25gâAcc","type":"particulier","ca":200.0,"revient":77.75,"urssaf":24.6,"wallet":0,"inf":0,"benef":92.55},{"id":"AVR-011","date":"2026-04-07","nom":"TS Store","prenom":"","type":"particulier","ca":340.0,"revient":203.0,"urssaf":41.82,"wallet":0,"inf":0,"benef":84.39},{"id":"AVR-012","date":"2026-04-08","nom":"Hessami","prenom":"Dariush","type":"particulier","ca":301.62,"revient":67.04,"urssaf":37.1,"wallet":11.4,"inf":0,"benef":161.09},{"id":"AVR-013","date":"2026-04-08","nom":"ADN Premium","prenom":"Paiement carte","type":"particulier","ca":195.0,"revient":144.75,"urssaf":23.98,"wallet":7.74,"inf":0,"benef":7.74},{"id":"AVR-014","date":"2026-04-09","nom":"Gelly","prenom":"Michel","type":"particulier","ca":49.97,"revient":3.14,"urssaf":6.15,"wallet":1.48,"inf":0,"benef":31.1},{"id":"AVR-015","date":"2026-04-09","nom":"Czyzak","prenom":"Sacha","type":"particulier","ca":126.15,"revient":18.3,"urssaf":15.52,"wallet":3.41,"inf":0,"benef":81.46},{"id":"AVR-016","date":"2026-04-09","nom":"Green Witch","prenom":"Herboriste","type":"particulier","ca":10.0,"revient":13.63,"urssaf":1.23,"wallet":0.62,"inf":0,"benef":-11.97},{"id":"AVR-017","date":"2026-04-10","nom":"Papa","prenom":"Alessandro","type":"particulier","ca":116.79,"revient":11.3,"urssaf":14.37,"wallet":4.72,"inf":0,"benef":61.41},{"id":"AVR-018","date":"2026-04-10","nom":"Uban CBD","prenom":"UK","type":"particulier","ca":20.0,"revient":16.64,"urssaf":2.46,"wallet":0.9,"inf":0,"benef":-18.98},{"id":"AVR-019","date":"2026-04-11","nom":"Evans","prenom":"Kieran","type":"particulier","ca":56.23,"revient":3.87,"urssaf":6.92,"wallet":2.33,"inf":0,"benef":20.13},{"id":"AVR-020","date":"2026-04-12","nom":"Rouet-Bosc","prenom":"Erwan","type":"particulier","ca":154.98,"revient":21.5,"urssaf":19.06,"wallet":4.15,"inf":0,"benef":104.17},{"id":"AVR-021","date":"2026-04-15","nom":"Lesseine","prenom":"Louis","type":"particulier","ca":114.98,"revient":22.0,"urssaf":14.14,"wallet":3.13,"inf":0,"benef":70.61},{"id":"AVR-022","date":"2026-04-15","nom":"Candyland Pots","prenom":"7 pots 5g Candyland","type":"particulier","ca":94.5,"revient":59.5,"urssaf":11.62,"wallet":0,"inf":0,"benef":15.38},{"id":"AVR-023","date":"2026-04-15","nom":"Commande Web","prenom":"","type":"particulier","ca":50.0,"revient":9.7,"urssaf":6.15,"wallet":0,"inf":0,"benef":33.45},{"id":"AVR-024","date":"2026-04-17","nom":"Azzedine","prenom":"","type":"particulier","ca":210.0,"revient":90.0,"urssaf":25.83,"wallet":0,"inf":0,"benef":83.38},{"id":"AVR-025","date":"2026-04-17","nom":"Terroir CBD","prenom":"Ãchantillons","type":"echantillon","ca":30.0,"revient":32.67,"urssaf":3.69,"wallet":0,"inf":0,"benef":-27.56},{"id":"AVR-026","date":"2026-04-17","nom":"MHA+Dispencherbe","prenom":"","type":"particulier","ca":15.0,"revient":15.64,"urssaf":1.84,"wallet":0,"inf":0,"benef":-8.97},{"id":"AVR-027","date":"2026-04-18","nom":"Franzke","prenom":"Constantin","type":"particulier","ca":49.98,"revient":5.6,"urssaf":6.15,"wallet":1.48,"inf":0,"benef":24.35},{"id":"AVR-028","date":"2026-04-20","nom":"Redjil","prenom":"Mehdi","type":"particulier","ca":78.59,"revient":14.12,"urssaf":9.67,"wallet":2.21,"inf":0,"benef":45.49},{"id":"AVR-029","date":"2026-04-20","nom":"Delville","prenom":"Elodie â Caramel Kush 5gâAcc","type":"particulier","ca":31.23,"revient":3.0,"urssaf":3.84,"wallet":1.0,"inf":0,"benef":16.79},{"id":"AVR-030","date":"2026-04-20","nom":"Choukroun","prenom":"Jeremy","type":"particulier","ca":84.99,"revient":24.57,"urssaf":10.45,"wallet":2.37,"inf":0,"benef":40.49},{"id":"AVR-031","date":"2026-04-20","nom":"Ploquin","prenom":"Deva â EspÃ¨ces hors wallet","type":"particulier","ca":30.0,"revient":6.85,"urssaf":3.69,"wallet":0,"inf":0,"benef":16.46},{"id":"AVR-032","date":"2026-04-23","nom":"Soum","prenom":"Basile","type":"particulier","ca":249.97,"revient":71.7,"urssaf":30.75,"wallet":6.56,"inf":0,"benef":131.17},{"id":"AVR-033","date":"2026-04-23","nom":"Pugliese","prenom":"Lisandro","type":"particulier","ca":74.96,"revient":8.9,"urssaf":9.22,"wallet":2.11,"inf":0,"benef":46.13},{"id":"AVR-034","date":"2026-04-23","nom":"CaneÃ¯","prenom":"Faustin","type":"particulier","ca":114.98,"revient":48.3,"urssaf":14.14,"wallet":3.13,"inf":0,"benef":40.95},{"id":"AVR-035","date":"2026-04-24","nom":"Serres Ã  Colas","prenom":"","type":"particulier","ca":208.7,"revient":90.0,"urssaf":25.67,"wallet":0,"inf":0,"benef":82.24},{"id":"AVR-036","date":"2026-04-25","nom":"Sweet H","prenom":"EspÃ¨ces â Lemon Cheese 100gâAcc(~10â¬)","type":"particulier","ca":235.0,"revient":118.25,"urssaf":28.91,"wallet":0,"inf":0,"benef":87.84},{"id":"AVR-037","date":"2026-04-26","nom":"Woodward","prenom":"Jack","type":"particulier","ca":50.99,"revient":6.5,"urssaf":6.27,"wallet":2.14,"inf":0,"benef":17.09},{"id":"AVR-038","date":"2026-04-27","nom":"Bommet","prenom":"Adrien","type":"particulier","ca":94.98,"revient":9.96,"urssaf":11.68,"wallet":2.62,"inf":0,"benef":54.73},{"id":"AVR-039","date":"2026-04-27","nom":"Seed's Experience","prenom":"","type":"particulier","ca":725.0,"revient":410.0,"urssaf":89.17,"wallet":0,"inf":0,"benef":225.82},{"id":"AVR-040","date":"2026-04-27","nom":"Planta Verte","prenom":"Ãchantillons","type":"echantillon","ca":30.0,"revient":30.5,"urssaf":3.69,"wallet":0,"inf":0,"benef":-18.09},{"id":"AVR-041","date":"2026-04-27","nom":"DÃ©pÃ´t Seed's","prenom":"DÃ©pÃ´t vente 29 prerolls","type":"particulier","ca":49.3,"revient":0.0,"urssaf":6.06,"wallet":0,"inf":0,"benef":14.24},{"id":"AVR-042","date":"2026-04-28","nom":"CBD Carnon","prenom":"EspÃ¨ces hors wallet â Gova 5â¬","type":"particulier","ca":140.0,"revient":87.0,"urssaf":17.22,"wallet":0,"inf":0,"benef":35.78},{"id":"AVR-043","date":"2026-04-29","nom":"Smoke Shop","prenom":"DÃ©pÃ´t","type":"particulier","ca":17.0,"revient":0.0,"urssaf":2.09,"wallet":0,"inf":0,"benef":4.91},{"id":"AVR-044","date":"2026-04-30","nom":"MusÃ©e Fumeur","prenom":"Cannabia 2.5gâAcc","type":"particulier","ca":410.0,"revient":196.99,"urssaf":50.43,"wallet":0,"inf":0,"benef":141.38}];
+const SEED = [{"id":"JAN-001","date":"2026-01-01","nom":"Girault","prenom":"Cyril","type":"particulier","ca":52.97,"revient":4.77,"urssaf":6.52,"wallet":1.56,"inf":0,"benef":35.33},{"id":"JAN-002","date":"2026-01-02","nom":"La Foncedalle","prenom":"","type":"boutique_cbd","ca":300.0,"revient":85.0,"urssaf":36.9,"wallet":0,"inf":0,"benef":166.41},{"id":"JAN-003","date":"2026-01-11","nom":"Delville","prenom":"Elodie","type":"particulier","ca":36.49,"revient":2.96,"urssaf":4.49,"wallet":1.14,"inf":0,"benef":23.11},{"id":"JAN-004","date":"2026-01-12","nom":"La foncedalle","prenom":"","type":"boutique_cbd","ca":400.0,"revient":164.0,"urssaf":49.2,"wallet":0,"inf":0,"benef":175.1},{"id":"JAN-005","date":"2026-01-13","nom":"Sousa","prenom":"Miguel","type":"particulier","ca":86.23,"revient":6.62,"urssaf":10.61,"wallet":3.97,"inf":0,"benef":40.64},{"id":"JAN-006","date":"2026-01-14","nom":"THE DREAM","prenom":"","type":"boutique_cbd","ca":60.0,"revient":10.0,"urssaf":7.38,"wallet":0,"inf":0,"benef":29.62},{"id":"JAN-007","date":"2026-01-15","nom":"VAPOLAND","prenom":"","type":"boutique_cbd","ca":255.0,"revient":152.5,"urssaf":31.36,"wallet":5.79,"inf":0,"benef":52.84},{"id":"JAN-008","date":"2026-01-16","nom":"LA Moula","prenom":"CBD","type":"boutique_cbd","ca":350.0,"revient":81.0,"urssaf":43.05,"wallet":0,"inf":0,"benef":214.25},{"id":"JAN-009","date":"2026-01-17","nom":"Tiago","prenom":"Julio","type":"particulier","ca":30.59,"revient":4.5,"urssaf":3.76,"wallet":0.99,"inf":0,"benef":15.04},{"id":"JAN-010","date":"2026-01-17","nom":"Nicolas","prenom":"Leroy","type":"particulier","ca":56.29,"revient":11.83,"urssaf":6.92,"wallet":1.64,"inf":0,"benef":29.89},{"id":"JAN-011","date":"2026-01-18","nom":"David","prenom":"Paul","type":"particulier","ca":91.94,"revient":9.72,"urssaf":11.31,"wallet":2.55,"inf":0,"benef":64.26},{"id":"JAN-012","date":"2026-01-19","nom":"Calm","prenom":"Leaf","type":"boutique_cbd","ca":3080.0,"revient":1840.0,"urssaf":378.84,"wallet":257.26,"inf":0,"benef":581.15},{"id":"JAN-013","date":"2026-01-19","nom":"So","prenom":"hempy","type":"boutique_cbd","ca":2280.0,"revient":1845.25,"urssaf":280.44,"wallet":0,"inf":0,"benef":154.31},{"id":"JAN-014","date":"2026-01-19","nom":"Fernandes","prenom":"Lester","type":"particulier","ca":99.97,"revient":9.85,"urssaf":12.3,"wallet":2.75,"inf":0,"benef":69.97},{"id":"JAN-015","date":"2026-01-21","nom":"La Foncedalle","prenom":"","type":"boutique_cbd","ca":500.0,"revient":171.72,"urssaf":61.5,"wallet":0,"inf":0,"benef":255.08},{"id":"JAN-016","date":"2026-01-23","nom":"Michel","prenom":"Damien","type":"particulier","ca":55.96,"revient":6.84,"urssaf":6.88,"wallet":1.63,"inf":0,"benef":30.71},{"id":"JAN-017","date":"2026-01-25","nom":"Soum","prenom":"Basile","type":"particulier","ca":69.97,"revient":9.5,"urssaf":8.61,"wallet":1.99,"inf":0,"benef":43.87},{"id":"JAN-018","date":"2026-01-26","nom":"Dehert","prenom":"Ruud","type":"boutique_cbd","ca":40.0,"revient":14.45,"urssaf":4.92,"wallet":0,"inf":0,"benef":4.43},{"id":"JAN-019","date":"2026-01-27","nom":"Canei","prenom":"Faustin","type":"particulier","ca":44.98,"revient":8.72,"urssaf":5.53,"wallet":1.35,"inf":0,"benef":24.22},{"id":"JAN-020","date":"2026-01-29","nom":"","prenom":"","type":"particulier","ca":51.95,"revient":3.38,"urssaf":6.39,"wallet":1.53,"inf":0,"benef":40.65},{"id":"JAN-021","date":"2026-01-29","nom":"Jardin","prenom":"Antigoone","type":"boutique_cbd","ca":60.0,"revient":0.0,"urssaf":7.38,"wallet":0,"inf":0,"benef":48.42},{"id":"JAN-022","date":"2026-01-29","nom":"Nelly","prenom":"Voisin","type":"particulier","ca":339.0,"revient":59.67,"urssaf":41.7,"wallet":7.63,"inf":0,"benef":215.4},{"id":"JAN-023","date":"2026-01-29","nom":"Briard","prenom":"Kevin","type":"particulier","ca":112.99,"revient":18.1,"urssaf":13.9,"wallet":3.08,"inf":0,"benef":71.91},{"id":"JAN-024","date":"2026-01-29","nom":"Loutil","prenom":"Samson","type":"particulier","ca":41.95,"revient":6.08,"urssaf":5.16,"wallet":1.28,"inf":0,"benef":25.33},{"id":"JAN-025","date":"2026-01-30","nom":"Tendance","prenom":"Nature","type":"boutique_cbd","ca":10.0,"revient":18.18,"urssaf":1.23,"wallet":0,"inf":0,"benef":-15.71},{"id":"JAN-026","date":"2026-01-31","nom":"Fournier","prenom":"Anthony","type":"particulier","ca":58.99,"revient":11.22,"urssaf":7.26,"wallet":1.71,"inf":0,"benef":32.5},{"id":"JAN-027","date":"2026-01-31","nom":"Sosa","prenom":"Miguel","type":"particulier","ca":91.15,"revient":12.98,"urssaf":11.21,"wallet":4.18,"inf":0,"benef":32.73},{"id":"FEV-001","date":"2026-02-01","nom":"Frederic","prenom":"garcia","type":"particulier","ca":59.96,"revient":7.22,"urssaf":7.38,"wallet":1.73,"inf":0,"benef":35.94},{"id":"FEV-002","date":"2026-02-02","nom":"Zushi","prenom":"Blo","type":"particulier","ca":168.19,"revient":12.59,"urssaf":20.69,"wallet":4.48,"inf":0,"benef":120.44},{"id":"FEV-003","date":"2026-02-06","nom":"Frédéric","prenom":"Garcia","type":"particulier","ca":64.98,"revient":10.31,"urssaf":7.99,"wallet":1.86,"inf":0,"benef":37.52},{"id":"FEV-004","date":"2026-02-09","nom":"Medhi","prenom":"Redjil","type":"particulier","ca":169.95,"revient":26.24,"urssaf":20.9,"wallet":4.0,"inf":0,"benef":110.71},{"id":"FEV-005","date":"2026-02-11","nom":"Nathan","prenom":"Bachelet","type":"particulier","ca":95.89,"revient":16.61,"urssaf":11.79,"wallet":2.65,"inf":9.59,"benef":44.94},{"id":"FEV-006","date":"2026-02-11","nom":"Kevin","prenom":"Soumat","type":"particulier","ca":54.98,"revient":7.22,"urssaf":6.76,"wallet":1.61,"inf":0,"benef":33.09},{"id":"FEV-007","date":"2026-02-12","nom":"Louis","prenom":"Leseigne","type":"particulier","ca":64.98,"revient":10.0,"urssaf":7.99,"wallet":1.86,"inf":0,"benef":38.83},{"id":"FEV-008","date":"2026-02-14","nom":"Anthony","prenom":"Fournier","type":"particulier","ca":58.99,"revient":10.15,"urssaf":7.26,"wallet":1.71,"inf":0,"benef":33.69},{"id":"FEV-009","date":"2026-02-16","nom":"Frédéric","prenom":"Garcia","type":"particulier","ca":4.99,"revient":8.94,"urssaf":0.61,"wallet":1.86,"inf":0,"benef":-13.61},{"id":"FEV-010","date":"2026-02-17","nom":"Elodie","prenom":"Delville","type":"particulier","ca":36.49,"revient":4.1,"urssaf":4.49,"wallet":1.14,"inf":3.65,"benef":15.92},{"id":"FEV-011","date":"2026-02-19","nom":"Melvin","prenom":"Reign","type":"particulier","ca":69.98,"revient":8.15,"urssaf":8.61,"wallet":1.99,"inf":0,"benef":44.04},{"id":"FEV-012","date":"2026-02-20","nom":"","prenom":"","type":"particulier","ca":20.0,"revient":0.0,"urssaf":2.46,"wallet":0,"inf":0,"benef":17.54},{"id":"FEV-013","date":"2026-02-21","nom":"NC","prenom":"DISTRIBUTION","type":"boutique_cbd","ca":20.0,"revient":19.6,"urssaf":2.46,"wallet":0,"inf":0,"benef":-8.25},{"id":"FEV-014","date":"2026-02-21","nom":"Julien","prenom":"Martin","type":"particulier","ca":74.99,"revient":20.27,"urssaf":9.22,"wallet":0,"inf":0,"benef":36.61},{"id":"FEV-015","date":"2026-02-22","nom":"Brixiam","prenom":"Farms (IT)","type":"boutique_cbd","ca":20.0,"revient":11.03,"urssaf":2.46,"wallet":0,"inf":0,"benef":-6.19},{"id":"FEV-016","date":"2026-02-22","nom":"Faustin","prenom":"Canei","type":"particulier","ca":89.98,"revient":19.45,"urssaf":11.07,"wallet":2.5,"inf":0,"benef":49.6},{"id":"FEV-017","date":"2026-02-23","nom":"Cyril","prenom":"Girault","type":"particulier","ca":45.96,"revient":4.27,"urssaf":5.65,"wallet":1.38,"inf":0,"benef":29.87},{"id":"FEV-018","date":"2026-02-25","nom":"Basile","prenom":"Soom","type":"particulier","ca":74.97,"revient":10.97,"urssaf":9.22,"wallet":2.11,"inf":0,"benef":47.88},{"id":"FEV-019","date":"2026-02-25","nom":"Erwan","prenom":"Rouet","type":"particulier","ca":154.98,"revient":20.0,"urssaf":19.06,"wallet":4.98,"inf":0,"benef":105.35},{"id":"FEV-020","date":"2026-02-26","nom":"La Poche","prenom":"Verte","type":"boutique_cbd","ca":810.0,"revient":500.0,"urssaf":99.63,"wallet":0,"inf":0,"benef":197.48},{"id":"FEV-021","date":"2026-02-26","nom":"GOLD LEAF","prenom":"H TOWN","type":"boutique_cbd","ca":1440.0,"revient":798.0,"urssaf":177.12,"wallet":120.0,"inf":0,"benef":321.88},{"id":"FEV-022","date":"2026-02-26","nom":"Elite","prenom":"CBD","type":"boutique_cbd","ca":360.0,"revient":156.0,"urssaf":44.28,"wallet":0,"inf":0,"benef":150.02},{"id":"MAR-001","date":"2026-03-02","nom":"Anthony","prenom":"Fournier","type":"particulier","ca":67.99,"revient":9.0,"urssaf":8.36,"wallet":2.03,"inf":0,"benef":42.3},{"id":"MAR-002","date":"2026-03-04","nom":"Augustin","prenom":"Jules","type":"particulier","ca":39.98,"revient":9.28,"urssaf":4.92,"wallet":1.23,"inf":0,"benef":19.71},{"id":"MAR-003","date":"2026-03-09","nom":"Valentin","prenom":"Lorenz","type":"particulier","ca":72.99,"revient":18.91,"urssaf":8.98,"wallet":2.06,"inf":0,"benef":37.94},{"id":"MAR-004","date":"2026-03-10","nom":"Seed's","prenom":"experience","type":"boutique_cbd","ca":775.0,"revient":418.0,"urssaf":95.33,"wallet":0,"inf":0,"benef":261.68},{"id":"MAR-005","date":"2026-03-10","nom":"Jerome","prenom":"Pastorino","type":"particulier","ca":454.96,"revient":63.18,"urssaf":55.96,"wallet":11.77,"inf":0,"benef":309.86},{"id":"MAR-006","date":"2026-03-10","nom":"VITAVI","prenom":"","type":"boutique_cbd","ca":239.0,"revient":174.2,"urssaf":29.4,"wallet":5.44,"inf":0,"benef":21.17},{"id":"MAR-007","date":"2026-03-10","nom":"Mehdi","prenom":"Redjil","type":"particulier","ca":145.24,"revient":30.41,"urssaf":17.86,"wallet":3.9,"inf":0,"benef":87.97},{"id":"MAR-008","date":"2026-03-12","nom":"Valentin","prenom":"lorthoire","type":"particulier","ca":48.99,"revient":18.32,"urssaf":6.03,"wallet":1.45,"inf":0,"benef":15.2},{"id":"MAR-009","date":"2026-03-12","nom":"Cyril","prenom":"Delvaque","type":"particulier","ca":124.94,"revient":17.25,"urssaf":15.37,"wallet":3.38,"inf":0,"benef":79.04},{"id":"MAR-010","date":"2026-03-13","nom":"Basile","prenom":"Soom","type":"particulier","ca":114.98,"revient":21.85,"urssaf":14.14,"wallet":3.13,"inf":0,"benef":69.26},{"id":"MAR-011","date":"2026-03-13","nom":"AMSTERDAM","prenom":"31","type":"boutique_cbd","ca":1370.0,"revient":836.0,"urssaf":168.51,"wallet":0,"inf":0,"benef":332.19},{"id":"MAR-012","date":"2026-03-13","nom":"SAS","prenom":"DOOBIES","type":"boutique_cbd","ca":550.0,"revient":313.0,"urssaf":67.65,"wallet":0,"inf":0,"benef":155.96},{"id":"MAR-013","date":"2026-03-14","nom":"Romeo","prenom":"lebeouf","type":"particulier","ca":59.98,"revient":8.2,"urssaf":7.38,"wallet":1.73,"inf":0,"benef":35.68},{"id":"MAR-014","date":"2026-03-16","nom":"Ellies","prenom":"Foudad","type":"particulier","ca":41.96,"revient":4.16,"urssaf":5.16,"wallet":1.28,"inf":0,"benef":23.96},{"id":"MAR-015","date":"2026-03-17","nom":"Ambrine","prenom":"Aleinou","type":"particulier","ca":134.97,"revient":17.71,"urssaf":16.6,"wallet":3.64,"inf":0,"benef":76.22},{"id":"MAR-016","date":"2026-03-17","nom":"CASA DI","prenom":"CANAPA","type":"boutique_cbd","ca":1425.0,"revient":869.5,"urssaf":175.28,"wallet":0,"inf":0,"benef":353.24},{"id":"MAR-017","date":"2026-03-18","nom":"NC Distrib","prenom":"","type":"particulier","ca":470.0,"revient":251.0,"urssaf":57.81,"wallet":0,"inf":0,"benef":150.4},{"id":"MAR-018","date":"2026-03-18","nom":"Client","prenom":"Google","type":"particulier","ca":72.98,"revient":9.85,"urssaf":8.98,"wallet":1.81,"inf":0,"benef":50.64},{"id":"MAR-019","date":"2026-03-18","nom":"Lucas","prenom":"DN","type":"particulier","ca":50.0,"revient":8.05,"urssaf":6.15,"wallet":1.31,"inf":0,"benef":29.39},{"id":"MAR-020","date":"2026-03-18","nom":"Vapourz","prenom":"LOUNG","type":"boutique_cbd","ca":2440.0,"revient":1664.5,"urssaf":300.12,"wallet":160.0,"inf":0,"benef":288.38},{"id":"MAR-021","date":"2026-03-19","nom":"ART OF","prenom":"WELLNESS","type":"boutique_cbd","ca":450.0,"revient":272.0,"urssaf":55.35,"wallet":0,"inf":0,"benef":112.86},{"id":"MAR-022","date":"2026-03-21","nom":"erwan","prenom":"Rouet","type":"particulier","ca":204.97,"revient":41.7,"urssaf":25.21,"wallet":5.42,"inf":0,"benef":124.04},{"id":"MAR-023","date":"2026-03-22","nom":"Ruben","prenom":"Madore","type":"particulier","ca":71.95,"revient":8.32,"urssaf":8.85,"wallet":2.04,"inf":0,"benef":45.64},{"id":"MAR-024","date":"2026-03-23","nom":"Arnoeld","prenom":"Aden","type":"particulier","ca":64.97,"revient":15.62,"urssaf":7.99,"wallet":1.86,"inf":0,"benef":33.39},{"id":"MAR-025","date":"2026-03-25","nom":"Yannick","prenom":"Jourdan","type":"particulier","ca":174.95,"revient":20.35,"urssaf":21.52,"wallet":4.65,"inf":0,"benef":123.13},{"id":"MAR-026","date":"2026-03-25","nom":"CBD BY","prenom":"CASA","type":"particulier","ca":270.0,"revient":156.0,"urssaf":33.21,"wallet":0,"inf":0,"benef":47.6},{"id":"MAR-027","date":"2026-03-25","nom":"Basile","prenom":"Soom","type":"particulier","ca":211.23,"revient":55.28,"urssaf":25.98,"wallet":5.58,"inf":0,"benef":109.79},{"id":"MAR-028","date":"2026-03-26","nom":"Merlier","prenom":"Theo","type":"particulier","ca":10.0,"revient":17.48,"urssaf":1.23,"wallet":0,"inf":0,"benef":-15.2},{"id":"MAR-029","date":"2026-03-26","nom":"Faustin","prenom":"Canei","type":"particulier","ca":97.48,"revient":25.95,"urssaf":11.99,"wallet":2.69,"inf":0,"benef":49.39},{"id":"MAR-030","date":"2026-03-27","nom":"Anthony","prenom":"Fournier","type":"particulier","ca":46.24,"revient":8.2,"urssaf":5.69,"wallet":1.38,"inf":0,"benef":24.87},{"id":"MAR-031","date":"2026-03-30","nom":"Coffe","prenom":"Bouledog","type":"boutique_cbd","ca":290.0,"revient":180.0,"urssaf":35.67,"wallet":0,"inf":0,"benef":64.54},{"id":"MAR-032","date":"2026-03-30","nom":"Mehdi","prenom":"Redjil","type":"particulier","ca":87.49,"revient":22.2,"urssaf":10.76,"wallet":2.43,"inf":0,"benef":47.7},{"id":"MAR-033","date":"2026-03-30","nom":"Corentin","prenom":"Pinel","type":"particulier","ca":119.48,"revient":15.56,"urssaf":14.7,"wallet":3.24,"inf":0,"benef":78.38},{"id":"AVR-001","date":"2026-04-01","nom":"Vanhuisse","prenom":"Corentin","type":"particulier","ca":270.0,"revient":164.83,"urssaf":33.21,"wallet":0,"inf":0,"benef":37.77},{"id":"AVR-002","date":"2026-04-01","nom":"Échantillons X2","prenom":"","type":"echantillon","ca":23.0,"revient":20.54,"urssaf":2.83,"wallet":0,"inf":0,"benef":-22.95},{"id":"AVR-003","date":"2026-04-06","nom":"Soler","prenom":"Alexis","type":"particulier","ca":-37.98,"revient":3.28,"urssaf":-4.67,"wallet":1.9,"inf":0,"benef":-43.59},{"id":"AVR-004","date":"2026-04-07","nom":"Gourdain","prenom":"Alexandra","type":"particulier","ca":130.49,"revient":17.0,"urssaf":16.05,"wallet":3.52,"inf":0,"benef":66.62},{"id":"AVR-005","date":"2026-04-07","nom":"Lesseine","prenom":"Louis","type":"particulier","ca":314.97,"revient":65.5,"urssaf":38.74,"wallet":8.21,"inf":0,"benef":193.92},{"id":"AVR-006","date":"2026-04-07","nom":"Beaubrun","prenom":"Tom","type":"particulier","ca":44.97,"revient":4.78,"urssaf":5.53,"wallet":1.35,"inf":0,"benef":26.21},{"id":"AVR-007","date":"2026-04-07","nom":"Chasseing","prenom":"Aloïs","type":"particulier","ca":109.97,"revient":12.14,"urssaf":13.53,"wallet":3.0,"inf":0,"benef":75.2},{"id":"AVR-008","date":"2026-04-07","nom":"Pochon Vert","prenom":"","type":"particulier","ca":160.0,"revient":86.0,"urssaf":19.68,"wallet":0,"inf":0,"benef":40.53},{"id":"AVR-009","date":"2026-04-07","nom":"CBD by Casa","prenom":"","type":"particulier","ca":462.5,"revient":320.5,"urssaf":56.89,"wallet":0,"inf":0,"benef":72.62},{"id":"AVR-010","date":"2026-04-07","nom":"H Corse","prenom":"G2Kush 25g→Acc","type":"particulier","ca":200.0,"revient":77.75,"urssaf":24.6,"wallet":0,"inf":0,"benef":92.55},{"id":"AVR-011","date":"2026-04-07","nom":"TS Store","prenom":"","type":"particulier","ca":340.0,"revient":203.0,"urssaf":41.82,"wallet":0,"inf":0,"benef":84.39},{"id":"AVR-012","date":"2026-04-08","nom":"Hessami","prenom":"Dariush","type":"particulier","ca":301.62,"revient":67.04,"urssaf":37.1,"wallet":11.4,"inf":0,"benef":161.09},{"id":"AVR-013","date":"2026-04-08","nom":"ADN Premium","prenom":"Paiement carte","type":"particulier","ca":195.0,"revient":144.75,"urssaf":23.98,"wallet":7.74,"inf":0,"benef":7.74},{"id":"AVR-014","date":"2026-04-09","nom":"Gelly","prenom":"Michel","type":"particulier","ca":49.97,"revient":3.14,"urssaf":6.15,"wallet":1.48,"inf":0,"benef":31.1},{"id":"AVR-015","date":"2026-04-09","nom":"Czyzak","prenom":"Sacha","type":"particulier","ca":126.15,"revient":18.3,"urssaf":15.52,"wallet":3.41,"inf":0,"benef":81.46},{"id":"AVR-016","date":"2026-04-09","nom":"Green Witch","prenom":"Herboriste","type":"particulier","ca":10.0,"revient":13.63,"urssaf":1.23,"wallet":0.62,"inf":0,"benef":-11.97},{"id":"AVR-017","date":"2026-04-10","nom":"Papa","prenom":"Alessandro","type":"particulier","ca":116.79,"revient":11.3,"urssaf":14.37,"wallet":4.72,"inf":0,"benef":61.41},{"id":"AVR-018","date":"2026-04-10","nom":"Uban CBD","prenom":"UK","type":"particulier","ca":20.0,"revient":16.64,"urssaf":2.46,"wallet":0.9,"inf":0,"benef":-18.98},{"id":"AVR-019","date":"2026-04-11","nom":"Evans","prenom":"Kieran","type":"particulier","ca":56.23,"revient":3.87,"urssaf":6.92,"wallet":2.33,"inf":0,"benef":20.13},{"id":"AVR-020","date":"2026-04-12","nom":"Rouet-Bosc","prenom":"Erwan","type":"particulier","ca":154.98,"revient":21.5,"urssaf":19.06,"wallet":4.15,"inf":0,"benef":104.17},{"id":"AVR-021","date":"2026-04-15","nom":"Lesseine","prenom":"Louis","type":"particulier","ca":114.98,"revient":22.0,"urssaf":14.14,"wallet":3.13,"inf":0,"benef":70.61},{"id":"AVR-022","date":"2026-04-15","nom":"Candyland Pots","prenom":"7 pots 5g Candyland","type":"particulier","ca":94.5,"revient":59.5,"urssaf":11.62,"wallet":0,"inf":0,"benef":15.38},{"id":"AVR-023","date":"2026-04-15","nom":"Commande Web","prenom":"","type":"particulier","ca":50.0,"revient":9.7,"urssaf":6.15,"wallet":0,"inf":0,"benef":33.45},{"id":"AVR-024","date":"2026-04-17","nom":"Azzedine","prenom":"","type":"particulier","ca":210.0,"revient":90.0,"urssaf":25.83,"wallet":0,"inf":0,"benef":83.38},{"id":"AVR-025","date":"2026-04-17","nom":"Terroir CBD","prenom":"Échantillons","type":"echantillon","ca":30.0,"revient":32.67,"urssaf":3.69,"wallet":0,"inf":0,"benef":-27.56},{"id":"AVR-026","date":"2026-04-17","nom":"MHA+Dispencherbe","prenom":"","type":"particulier","ca":15.0,"revient":15.64,"urssaf":1.84,"wallet":0,"inf":0,"benef":-8.97},{"id":"AVR-027","date":"2026-04-18","nom":"Franzke","prenom":"Constantin","type":"particulier","ca":49.98,"revient":5.6,"urssaf":6.15,"wallet":1.48,"inf":0,"benef":24.35},{"id":"AVR-028","date":"2026-04-20","nom":"Redjil","prenom":"Mehdi","type":"particulier","ca":78.59,"revient":14.12,"urssaf":9.67,"wallet":2.21,"inf":0,"benef":45.49},{"id":"AVR-029","date":"2026-04-20","nom":"Delville","prenom":"Elodie — Caramel Kush 5g→Acc","type":"particulier","ca":31.23,"revient":3.0,"urssaf":3.84,"wallet":1.0,"inf":0,"benef":16.79},{"id":"AVR-030","date":"2026-04-20","nom":"Choukroun","prenom":"Jeremy","type":"particulier","ca":84.99,"revient":24.57,"urssaf":10.45,"wallet":2.37,"inf":0,"benef":40.49},{"id":"AVR-031","date":"2026-04-20","nom":"Ploquin","prenom":"Deva — Espèces hors wallet","type":"particulier","ca":30.0,"revient":6.85,"urssaf":3.69,"wallet":0,"inf":0,"benef":16.46},{"id":"AVR-032","date":"2026-04-23","nom":"Soum","prenom":"Basile","type":"particulier","ca":249.97,"revient":71.7,"urssaf":30.75,"wallet":6.56,"inf":0,"benef":131.17},{"id":"AVR-033","date":"2026-04-23","nom":"Pugliese","prenom":"Lisandro","type":"particulier","ca":74.96,"revient":8.9,"urssaf":9.22,"wallet":2.11,"inf":0,"benef":46.13},{"id":"AVR-034","date":"2026-04-23","nom":"Caneï","prenom":"Faustin","type":"particulier","ca":114.98,"revient":48.3,"urssaf":14.14,"wallet":3.13,"inf":0,"benef":40.95},{"id":"AVR-035","date":"2026-04-24","nom":"Serres à Colas","prenom":"","type":"particulier","ca":208.7,"revient":90.0,"urssaf":25.67,"wallet":0,"inf":0,"benef":82.24},{"id":"AVR-036","date":"2026-04-25","nom":"Sweet H","prenom":"Espèces — Lemon Cheese 100g→Acc(~10€)","type":"particulier","ca":235.0,"revient":118.25,"urssaf":28.91,"wallet":0,"inf":0,"benef":87.84},{"id":"AVR-037","date":"2026-04-26","nom":"Woodward","prenom":"Jack","type":"particulier","ca":50.99,"revient":6.5,"urssaf":6.27,"wallet":2.14,"inf":0,"benef":17.09},{"id":"AVR-038","date":"2026-04-27","nom":"Bommet","prenom":"Adrien","type":"particulier","ca":94.98,"revient":9.96,"urssaf":11.68,"wallet":2.62,"inf":0,"benef":54.73},{"id":"AVR-039","date":"2026-04-27","nom":"Seed's Experience","prenom":"","type":"particulier","ca":725.0,"revient":410.0,"urssaf":89.17,"wallet":0,"inf":0,"benef":225.82},{"id":"AVR-040","date":"2026-04-27","nom":"Planta Verte","prenom":"Échantillons","type":"echantillon","ca":30.0,"revient":30.5,"urssaf":3.69,"wallet":0,"inf":0,"benef":-18.09},{"id":"AVR-041","date":"2026-04-27","nom":"Dépôt Seed's","prenom":"Dépôt vente 29 prerolls","type":"particulier","ca":49.3,"revient":0.0,"urssaf":6.06,"wallet":0,"inf":0,"benef":14.24},{"id":"AVR-042","date":"2026-04-28","nom":"CBD Carnon","prenom":"Espèces hors wallet — Gova 5€","type":"particulier","ca":140.0,"revient":87.0,"urssaf":17.22,"wallet":0,"inf":0,"benef":35.78},{"id":"AVR-043","date":"2026-04-29","nom":"Smoke Shop","prenom":"Dépôt","type":"particulier","ca":17.0,"revient":0.0,"urssaf":2.09,"wallet":0,"inf":0,"benef":4.91},{"id":"AVR-044","date":"2026-04-30","nom":"Musée Fumeur","prenom":"Cannabia 2.5g→Acc","type":"particulier","ca":410.0,"revient":196.99,"urssaf":50.43,"wallet":0,"inf":0,"benef":141.38}];
 
 const DEFAULT_FF = [
   {id:'ff1',nom:'Shopify',montant:150},
   {id:'ff2',nom:'Google Workspace',montant:9.72},
-  {id:'ff3',nom:'Box Stockage Ã3',montant:97.83},
+  {id:'ff3',nom:'Box Stockage ×3',montant:97.83},
   {id:'ff4',nom:'Spotify',montant:12.14},
-  {id:'ff5',nom:'Lycamobile Ã2',montant:18.98},
+  {id:'ff5',nom:'Lycamobile ×2',montant:18.98},
   {id:'ff6',nom:'Viva Wallet',montant:14.99},
 ];
 
 const MONTH_LABELS = {
-  '2026-01':'Janvier','2026-02':'FÃ©vrier','2026-03':'Mars','2026-04':'Avril',
-  '2026-05':'Mai','2026-06':'Juin','2026-07':'Juillet','2026-08':'AoÃ»t',
-  '2026-09':'Septembre','2026-10':'Octobre','2026-11':'Novembre','2026-12':'DÃ©cembre'
+  '2026-01':'Janvier','2026-02':'Février','2026-03':'Mars','2026-04':'Avril',
+  '2026-05':'Mai','2026-06':'Juin','2026-07':'Juillet','2026-08':'Août',
+  '2026-09':'Septembre','2026-10':'Octobre','2026-11':'Novembre','2026-12':'Décembre'
 };
 
 // ===================== STATE =====================
@@ -372,11 +372,11 @@ function save(){
 
 // ===================== HELPERS =====================
 const fmt = (n, decimals=2) => {
-  if(n===null||n===undefined||isNaN(n)) return 'â';
+  if(n===null||n===undefined||isNaN(n)) return '—';
   const v = typeof n==='string'?parseFloat(n):n;
-  return v.toLocaleString('fr-FR', {minimumFractionDigits:decimals, maximumFractionDigits:decimals}) + ' â¬';
+  return v.toLocaleString('fr-FR', {minimumFractionDigits:decimals, maximumFractionDigits:decimals}) + ' €';
 };
-const fmtK = n => Math.abs(n)>=1000 ? (n/1000).toFixed(1).replace('.',',')+'k â¬' : fmt(n);
+const fmtK = n => Math.abs(n)>=1000 ? (n/1000).toFixed(1).replace('.',',')+'k €' : fmt(n);
 const colorVal = n => n>0?'pos':n<0?'neg':'';
 const months = () => [...new Set(orders.map(o=>o.date.slice(0,7)))].sort();
 
@@ -397,7 +397,7 @@ let pinInput = '';
 function buildKeypad(){
   const kp = document.getElementById('keypad');
   kp.innerHTML = '';
-  const keys = ['1','2','3','4','5','6','7','8','9','','0','â«'];
+  const keys = ['1','2','3','4','5','6','7','8','9','','0','⌫'];
   keys.forEach(k=>{
     const btn = document.createElement('button');
     btn.className='pin-btn';
@@ -410,7 +410,7 @@ function buildKeypad(){
 function pinKey(k){
   const err = document.getElementById('pin-error');
   err.textContent='';
-  if(k==='â«'){pinInput=pinInput.slice(0,-1);}
+  if(k==='⌫'){pinInput=pinInput.slice(0,-1);}
   else if(pinInput.length<4){pinInput+=k;}
   updateDots(false);
   if(pinInput.length===4) setTimeout(checkPin,80);
@@ -464,10 +464,10 @@ function renderDashboard(){
 
   // KPIs
   document.getElementById('kpi-grid').innerHTML = `
-    <div class="kpi gold"><div class="kpi-label">CA CumulÃ©</div><div class="kpi-value gold">${fmtK(totCA)}</div><div class="kpi-sub">${orders.length} commandes</div></div>
-    <div class="kpi green"><div class="kpi-label">BÃ©nÃ©fice Net</div><div class="kpi-value green">${fmtK(totBenefNet)}</div><div class="kpi-sub">AprÃ¨s frais fixes</div></div>
-    <div class="kpi amber"><div class="kpi-label">URSSAF dÃ»</div><div class="kpi-value amber">${fmtK(totURSSAF)}</div><div class="kpi-sub">12,3% du CA</div></div>
-    <div class="kpi red"><div class="kpi-label">Provision impÃ´ts</div><div class="kpi-value red">${fmtK(totImpots)}</div><div class="kpi-sub">${settings.impotsRate}% bÃ©n. net</div></div>
+    <div class="kpi gold"><div class="kpi-label">CA Cumulé</div><div class="kpi-value gold">${fmtK(totCA)}</div><div class="kpi-sub">${orders.length} commandes</div></div>
+    <div class="kpi green"><div class="kpi-label">Bénéfice Net</div><div class="kpi-value green">${fmtK(totBenefNet)}</div><div class="kpi-sub">Après frais fixes</div></div>
+    <div class="kpi amber"><div class="kpi-label">URSSAF dû</div><div class="kpi-value amber">${fmtK(totURSSAF)}</div><div class="kpi-sub">12,3% du CA</div></div>
+    <div class="kpi red"><div class="kpi-label">Provision impôts</div><div class="kpi-value red">${fmtK(totImpots)}</div><div class="kpi-sub">${settings.impotsRate}% bén. net</div></div>
   `;
 
   // Progress
@@ -475,30 +475,30 @@ function renderDashboard(){
   document.getElementById('prog-section').innerHTML = `
     <div class="prog-title">SEUIL AUTO-ENTREPRENEUR</div>
     <div class="prog-row">
-      <div class="prog-label">CA / Seuil (${(settings.seuil/1000).toFixed(1)}kâ¬/an)</div>
+      <div class="prog-label">CA / Seuil (${(settings.seuil/1000).toFixed(1)}k€/an)</div>
       <div class="prog-bar"><div class="prog-fill ${seuilColor}" style="width:${seuilPct}%"></div></div>
       <div class="prog-pct">${seuilPct.toFixed(1)}%</div>
     </div>
     <div style="font-size:12px;color:var(--muted);margin-top:.5rem">
-      ${fmt(totCA)} / ${fmt(settings.seuil)} â Restant : <span style="color:var(--${seuilColor})">${fmt(settings.seuil-totCA)}</span>
+      ${fmt(totCA)} / ${fmt(settings.seuil)} — Restant : <span style="color:var(--${seuilColor})">${fmt(settings.seuil-totCA)}</span>
     </div>
   `;
 
   // Month cards
-  document.getElementById('month-grid').innerHTML = activeMonths.map((m,i) =>{
+  document.getElementById('month-grid').innerHTML = activeMonths.map((m,i)=>{
     const s = allStats[i];
     return `<div class="month-card">
       <div class="month-card-title">${MONTH_LABELS[m]||m}</div>
       <div class="month-row"><span>CA</span><span>${fmt(s.ca,0)}</span></div>
       <div class="month-row"><span>Revient</span><span>${fmt(s.revient,0)}</span></div>
       <div class="month-row urssaf"><span>URSSAF</span><span>${fmt(s.urssaf,0)}</span></div>
-      <div class="month-row benef"><span>BÃ©n. net</span><span>${fmt(s.benefNet,0)}</span></div>
+      <div class="month-row benef"><span>Bén. net</span><span>${fmt(s.benefNet,0)}</span></div>
       <div class="month-row"><span>Commandes</span><span>${s.n}</span></div>
     </div>`;
   }).join('');
 }
 
-// ===================== COMMANEES ======================
+// ===================== COMMANDES =====================
 function buildMonthFilters(){
   const ms = ['all',...months()];
   document.getElementById('month-filters').innerHTML = ms.map(m=>`
@@ -526,12 +526,12 @@ function renderTable(){
   document.getElementById('sum-bar').innerHTML = `
     <span>${filtered.length} commandes</span>
     <span>CA : <b>${fmt(totCA)}</b></span>
-    <span class="g">BÃ©nÃ©fice : <b>${fmt(totBenef)}</b></span>
+    <span class="g">Bénéfice : <b>${fmt(totBenef)}</b></span>
     <span class="a">URSSAF : <b>${fmt(totURSSAF)}</b></span>
   `;
 
   if(!filtered.length){
-    document.getElementById('cmd-body').innerHTML = '<tr><td colspan="10" class="empty">Aucune commande trouvÃ©e</td></tr>';
+    document.getElementById('cmd-body').innerHTML = '<tr><td colspan="10" class="empty">Aucune commande trouvée</td></tr>';
     return;
   }
 
@@ -539,195 +539,176 @@ function renderTable(){
     <tr>
       <td class="mono">${o.date.split('-').reverse().join('/')}</td>
       <td>${o.nom}${o.prenom?' <span style="color:var(--muted)">'+o.prenom+'</span>':''}</td>
-      <td><span class="badge ${o.type}">${typeLabel(m.type)}</span></td>
+      <td><span class="badge ${o.type}">${typeLabel(o.type)}</span></td>
       <td class="mono" style="text-align:right">${fmt(o.ca)}</td>
       <td class="mono" style="text-align:right;color:var(--muted)">${fmt(o.revient)}</td>
       <td class="mono" style="text-align:right;color:var(--amber)">${fmt(o.urssaf)}</td>
-      <td class="mono" style="text-align:right;color:var(--muted)">${o.wallet?fmt(o.wallet):'â'}</td>
-      <td class="mono" style="text-align:right;color:var(--muted)">${o.inf?fmt(Ë[Nø %	ßOÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚÜ[Û\ÜÏHØÛÛÜ[
-Ë[Y_HÙ]
-Ë[Y_OÜÜ[Ý]ÛÛ\ÜÏHY[Ù\Ý[OHY[ÎÜÙÛ\Ú^NL\ÛÛXÚÏH[]SÜ\	ÉÛËYIÊH°åÏØ]ÛÝÝ
-KÚ[	ÉÊNÂB[Ý[Û\SX[
-
-^Â]\Ü\XÝ[Y\Ô\XÝ[Y\ËÝ]\]YWØØÐÝ]\]YIË[Y[Ù]\Ò[Y[Ù]\ËXÚ[[ÛðâXÚ[[ÛßVÝ_ÂB[Ý[Û[]SÜ\Y
-^ÂYXÛÛ\J	ÔÝ\[Y\Ù]HÛÛ[X[HÉÊJH]\ÂÜ\ÈHÜ\Ë[\ÏOËYOOZY
-NÂØ]J
-NÈ[\XJ
-NÈ[\\ÚØ\
+      <td class="mono" style="text-align:right;color:var(--muted)">${o.wallet?fmt(o.wallet):'—'}</td>
+      <td class="mono" style="text-align:right;color:var(--muted)">${o.inf?fmt(o.inf):'—'}</td>
+      <td class="mono" style="text-align:right"><span class="${colorVal(o.benef)}">${fmt(o.benef)}</span></td>
+      <td><button class="btn btn-danger" style="padding:3px 8px;font-size:11px" onclick="deleteOrder('${o.id}')">×</button></td>
+    </tr>`).join('');
+}
+function typeLabel(t){
+  return {particulier:'Particulier',boutique_cbd:'Boutique',influenceur:'Influenceur',echantillon:'Échantillon'}[t]||t;
+}
+function deleteOrder(id){
+  if(!confirm('Supprimer cette commande ?')) return;
+  orders = orders.filter(o=>o.id!==id);
+  save(); renderTable(); renderDashboard();
+}
 
-NÂB[Ý[ÛYÜ\
-^ÂÛÛÝ]OYØÝ[Y[Ù][[Y[RY
-	ÙY]IÊK[YNÂÛÛÝÛOYØÝ[Y[Ù][[Y[RY
-	Ù[ÛIÊK[YK[J
-NÂÛÛÝØO\\ÙQØ]
-ØÝ[Y[Ù][[Y[RY
-	ÙXØIÊK[YJ_ÂÛÛÝ]Y[\\ÙQØ]
-ØÝ[Y[Ù][[Y[RY
-	Ù\]Y[	ÊK[YJ_ÂÛÛÝØ[]\\ÙQØ]
-ØÝ[Y[Ù][[Y[RY
-	Ù]Ø[]	ÊK[YJ_ÂÛÛÝ[\\ÙQØ]
-ØÝ[Y[Ù][[Y[RY
-	ÙZ[ÊK[YJ_ÂYY]_[Û_ØOOOL
-^ÂØÝ[Y[Ù][[Y[RY
-	ÙÜK[\ÙÉÊK^ÛÛ[IÑ]KÛH]ÐHÛÛ\]Z\ËÎÂ]\ÂBÛÛÝ\ÜØYHØH
-Ù][ÜË\ÜØY]KÌLÂÛÛÝ[YHØHH]Y[H\ÜØYHØ[]H[ÂÛÛÝ]ÒYH	ÓPSIÊÑ]KÝÊ
-NÂÜ\Ë\Ú
-ÂY]ÒY]KÛK[ÛNØÝ[Y[Ù][[Y[RY
-	Ù\[ÛIÊK[YK[J
-K\NØÝ[Y[Ù][[Y[RY
-	Ù]\IÊK[YKØNX]Ý[
-ØJL
-KÌL]Y[X]Ý[
-]Y[
-L
-KÌL\ÜØYX]Ý[
-\ÜØYL
-KÌLØ[]X]Ý[
-Ø[]
-L
-KÌL[X]Ý[
-[L
-KÌL[YX]Ý[
-[YL
-KÌLJNÂØ]J
-NÂØÝ[Y[Ù][[Y[RY
-	ÙÜK[\ÙÉÊK^ÛÛ[Iø§$ÈZÝ]0êIÎÂÉÙ[ÛIË	Ù\[ÛIË	ÙXØIË	Ù\]Y[	Ë	Ù]Ø[]	Ë	ÙZ[×KÜXXÚ
-YOØÝ[Y[Ù][[Y[RY
-Y
-K[YOIÉÊNÂÙ][Y[Ý]
+function addOrder(){
+  const date=document.getElementById('f-date').value;
+  const nom=document.getElementById('f-nom').value.trim();
+  const ca=parseFloat(document.getElementById('f-ca').value)||0;
+  const revient=parseFloat(document.getElementById('f-revient').value)||0;
+  const wallet=parseFloat(document.getElementById('f-wallet').value)||0;
+  const inf=parseFloat(document.getElementById('f-inf').value)||0;
+  if(!date||!nom||ca===0){
+    document.getElementById('form-msg').textContent='Date, nom et CA sont requis.';
+    return;
+  }
+  const urssaf = ca * settings.urssafRate/100;
+  const benef = ca - revient - urssaf - wallet - inf;
+  const newId = 'MAN-'+Date.now();
+  orders.push({
+    id:newId, date, nom,
+    prenom:document.getElementById('f-prenom').value.trim(),
+    type:document.getElementById('f-type').value,
+    ca:Math.round(ca*100)/100,
+    revient:Math.round(revient*100)/100,
+    urssaf:Math.round(urssaf*100)/100,
+    wallet:Math.round(wallet*100)/100,
+    inf:Math.round(inf*100)/100,
+    benef:Math.round(benef*100)/100,
+  });
+  save();
+  document.getElementById('form-msg').textContent='✓ Ajouté';
+  ['f-nom','f-prenom','f-ca','f-revient','f-wallet','f-inf'].forEach(id=>document.getElementById(id).value='');
+  setTimeout(()=>document.getElementById('form-msg').textContent='',2000);
+  buildMonthFilters(); renderTable(); renderDashboard();
+}
 
+// ===================== FRAIS FIXES =====================
+function renderFF(){
+  const total = fraisFixes.reduce((s,f)=>s+f.montant,0);
+  document.getElementById('ff-list').innerHTML = fraisFixes.map(f=>`
+    <li class="ff-item">
+      <span class="ff-nom">${f.nom}</span>
+      <span class="ff-mont">${fmt(f.montant)}</span>
+      <button class="ff-del" onclick="deleteFF('${f.id}')">✕</button>
+    </li>`).join('') || '<li class="ff-item" style="color:var(--dim)">Aucun frais fixe</li>';
+  document.getElementById('ff-total').textContent = fmt(total);
+  document.getElementById('ff-annual').textContent = fmt(total*12) + ' / an';
+}
+function addFF(){
+  const nom=document.getElementById('ff-nom').value.trim();
+  const mont=parseFloat(document.getElementById('ff-mont').value)||0;
+  if(!nom||!mont) return;
+  fraisFixes.push({id:'ff'+Date.now(),nom,montant:mont});
+  document.getElementById('ff-nom').value='';
+  document.getElementById('ff-mont').value='';
+  save(); renderFF(); renderDashboard();
+}
+function deleteFF(id){
+  if(!confirm('Supprimer ce poste ?')) return;
+  fraisFixes = fraisFixes.filter(f=>f.id!==id);
+  save(); renderFF(); renderDashboard();
+}
 
-OOØÝ[Y[Ù][[Y[RY
-	ÙÜK[\ÙÉÊK^ÛÛ[IÉË
-NÂZ[[Û[\Ê
-NÈ[\XJ
-NÈ[\\ÚØ\
+// ===================== BILAN =====================
+function renderBilan(){
+  const ffTotal = fraisFixes.reduce((s,f)=>s+f.montant,0);
+  const ms = months();
+  let totCA=0,totRev=0,totURSSAF=0,totFF=0,totBenef=0,totImpots=0,totN=0;
+  
+  const alerts = [];
+  const seuilPct = (orders.reduce((s,o)=>s+o.ca,0)/settings.seuil)*100;
+  if(seuilPct>=80) alerts.push(`<div class="alert alert-${seuilPct>=90?'red':'amber'}">⚠ Seuil AE atteint à ${seuilPct.toFixed(1)}% — ${fmt(settings.seuil - orders.reduce((s,o)=>s+o.ca,0))} restant avant le plafond de ${fmt(settings.seuil,0)}.</div>`);
+  document.getElementById('bilan-alerts').innerHTML = alerts.join('');
 
-NÂBËÈOOOOOOOOOOOOOOOOOOOOHRTÈVTÈOOOOOOOOOOOOOOOOOOOOB[Ý[Û[\
-^ÂÛÛÝÝ[HZ\Ñ^\ËYXÙJ
-ËOOÊÙ[Û[
-NÂØÝ[Y[Ù][[Y[RY
-	Ù[\Ý	ÊK[\SHZ\Ñ^\ËX\
-OHÛ\ÜÏHZ][HÜ[Û\ÜÏH[ÛHÙÛ_OÜÜ[Ü[Û\ÜÏH[[ÛÙ]
-[Û[
-_OÜÜ[]ÛÛ\ÜÏHY[ÛÛXÚÏH[]Q	ÉÙYIÊH¸§%OØ]ÛÛO
-KÚ[	ÉÊH	ÏHÛ\ÜÏHZ][HÝ[OHÛÛÜ\KY[JH]XÝ[Z\È^OÛOÎÂØÝ[Y[Ù][[Y[RY
-	Ù]Ý[	ÊK^ÛÛ[H]
-Ý[
-NÂØÝ[Y[Ù][[Y[RY
-	ÙX[X[	ÊK^ÛÛ[H]
-Ý[
-LH
-È	ÈÈ[ÎÂB[Ý[ÛY
-^ÂÛÛÝÛOYØÝ[Y[Ù][[Y[RY
-	Ù[ÛIÊK[YK[J
-NÂÛÛÝ[Û\\ÙQØ]
-ØÝ[Y[Ù][[Y[RY
-	Ù[[Û	ÊK[YJ_ÂY[Û_[[Û
-H]\ÂZ\Ñ^\Ë\Ú
-ÚYÙÊÑ]KÝÊ
-KÛK[Û[[ÛJNÂØÝ[Y[Ù][[Y[RY
-	Ù[ÛIÊK[YOIÉÎÂØÝ[Y[Ù][[Y[RY
-	Ù[[Û	ÊK[YOIÉÎÂØ]J
-NÈ[\
-NÈ[\\ÚØ\
+  const rows = ms.map(m=>{
+    const s = calcMonthStats(orders.filter(o=>o.date.startsWith(m)), ffTotal);
+    totCA+=s.ca; totRev+=s.revient; totURSSAF+=s.urssaf; totFF+=ffTotal;
+    totBenef+=s.benefNet; totImpots+=s.impots; totN+=s.n;
+    const margeBrute = s.ca - s.revient;
+    return `<tr>
+      <td>${MONTH_LABELS[m]||m}</td>
+      <td class="mono" style="text-align:right">${s.n}</td>
+      <td class="mono" style="text-align:right;color:var(--gold)">${fmt(s.ca)}</td>
+      <td class="mono" style="text-align:right;color:var(--muted)">${fmt(s.revient)}</td>
+      <td class="mono" style="text-align:right">${fmt(margeBrute)}</td>
+      <td class="mono" style="text-align:right;color:var(--amber)">${fmt(s.urssaf)}</td>
+      <td class="mono" style="text-align:right;color:var(--muted)">${fmt(ffTotal)}</td>
+      <td class="mono" style="text-align:right"><span class="${colorVal(s.benefNet)}">${fmt(s.benefNet)}</span></td>
+      <td class="mono" style="text-align:right;color:var(--red)">${fmt(s.impots)}</td>
+    </tr>`;
+  });
 
-NÂB[Ý[Û[]QY
-^ÂYXÛÛ\J	ÔÝ\[Y\ÙHÜÝHÉÊJH]\ÂZ\Ñ^\ÈHZ\Ñ^\Ë[\OYOOZY
-NÂØ]J
-NÈ[\
-NÈ[\\ÚØ\
+  document.getElementById('bilan-body').innerHTML = rows.join('');
+  document.getElementById('bilan-foot').innerHTML = `<tr class="bilan-foot">
+    <td>TOTAL</td>
+    <td class="mono" style="text-align:right">${totN}</td>
+    <td class="mono" style="text-align:right;color:var(--gold)">${fmt(totCA)}</td>
+    <td class="mono" style="text-align:right">${fmt(totRev)}</td>
+    <td class="mono" style="text-align:right">${fmt(totCA-totRev)}</td>
+    <td class="mono" style="text-align:right;color:var(--amber)">${fmt(totURSSAF)}</td>
+    <td class="mono" style="text-align:right">${fmt(totFF)}</td>
+    <td class="mono" style="text-align:right"><span class="${colorVal(totBenef)}">${fmt(totBenef)}</span></td>
+    <td class="mono" style="text-align:right;color:var(--red)">${fmt(totImpots)}</td>
+  </tr>`;
 
-NÂBËÈOOOOOOOOOOOOOOOOOOOOHSSOOOOOOOOOOOOOOOOOOOOB[Ý[Û[\[[
-^ÂÛÛÝÝ[HZ\Ñ^\ËYXÙJ
-ËOOÊÙ[Û[
-NÂÛÛÝ\ÈH[ÛÊ
-NÂ]ÝÐOLÝ]LÝTÔÐQLÝLÝ[YLÝ[\ÝÏLÝLÂÛÛÝ[\ÈH×NÂÛÛÝÙ]Z[ÝH
-Ü\ËYXÙJ
-ËÊOOÊÛËØK
-KÜÙ][ÜËÙ]Z[
-JLÂYÙ]Z[ÝN
-H[\Ë\Ú
-]Û\ÜÏH[\[\IÜÙ]Z[ÝNLÉÜY	ÎØ[X\ßH¸¦¨Ù]Z[QH]Z[0è	ÜÙ]Z[ÝÑ^Y
-J_IH8 %	Ù]
-Ù][ÜËÙ]Z[HÜ\ËYXÙJ
-ËÊOOÊÛËØK
-J_H\Ý[][HYÛH	Ù]
-Ù][ÜËÙ]Z[
-_KÙ]
-NÂØÝ[Y[Ù][[Y[RY
-	Ø[[X[\ÉÊK[\SH[\ËÚ[	ÉÊNÂÛÛÝÝÜÈH\ËX\
-OOÂÛÛÝÈHØ[Ó[ÛÝ]ÊÜ\Ë[\ÏOË]KÝ\ÕÚ]
-JJKÝ[
-NÂÝÐJÏ\ËØNÈÝ]Ï\Ë]Y[ÈÝTÔÐQÏ\Ë\ÜØYÈÝÏYÝ[ÂÝ[YÏ\Ë[Y]ÈÝ[\ÝÊÏ\Ë[\ÝÎÈÝÏ\ËÂÛÛÝX\ÙP]HHËØHHË]Y[Â]\ÓSÓÓPSÖÛW__OÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚÜËOÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚØÛÛÜ\KYÛÛ
-HÙ]
-ËØJ_OÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚØÛÛÜ\K[]]Y
-HÙ]
-Ë]Y[
-_OÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚÙ]
-X\ÙP]J_OÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚØÛÛÜ\KX[X\HÙ]
-Ë\ÜØY_OÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚØÛÛÜ\K[]]Y
-HÙ]
-Ý[
-_OÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚÜ[Û\ÜÏHØÛÛÜ[
-Ë[Y]
-_HÙ]
-Ë[Y]
-_OÜÜ[ÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚØÛÛÜ\K\Y
-HÙ]
-Ë[\ÝÊ_OÝÝÂJNÂØÝ[Y[Ù][[Y[RY
-	Ø[[XÙIÊK[\SHÝÜËÚ[	ÉÊNÂØÝ[Y[Ù][[Y[RY
-	Ø[[YÛÝ	ÊK[\SHÛ\ÜÏH[[YÛÝÕSÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚÝÝOÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚØÛÛÜ\KYÛÛ
-HÙ]
-ÝÐJ_OÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚÙ]
-Ý]_OÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚÙ]
-ÝÐK]Ý]_OÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚØÛÛÜ\KX[X\HÙ]
-ÝTÔÐQ_OÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚÙ]
-Ý_OÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚÜ[Û\ÜÏHØÛÛÜ[
-Ý[Y_HÙ]
-Ý[Y_OÜÜ[ÝÛ\ÜÏH[ÛÈÝ[OH^X[YÛYÚØÛÛÜ\K\Y
-HÙ]
-Ý[\ÝÊ_OÝÝÂØÝ[Y[Ù][[Y[RY
-	Ø[[ZÜIÊK[\SH]Û\ÜÏHÜHÛÛ]Û\ÜÏHÜK[X[ÐHÝ[Ù]]Û\ÜÏHÜK][YHÛÛÙ]ÊÝÐJ_OÙ]Ù]]Û\ÜÏHÜHÜY[]Û\ÜÏHÜK[X[°ê[°êYXÙH]Ù]]Û\ÜÏHÜK][YHÜY[Ù]ÊÝ[Y_OÙ]Ù]]Û\ÜÏHÜH[X\]Û\ÜÏHÜK[X[TÔÐQÝ[Ù]]Û\ÜÏHÜK][YH[X\Ù]ÊÝTÔÐQ_OÙ]Ù]]Û\ÜÏHÜHY]Û\ÜÏHÜK[X[Ý\Ú[Û[\0íÏÙ]]Û\ÜÏHÜK][YHYÙ]ÊÝ[\ÝÊ_OÙ]Ù]ÂBËÈOOOOOOOOOOOOOOOOOOOOHÑUSÔÈOOOOOOOOOOOOOOOOOOOOB[Ý[ÛØYÙ][ÜÊ
-^ÂØÝ[Y[Ù][[Y[RY
-	ÜË\[ÊK[YHHÙ][ÜË[	ÌLÍ	ÎÂØÝ[Y[Ù][[Y[RY
-	ÜË\Ù]Z[	ÊK[YHHÙ][ÜËÙ]Z[
-ÍÍÌÂØÝ[Y[Ù][[Y[RY
-	ÜË]\ÜØY\]IÊK[YHHÙ][ÜË\ÜØY]_LÎÂØÝ[Y[Ù][[Y[RY
-	ÜËZ[\ÝË\]IÊK[YHHÙ][ÜË[\ÝÔ]_NÂB[Ý[ÛØ]TÙ][ÜÊ
-^ÂÙ][ÜË[HØÝ[Y[Ù][[Y[RY
-	ÜË\[ÊK[YH	ÌLÍ	ÎÂÙ][ÜËÙ]Z[H\ÙQØ]
-ØÝ[Y[Ù][[Y[RY
-	ÜË\Ù]Z[	ÊK[YJ_
-ÍÍÌÂÙ][ÜË\ÜØY]HH\ÙQØ]
-ØÝ[Y[Ù][[Y[RY
-	ÜË]\ÜØY\]IÊK[YJ_LÎÂÙ][ÜË[\ÝÔ]HH\ÙQØ]
-ØÝ[Y[Ù][[Y[RY
-	ÜËZ[\ÝË\]IÊK[YJ_NÂØ]J
-NÂÛÛÝ\ÙÈHØÝ[Y[Ù][[Y[RY
-	ÜÙ][ÜË[\ÙÉÊNÂ\ÙË^ÛÛ[Iø§$È[YÚ\Ý°êIÎÂÙ][Y[Ý]
+  document.getElementById('bilan-kpi').innerHTML = `
+    <div class="kpi gold"><div class="kpi-label">CA Total</div><div class="kpi-value gold">${fmtK(totCA)}</div></div>
+    <div class="kpi green"><div class="kpi-label">Bénéfice net</div><div class="kpi-value green">${fmtK(totBenef)}</div></div>
+    <div class="kpi amber"><div class="kpi-label">URSSAF total</div><div class="kpi-value amber">${fmtK(totURSSAF)}</div></div>
+    <div class="kpi red"><div class="kpi-label">Provision impôts</div><div class="kpi-value red">${fmtK(totImpots)}</div></div>
+  `;
+}
 
+// ===================== SETTINGS =====================
+function loadSettings(){
+  document.getElementById('s-pin').value = settings.pin||'1234';
+  document.getElementById('s-seuil').value = settings.seuil||77700;
+  document.getElementById('s-urssaf-rate').value = settings.urssafRate||12.3;
+  document.getElementById('s-impots-rate').value = settings.impotsRate||25;
+}
+function saveSettings(){
+  settings.pin = document.getElementById('s-pin').value || '1234';
+  settings.seuil = parseFloat(document.getElementById('s-seuil').value)||77700;
+  settings.urssafRate = parseFloat(document.getElementById('s-urssaf-rate').value)||12.3;
+  settings.impotsRate = parseFloat(document.getElementById('s-impots-rate').value)||25;
+  save();
+  const msg = document.getElementById('settings-msg');
+  msg.textContent='✓ Enregistré';
+  setTimeout(()=>msg.textContent='',2000);
+}
+function exportData(){
+  const blob = new Blob([JSON.stringify({orders,fraisFixes,settings},null,2)],{type:'application/json'});
+  const a = document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='gaz_compta_export.json';
+  a.click();
+}
+function resetData(){
+  if(!confirm('⚠ Réinitialiser toutes les données ? Les commandes ajoutées manuellement seront perdues.')) return;
+  orders = JSON.parse(JSON.stringify(SEED));
+  fraisFixes = JSON.parse(JSON.stringify(DEFAULT_FF));
+  save(); renderAll();
+  alert('Données réinitialisées aux données de base (Jan-Avr 2026).');
+}
 
-OO\ÙË^ÛÛ[IÉË
-NÂB[Ý[Û^Ü]J
-^ÂÛÛÝØH]ÈØÒÓÓÝ[ÚYJÛÜ\ËZ\Ñ^\ËÙ][ÜßK[WKÝ\NØ\XØ][ÛÚÛÛßJNÂÛÛÝHHØÝ[Y[ÜX]Q[[Y[
-	ØIÊNÂKYUTÜX]SØXÝT
-ØNÂKÝÛØYIÙØ^ØÛÛ\WÙ^ÜÛÛÎÂKÛXÚÊ
-NÂB[Ý[Û\Ù]]J
-^ÂYXÛÛ\J	ø¦¨°êZ[]X[\Ù\Ý]\È\ÈÛ°êY\ÈÈ\ÈÛÛ[X[\ÈZÝ]0êY\ÈX[Y[[Y[Ù\Û\Y\ËÊJH]\ÂÜ\ÈHÓÓ\ÙJÓÓÝ[ÚYJÑQQ
-JNÂZ\Ñ^\ÈHÓÓ\ÙJÓÓÝ[ÚYJQUSÑJNÂØ]J
-NÈ[\[
+// ===================== RENDER ALL =====================
+function renderAll(){
+  renderDashboard();
+  buildMonthFilters();
+  renderTable();
+}
 
-NÂ[\
-	ÑÛ°êY\È°êZ[]X[\ðêY\È]^Û°êY\ÈH\ÙH
-[P]KÊNÂBËÈOOOOOOOOOOOOOOOOOOOOHSTSOOOOOOOOOOOOOOOOOOOOB[Ý[Û[\[
-
-^Â[\\ÚØ\
-
-NÂZ[[Û[\Ê
-NÂ[\XJ
-NÂBËÈOOOOOOOOOOOOOOOOOOOOHSUOOOOOOOOOOOOOOOOOOOOBØY
-
-NÂZ[Ù^\Y
-
-NÂÜØÜ\ØÙOÚ[
+// ===================== INIT =====================
+load();
+buildKeypad();
+</script>
+</body>
+</html>
