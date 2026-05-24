@@ -11,8 +11,6 @@
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;font-size:14px}
 button{cursor:pointer;font-family:'DM Sans',sans-serif}
 input,select,textarea{font-family:'DM Sans',sans-serif}
-
-/* PIN LOCK */
 #pin-lock{position:fixed;inset:0;background:var(--bg);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
 .pin-logo{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:4px;color:var(--gold)}
 .pin-logo span{color:var(--text)}
@@ -25,8 +23,6 @@ input,select,textarea{font-family:'DM Sans',sans-serif}
 .pin-btn:hover{background:var(--s3);border-color:var(--gold-dim)}
 .pin-btn:active{transform:scale(.95)}
 .pin-error{color:var(--red);font-size:13px;min-height:20px;text-align:center}
-
-/* LAYOUT */
 #app{display:none;flex-direction:column;min-height:100vh}
 header{background:var(--s1);border-bottom:1px solid var(--border);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:3px;color:var(--gold)}
@@ -39,8 +35,6 @@ nav::-webkit-scrollbar{display:none}
 .tab-btn:hover{color:var(--text)}
 .page{display:none;padding:1.5rem;max-width:1200px;margin:0 auto;width:100%}
 .page.active{display:block}
-
-/* KPI GRID */
 .kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:1.5rem}
 @media(min-width:600px){.kpi-grid{grid-template-columns:repeat(4,1fr)}}
 .kpi{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:1rem;position:relative;overflow:hidden}
@@ -53,8 +47,6 @@ nav::-webkit-scrollbar{display:none}
 .kpi-value.gold{color:var(--gold)}.kpi-value.green{color:var(--green)}
 .kpi-value.red{color:var(--red)}.kpi-value.blue{color:var(--blue)}.kpi-value.amber{color:var(--amber)}
 .kpi-sub{font-size:11px;color:var(--muted);margin-top:4px}
-
-/* PROGRESS BAR */
 .prog-section{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.5rem}
 .prog-title{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--gold);margin-bottom:1rem}
 .prog-row{display:flex;align-items:center;gap:1rem;margin-bottom:.75rem}
@@ -63,18 +55,15 @@ nav::-webkit-scrollbar{display:none}
 .prog-fill{height:100%;border-radius:3px;transition:width 1s ease}
 .prog-fill.gold{background:var(--gold)}.prog-fill.green{background:var(--green)}.prog-fill.red{background:var(--red)}
 .prog-pct{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);min-width:40px;text-align:right}
-
-/* MONTH GRID */
 .month-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:1.5rem}
 @media(min-width:700px){.month-grid{grid-template-columns:repeat(4,1fr)}}
-.month-card{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:1rem}
+.month-card{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:1rem;cursor:pointer;transition:.15s}
+.month-card:hover{border-color:var(--gold-dim);transform:translateY(-2px)}
 .month-card-title{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:2px;color:var(--gold);margin-bottom:.6rem}
 .month-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:.3rem;color:var(--muted)}
 .month-row span:last-child{color:var(--text);font-family:'DM Mono',monospace}
 .month-row.benef span:last-child{color:var(--green)}
 .month-row.urssaf span:last-child{color:var(--amber)}
-
-/* TABLE */
 .table-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap}
 .search-box{background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:.5rem .75rem;color:var(--text);font-size:13px;flex:1;min-width:150px}
 .search-box:focus{outline:none;border-color:var(--gold-dim)}
@@ -95,8 +84,6 @@ tr:hover td{background:rgba(255,255,255,.02)}
 .badge.echantillon{background:rgba(136,136,136,.15);color:var(--muted)}
 .mono{font-family:'DM Mono',monospace;font-size:12px}
 .pos{color:var(--green)}.neg{color:var(--red)}
-
-/* FORM */
 .form-section{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.5rem}
 .form-title{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:var(--gold);margin-bottom:1rem}
 .form-sub{font-family:'Bebas Neue',sans-serif;font-size:.8rem;letter-spacing:2px;color:var(--muted);margin-bottom:.6rem;margin-top:.9rem}
@@ -115,8 +102,6 @@ select option{background:var(--s2)}
 .btn-ghost{background:var(--s2);border:1px solid var(--border);color:var(--text)}.btn-ghost:hover{border-color:var(--dim)}
 .btn-danger{background:rgba(224,62,62,.15);border:1px solid rgba(224,62,62,.3);color:var(--red)}.btn-danger:hover{background:rgba(224,62,62,.25)}
 .btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
-
-/* PRODUCTS GRID */
 .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.4rem;padding:.75rem;background:var(--s2);border:1px solid var(--border);border-radius:8px;max-height:220px;overflow-y:auto}
 .prod-cell{display:flex;flex-direction:column;gap:.2rem}
 .prod-cell label{font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:default}
@@ -130,8 +115,6 @@ select option{background:var(--s2)}
 .calc-row b{font-family:'DM Mono',monospace;color:var(--gold)}
 .calc-row.benef-row b.pos{color:var(--green)}
 .calc-row.benef-row b.neg{color:var(--red)}
-
-/* FRAIS FIXES */
 .ff-list{list-style:none}
 .ff-item{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-bottom:1px solid rgba(255,255,255,.04)}
 .ff-item:last-child{border-bottom:none}
@@ -139,53 +122,70 @@ select option{background:var(--s2)}
 .ff-mont{font-family:'DM Mono',monospace;font-size:13px;color:var(--gold)}
 .ff-del{background:none;border:none;color:var(--dim);padding:.2rem .4rem;border-radius:4px;transition:.15s}
 .ff-del:hover{color:var(--red)}
-
-/* BILAN TABLE */
 .bilan-table{background:var(--s1);border:1px solid var(--border);border-radius:10px;overflow:auto}
 .bilan-table table{min-width:600px}
 .bilan-table td:first-child{font-family:'Bebas Neue',sans-serif;letter-spacing:1px;color:var(--gold)}
 .bilan-foot td{border-top:1px solid var(--border);font-weight:600;color:var(--text)}
-
-/* ALERTS */
+.bilan-month-link{cursor:pointer;text-decoration:none}
+.bilan-month-link:hover{color:var(--text) !important;text-decoration:underline}
 .alert{padding:.75rem 1rem;border-radius:8px;font-size:13px;margin-bottom:1rem}
 .alert-amber{background:rgba(224,124,26,.1);border:1px solid rgba(224,124,26,.3);color:var(--amber)}
 .alert-red{background:rgba(224,62,62,.1);border:1px solid rgba(224,62,62,.3);color:var(--red)}
 .alert-green{background:rgba(39,174,114,.1);border:1px solid rgba(39,174,114,.3);color:var(--green)}
-
-/* PRODUITS CATALOG */
 .prod-catalog{display:grid;gap:.5rem}
-.prod-cat-title{font-family:'Bebas Neue',sans-serif;font-size:.85rem;letter-spacing:2px;color:var(--muted);padding:.5rem 0 .25rem;border-bottom:1px solid var(--border);margin-bottom:.25rem}
-.prod-list-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.5rem;margin-bottom:1rem}
-.prod-card{background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:.75rem;display:flex;align-items:center;gap:.75rem}
-.prod-card-info{flex:1}
-.prod-card-name{font-size:13px;font-weight:500;margin-bottom:.15rem}
+.prod-cat-title{font-family:'Bebas Neue',sans-serif;font-size:.85rem;letter-spacing:2px;color:var(--muted)}
+.prod-list-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.5rem;margin-bottom:.5rem}
+.prod-card{background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:.75rem;display:flex;flex-direction:column;gap:.5rem}
+.prod-card-info{display:flex;align-items:center;gap:.4rem}
+.prod-card-name{font-size:13px;font-weight:500;flex:1;cursor:text}
+.prod-card-name:hover{color:var(--gold)}
 .prod-card-cat{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
-.prod-card-price{display:flex;align-items:center;gap:.4rem}
+.prod-card-bottom{display:flex;align-items:center;gap:.4rem}
 .prod-price-input{width:80px;text-align:right;font-family:'DM Mono',monospace;background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:.3rem .5rem;color:var(--gold);font-size:13px}
 .prod-price-input:focus{outline:none;border-color:var(--gold-dim)}
 .prod-unit{font-size:11px;color:var(--muted)}
-
-/* SECTION TITLE */
+.prod-cat-section{margin-bottom:1.5rem}
+.prod-cat-header{display:flex;align-items:center;gap:.5rem;padding:.4rem 0;border-bottom:1px solid var(--border);margin-bottom:.5rem}
+.prod-cat-header .prod-cat-title{flex:1}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;color:var(--text);margin-bottom:.75rem;margin-top:1.5rem}
 .section-title:first-child{margin-top:0}
-
-/* SUMMARY BAR */
 .sum-bar{background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:.6rem 1rem;margin-bottom:1rem;display:flex;gap:1.5rem;flex-wrap:wrap;font-size:12px;color:var(--muted)}
 .sum-bar span b{color:var(--text);font-family:'DM Mono',monospace}
 .sum-bar span.g b{color:var(--green)}
 .sum-bar span.r b{color:var(--red)}
 .sum-bar span.a b{color:var(--amber)}
-
-/* EMPTY */
 .empty{text-align:center;padding:3rem;color:var(--dim);font-size:13px}
-
-/* SETTINGS */
 .settings-grid{display:grid;gap:1rem;max-width:400px}
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-bg.open{display:flex}
+.modal-box{background:var(--s1);border:1px solid var(--border);border-radius:12px;width:100%;max-width:580px;max-height:90vh;overflow-y:auto;padding:1.5rem}
+.modal-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
+.modal-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;color:var(--gold)}
+.modal-close{background:none;border:none;color:var(--muted);font-size:1.4rem;line-height:1;cursor:pointer;padding:.2rem .4rem;border-radius:4px}
+.modal-close:hover{color:var(--text)}
+/* ICON BUTTONS */
+.btn-icon{background:none;border:none;padding:3px 6px;border-radius:4px;cursor:pointer;font-size:13px;line-height:1;transition:.15s}
+.btn-icon.edit{color:var(--dim)}.btn-icon.edit:hover{color:var(--gold)}
+.btn-icon.del{color:var(--dim)}.btn-icon.del:hover{color:var(--red)}
+.btn-icon.add{color:var(--dim)}.btn-icon.add:hover{color:var(--green)}
+/* INLINE EDIT */
+.prod-name-inp{background:var(--s2);border:1px solid var(--gold-dim);border-radius:5px;padding:2px 6px;color:var(--text);font-size:13px;font-weight:500;width:100%;outline:none}
+.cat-name-inp{background:transparent;border:none;border-bottom:1px solid var(--gold-dim);color:var(--muted);font-family:'Bebas Neue',sans-serif;font-size:.85rem;letter-spacing:2px;padding:0 2px;min-width:80px;outline:none}
+/* FF MONTH TABS */
+.ff-month-tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.75rem}
+.ff-month-btn{background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:.35rem .75rem;color:var(--muted);font-size:12px;transition:.15s;white-space:nowrap}
+.ff-month-btn.active{background:var(--gold-dim);border-color:var(--gold);color:var(--gold)}
+.ff-month-btn:hover{border-color:var(--dim)}
+.ff-status-note{font-size:12px;color:var(--muted);margin-bottom:.75rem;padding:.5rem .75rem;background:var(--s2);border-radius:6px}
+/* ADD PROD FORM */
+.add-prod-inline{background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:.75rem;margin-bottom:.5rem;display:none;gap:.5rem;flex-wrap:wrap;align-items:flex-end}
+.add-prod-inline.open{display:flex}
+.add-prod-inline input{background:var(--s3);border:1px solid var(--border);border-radius:6px;padding:.4rem .6rem;color:var(--text);font-size:13px}
+.add-prod-inline input:focus{outline:none;border-color:var(--gold-dim)}
 </style>
 </head>
 <body>
-
-<!-- PIN LOCK -->
 <div id="pin-lock">
   <div class="pin-logo">GAZ<span>SELECTION</span></div>
   <div style="font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase">COMPTABILITÉ 2026</div>
@@ -197,7 +197,6 @@ select option{background:var(--s2)}
   <div class="pin-error" id="pin-error"></div>
 </div>
 
-<!-- MAIN APP -->
 <div id="app">
   <header>
     <div>
@@ -219,16 +218,14 @@ select option{background:var(--s2)}
   <div class="page active" id="p-dashboard">
     <div class="kpi-grid" id="kpi-grid"></div>
     <div class="prog-section" id="prog-section"></div>
-    <div class="section-title">PAR MOIS</div>
+    <div class="section-title">PAR MOIS <span style="font-size:12px;color:var(--muted);font-family:'DM Sans',sans-serif;letter-spacing:0;text-transform:none">— cliquer pour voir les commandes</span></div>
     <div class="month-grid" id="month-grid"></div>
   </div>
 
   <!-- COMMANDES -->
   <div class="page" id="p-commandes">
     <div class="form-section" id="form-add">
-      <div class="form-title">+ NOUVELLE COMMANDE</div>
-
-      <!-- Infos de base -->
+      <div class="form-title" id="form-add-title">+ NOUVELLE COMMANDE</div>
       <div class="form-grid cols4">
         <div class="form-group"><label>Date</label><input type="date" id="f-date"></div>
         <div class="form-group"><label>Nom</label><input type="text" id="f-nom" placeholder="Dupont"></div>
@@ -242,16 +239,12 @@ select option{background:var(--s2)}
           </select>
         </div>
       </div>
-
-      <!-- Produits -->
       <div class="form-sub">PRODUITS (saisir quantité en grammes)</div>
       <div class="prod-grid" id="prod-form-grid"></div>
       <div class="calc-row" style="margin-top:.5rem">
         <span>Prix de revient produits :</span><b id="calc-revient">0,00 €</b>
         <span style="margin-left:auto;font-size:11px;color:var(--dim)" id="prod-detail"></span>
       </div>
-
-      <!-- Conditionnement -->
       <div class="form-sub">CONDITIONNEMENT & ENVOI</div>
       <div class="form-grid cols4">
         <div class="form-group"><label>Carton €</label><input type="number" step="0.01" id="f-carton" placeholder="1.20" oninput="liveCalc()"></div>
@@ -263,8 +256,6 @@ select option{background:var(--s2)}
         <div class="form-group"><label>Frais livraison €</label><input type="number" step="0.01" id="f-livraison" placeholder="4.10" oninput="liveCalc()"></div>
         <div class="form-group"><label>Prix d'envoi total</label><input type="text" id="calc-envoi" readonly placeholder="0,00 €"></div>
       </div>
-
-      <!-- Financier -->
       <div class="form-sub">FINANCIER</div>
       <div class="form-grid cols4">
         <div class="form-group"><label>CA (prix de vente) €</label><input type="number" step="0.01" id="f-ca" placeholder="0.00" oninput="liveCalc()"></div>
@@ -277,12 +268,11 @@ select option{background:var(--s2)}
         <span style="margin-left:1rem">= CA − Revient − Envoi − URSSAF − Wallet − Infl.</span>
       </div>
       <div class="btn-row">
-        <button class="btn btn-gold" onclick="addOrder()">Ajouter la commande</button>
+        <button class="btn btn-gold" id="form-submit-btn" onclick="submitForm()">Ajouter la commande</button>
         <button class="btn btn-ghost" onclick="clearForm()">Effacer</button>
         <span id="form-msg" style="font-size:12px;color:var(--muted);align-self:center"></span>
       </div>
     </div>
-
     <div class="table-header">
       <input type="text" class="search-box" id="search-cmd" placeholder="🔍 Rechercher un client..." oninput="renderTable()">
       <div class="filter-btns" id="month-filters"></div>
@@ -310,9 +300,40 @@ select option{background:var(--s2)}
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem">
       <div>
         <div class="section-title" style="margin:0">CATALOGUE PRODUITS</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:.25rem">Prix de revient par gramme — utilisés pour le calcul automatique des commandes</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:.25rem">✏ Cliquer sur un nom pour le renommer — 🗑 pour supprimer</div>
       </div>
-      <button class="btn btn-ghost" onclick="resetProducts()" style="font-size:12px">Réinitialiser prix</button>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <button class="btn btn-ghost" onclick="toggleNewProdForm()" style="font-size:12px">+ Produit</button>
+        <button class="btn btn-ghost" onclick="toggleNewCatForm()" style="font-size:12px">+ Catégorie</button>
+        <button class="btn btn-ghost" onclick="resetProducts()" style="font-size:12px">Réinitialiser prix</button>
+      </div>
+    </div>
+    <div id="new-prod-form" class="form-section" style="display:none">
+      <div class="form-title">NOUVEAU PRODUIT</div>
+      <div class="form-grid cols4">
+        <div class="form-group"><label>Nom</label><input type="text" id="np-name" placeholder="Ex: Gorilla Glue"></div>
+        <div class="form-group"><label>Prix (€/g ou € direct)</label><input type="number" step="0.001" id="np-price" placeholder="0.80" value="0.80"></div>
+        <div class="form-group"><label>Catégorie</label><select id="np-cat"></select></div>
+        <div class="form-group" style="justify-content:flex-end">
+          <label style="display:flex;align-items:center;gap:.4rem;text-transform:none;letter-spacing:0;font-size:12px;cursor:pointer">
+            <input type="checkbox" id="np-direct" style="width:auto"> Prix direct (€, pas €/g)
+          </label>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-gold" onclick="confirmAddProd()">Ajouter</button>
+        <button class="btn btn-ghost" onclick="toggleNewProdForm()">Annuler</button>
+      </div>
+    </div>
+    <div id="new-cat-form" class="form-section" style="display:none">
+      <div class="form-title">NOUVELLE CATÉGORIE</div>
+      <div class="form-grid cols3">
+        <div class="form-group"><label>Nom de la catégorie</label><input type="text" id="nc-name" placeholder="Ex: Résines"></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-gold" onclick="confirmAddCat()">Créer</button>
+        <button class="btn btn-ghost" onclick="toggleNewCatForm()">Annuler</button>
+      </div>
     </div>
     <div id="produits-catalog"></div>
   </div>
@@ -320,15 +341,21 @@ select option{background:var(--s2)}
   <!-- FRAIS FIXES -->
   <div class="page" id="p-frais">
     <div class="form-section">
-      <div class="form-title">AJOUTER UN FRAIS FIXE</div>
+      <div class="form-title">SÉLECTIONNER UN MOIS</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:.75rem">Les frais sont configurables mois par mois. Le modèle global est utilisé par défaut.</div>
+      <div class="ff-month-tabs" id="ff-month-tabs"></div>
+      <div id="ff-status-note" class="ff-status-note" style="display:none"></div>
+    </div>
+    <div class="form-section">
+      <div class="form-title" id="ff-section-title">AJOUTER UN FRAIS</div>
       <div class="form-grid cols3">
         <div class="form-group full" style="grid-column:1/3"><label>Nom du poste</label><input type="text" id="ff-nom" placeholder="ex: Shopify"></div>
-        <div class="form-group"><label>Montant mensuel €</label><input type="number" step="0.01" id="ff-mont" placeholder="0.00"></div>
+        <div class="form-group"><label>Montant €</label><input type="number" step="0.01" id="ff-mont" placeholder="0.00"></div>
       </div>
       <div class="btn-row"><button class="btn btn-gold" onclick="addFF()">Ajouter</button></div>
     </div>
     <div class="form-section">
-      <div class="form-title">POSTES ACTIFS</div>
+      <div class="form-title" id="ff-list-title">POSTES ACTIFS</div>
       <ul class="ff-list" id="ff-list"></ul>
       <div style="display:flex;justify-content:space-between;padding:.75rem 1rem;border-top:1px solid var(--border);margin-top:.5rem">
         <span style="font-size:13px;color:var(--muted)">Total mensuel</span>
@@ -338,13 +365,20 @@ select option{background:var(--s2)}
         <span style="font-size:12px;color:var(--muted)">Projection annuelle</span>
         <span style="font-family:'DM Mono',monospace;font-size:13px;color:var(--muted)" id="ff-annual">—</span>
       </div>
+      <div class="btn-row" id="ff-month-actions" style="display:none">
+        <button class="btn btn-ghost" onclick="copyFromGlobal()" style="font-size:12px">Copier depuis modèle global</button>
+        <button class="btn btn-danger" onclick="resetToGlobal()" style="font-size:12px">Supprimer config. mois</button>
+      </div>
     </div>
   </div>
 
   <!-- BILAN -->
   <div class="page" id="p-bilan">
     <div id="bilan-alerts"></div>
-    <div class="section-title">BILAN MENSUEL 2026</div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap;gap:.5rem">
+      <div class="section-title" style="margin:0">BILAN MENSUEL 2026</div>
+      <button class="btn btn-ghost" onclick="exportBilanCSV()" style="font-size:12px">Exporter CSV</button>
+    </div>
     <div class="bilan-table" style="margin-bottom:1.5rem">
       <table>
         <thead><tr>
@@ -379,7 +413,7 @@ select option{background:var(--s2)}
     </div>
     <div class="form-section" style="max-width:500px">
       <div class="form-title">DONNÉES</div>
-      <div style="font-size:13px;color:var(--muted);margin-bottom:1rem">Les commandes et les prix produits sont sauvegardés dans le localStorage du navigateur.</div>
+      <div style="font-size:13px;color:var(--muted);margin-bottom:1rem">Commandes, produits et frais sauvegardés dans le localStorage du navigateur.</div>
       <div class="btn-row">
         <button class="btn btn-ghost" onclick="exportData()">Exporter JSON</button>
         <button class="btn btn-danger" onclick="resetData()">Réinitialiser données</button>
@@ -388,12 +422,49 @@ select option{background:var(--s2)}
   </div>
 </div>
 
+<!-- EDIT ORDER MODAL -->
+<div id="edit-modal" class="modal-bg" onclick="if(event.target===this)closeEditModal()">
+  <div class="modal-box">
+    <div class="modal-hdr">
+      <div class="modal-title">MODIFIER LA COMMANDE</div>
+      <button class="modal-close" onclick="closeEditModal()">✕</button>
+    </div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:1rem" id="edit-modal-id"></div>
+    <div class="form-grid cols4">
+      <div class="form-group"><label>Date</label><input type="date" id="em-date"></div>
+      <div class="form-group"><label>Nom</label><input type="text" id="em-nom"></div>
+      <div class="form-group"><label>Prénom / Note</label><input type="text" id="em-prenom"></div>
+      <div class="form-group"><label>Type</label>
+        <select id="em-type">
+          <option value="particulier">Particulier</option>
+          <option value="boutique_cbd">Boutique CBD</option>
+          <option value="influenceur">Influenceur</option>
+          <option value="echantillon">Échantillon</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-grid cols4" style="margin-top:.75rem">
+      <div class="form-group"><label>CA (prix de vente) €</label><input type="number" step="0.01" id="em-ca" oninput="updateEditCalc()"></div>
+      <div class="form-group"><label>Revient total €</label><input type="number" step="0.01" id="em-revient" oninput="updateEditCalc()"></div>
+      <div class="form-group"><label>Frais Wallet €</label><input type="number" step="0.01" id="em-wallet" oninput="updateEditCalc()"></div>
+      <div class="form-group"><label>Frais Influenceur €</label><input type="number" step="0.01" id="em-inf" oninput="updateEditCalc()"></div>
+    </div>
+    <div class="calc-row benef-row" style="margin-top:.75rem">
+      <span>URSSAF :</span><b id="em-urssaf-disp" style="color:var(--amber)">—</b>
+      <span style="margin-left:1rem">Bénéfice :</span><b id="em-benef-disp">—</b>
+    </div>
+    <div class="btn-row" style="margin-top:1rem">
+      <button class="btn btn-gold" onclick="saveEditOrder()">Enregistrer</button>
+      <button class="btn btn-ghost" onclick="closeEditModal()">Annuler</button>
+      <span id="edit-msg" style="font-size:12px;color:var(--muted);align-self:center"></span>
+    </div>
+  </div>
+</div>
+
 <script>
-// ===================== DATA =====================
 const SEED = [{"id":"JAN-001","date":"2026-01-01","nom":"Girault","prenom":"Cyril","type":"particulier","ca":52.97,"revient":4.77,"urssaf":6.52,"wallet":1.56,"inf":0,"benef":35.33},{"id":"JAN-002","date":"2026-01-02","nom":"La Foncedalle","prenom":"","type":"boutique_cbd","ca":300.0,"revient":85.0,"urssaf":36.9,"wallet":0,"inf":0,"benef":166.41},{"id":"JAN-003","date":"2026-01-11","nom":"Delville","prenom":"Elodie","type":"particulier","ca":36.49,"revient":2.96,"urssaf":4.49,"wallet":1.14,"inf":0,"benef":23.11},{"id":"JAN-004","date":"2026-01-12","nom":"La foncedalle","prenom":"","type":"boutique_cbd","ca":400.0,"revient":164.0,"urssaf":49.2,"wallet":0,"inf":0,"benef":175.1},{"id":"JAN-005","date":"2026-01-13","nom":"Sousa","prenom":"Miguel","type":"particulier","ca":86.23,"revient":6.62,"urssaf":10.61,"wallet":3.97,"inf":0,"benef":40.64},{"id":"JAN-006","date":"2026-01-14","nom":"THE DREAM","prenom":"","type":"boutique_cbd","ca":60.0,"revient":10.0,"urssaf":7.38,"wallet":0,"inf":0,"benef":29.62},{"id":"JAN-007","date":"2026-01-15","nom":"VAPOLAND","prenom":"","type":"boutique_cbd","ca":255.0,"revient":152.5,"urssaf":31.36,"wallet":5.79,"inf":0,"benef":52.84},{"id":"JAN-008","date":"2026-01-16","nom":"LA Moula","prenom":"CBD","type":"boutique_cbd","ca":350.0,"revient":81.0,"urssaf":43.05,"wallet":0,"inf":0,"benef":214.25},{"id":"JAN-009","date":"2026-01-17","nom":"Tiago","prenom":"Julio","type":"particulier","ca":30.59,"revient":4.5,"urssaf":3.76,"wallet":0.99,"inf":0,"benef":15.04},{"id":"JAN-010","date":"2026-01-17","nom":"Nicolas","prenom":"Leroy","type":"particulier","ca":56.29,"revient":11.83,"urssaf":6.92,"wallet":1.64,"inf":0,"benef":29.89},{"id":"JAN-011","date":"2026-01-18","nom":"David","prenom":"Paul","type":"particulier","ca":91.94,"revient":9.72,"urssaf":11.31,"wallet":2.55,"inf":0,"benef":64.26},{"id":"JAN-012","date":"2026-01-19","nom":"Calm","prenom":"Leaf","type":"boutique_cbd","ca":3080.0,"revient":1840.0,"urssaf":378.84,"wallet":257.26,"inf":0,"benef":581.15},{"id":"JAN-013","date":"2026-01-19","nom":"So","prenom":"hempy","type":"boutique_cbd","ca":2280.0,"revient":1845.25,"urssaf":280.44,"wallet":0,"inf":0,"benef":154.31},{"id":"JAN-014","date":"2026-01-19","nom":"Fernandes","prenom":"Lester","type":"particulier","ca":99.97,"revient":9.85,"urssaf":12.3,"wallet":2.75,"inf":0,"benef":69.97},{"id":"JAN-015","date":"2026-01-21","nom":"La Foncedalle","prenom":"","type":"boutique_cbd","ca":500.0,"revient":171.72,"urssaf":61.5,"wallet":0,"inf":0,"benef":255.08},{"id":"JAN-016","date":"2026-01-23","nom":"Michel","prenom":"Damien","type":"particulier","ca":55.96,"revient":6.84,"urssaf":6.88,"wallet":1.63,"inf":0,"benef":30.71},{"id":"JAN-017","date":"2026-01-25","nom":"Soum","prenom":"Basile","type":"particulier","ca":69.97,"revient":9.5,"urssaf":8.61,"wallet":1.99,"inf":0,"benef":43.87},{"id":"JAN-018","date":"2026-01-26","nom":"Dehert","prenom":"Ruud","type":"boutique_cbd","ca":40.0,"revient":14.45,"urssaf":4.92,"wallet":0,"inf":0,"benef":4.43},{"id":"JAN-019","date":"2026-01-27","nom":"Canei","prenom":"Faustin","type":"particulier","ca":44.98,"revient":8.72,"urssaf":5.53,"wallet":1.35,"inf":0,"benef":24.22},{"id":"JAN-020","date":"2026-01-29","nom":"","prenom":"","type":"particulier","ca":51.95,"revient":3.38,"urssaf":6.39,"wallet":1.53,"inf":0,"benef":40.65},{"id":"JAN-021","date":"2026-01-29","nom":"Jardin","prenom":"Antigoone","type":"boutique_cbd","ca":60.0,"revient":0.0,"urssaf":7.38,"wallet":0,"inf":0,"benef":48.42},{"id":"JAN-022","date":"2026-01-29","nom":"Nelly","prenom":"Voisin","type":"particulier","ca":339.0,"revient":59.67,"urssaf":41.7,"wallet":7.63,"inf":0,"benef":215.4},{"id":"JAN-023","date":"2026-01-29","nom":"Briard","prenom":"Kevin","type":"particulier","ca":112.99,"revient":18.1,"urssaf":13.9,"wallet":3.08,"inf":0,"benef":71.91},{"id":"JAN-024","date":"2026-01-29","nom":"Loutil","prenom":"Samson","type":"particulier","ca":41.95,"revient":6.08,"urssaf":5.16,"wallet":1.28,"inf":0,"benef":25.33},{"id":"JAN-025","date":"2026-01-30","nom":"Tendance","prenom":"Nature","type":"boutique_cbd","ca":10.0,"revient":18.18,"urssaf":1.23,"wallet":0,"inf":0,"benef":-15.71},{"id":"JAN-026","date":"2026-01-31","nom":"Fournier","prenom":"Anthony","type":"particulier","ca":58.99,"revient":11.22,"urssaf":7.26,"wallet":1.71,"inf":0,"benef":32.5},{"id":"JAN-027","date":"2026-01-31","nom":"Sosa","prenom":"Miguel","type":"particulier","ca":91.15,"revient":12.98,"urssaf":11.21,"wallet":4.18,"inf":0,"benef":32.73},{"id":"FEV-001","date":"2026-02-01","nom":"Frederic","prenom":"garcia","type":"particulier","ca":59.96,"revient":7.22,"urssaf":7.38,"wallet":1.73,"inf":0,"benef":35.94},{"id":"FEV-002","date":"2026-02-02","nom":"Zushi","prenom":"Blo","type":"particulier","ca":168.19,"revient":12.59,"urssaf":20.69,"wallet":4.48,"inf":0,"benef":120.44},{"id":"FEV-003","date":"2026-02-06","nom":"Frédéric","prenom":"Garcia","type":"particulier","ca":64.98,"revient":10.31,"urssaf":7.99,"wallet":1.86,"inf":0,"benef":37.52},{"id":"FEV-004","date":"2026-02-09","nom":"Medhi","prenom":"Redjil","type":"particulier","ca":169.95,"revient":26.24,"urssaf":20.9,"wallet":4.0,"inf":0,"benef":110.71},{"id":"FEV-005","date":"2026-02-11","nom":"Nathan","prenom":"Bachelet","type":"particulier","ca":95.89,"revient":16.61,"urssaf":11.79,"wallet":2.65,"inf":9.59,"benef":44.94},{"id":"FEV-006","date":"2026-02-11","nom":"Kevin","prenom":"Soumat","type":"particulier","ca":54.98,"revient":7.22,"urssaf":6.76,"wallet":1.61,"inf":0,"benef":33.09},{"id":"FEV-007","date":"2026-02-12","nom":"Louis","prenom":"Leseigne","type":"particulier","ca":64.98,"revient":10.0,"urssaf":7.99,"wallet":1.86,"inf":0,"benef":38.83},{"id":"FEV-008","date":"2026-02-14","nom":"Anthony","prenom":"Fournier","type":"particulier","ca":58.99,"revient":10.15,"urssaf":7.26,"wallet":1.71,"inf":0,"benef":33.69},{"id":"FEV-009","date":"2026-02-16","nom":"Frédéric","prenom":"Garcia","type":"particulier","ca":4.99,"revient":8.94,"urssaf":0.61,"wallet":1.86,"inf":0,"benef":-13.61},{"id":"FEV-010","date":"2026-02-17","nom":"Elodie","prenom":"Delville","type":"particulier","ca":36.49,"revient":4.1,"urssaf":4.49,"wallet":1.14,"inf":3.65,"benef":15.92},{"id":"FEV-011","date":"2026-02-19","nom":"Melvin","prenom":"Reign","type":"particulier","ca":69.98,"revient":8.15,"urssaf":8.61,"wallet":1.99,"inf":0,"benef":44.04},{"id":"FEV-012","date":"2026-02-20","nom":"","prenom":"","type":"particulier","ca":20.0,"revient":0.0,"urssaf":2.46,"wallet":0,"inf":0,"benef":17.54},{"id":"FEV-013","date":"2026-02-21","nom":"NC","prenom":"DISTRIBUTION","type":"boutique_cbd","ca":20.0,"revient":19.6,"urssaf":2.46,"wallet":0,"inf":0,"benef":-8.25},{"id":"FEV-014","date":"2026-02-21","nom":"Julien","prenom":"Martin","type":"particulier","ca":74.99,"revient":20.27,"urssaf":9.22,"wallet":0,"inf":0,"benef":36.61},{"id":"FEV-015","date":"2026-02-22","nom":"Brixiam","prenom":"Farms (IT)","type":"boutique_cbd","ca":20.0,"revient":11.03,"urssaf":2.46,"wallet":0,"inf":0,"benef":-6.19},{"id":"FEV-016","date":"2026-02-22","nom":"Faustin","prenom":"Canei","type":"particulier","ca":89.98,"revient":19.45,"urssaf":11.07,"wallet":2.5,"inf":0,"benef":49.6},{"id":"FEV-017","date":"2026-02-23","nom":"Cyril","prenom":"Girault","type":"particulier","ca":45.96,"revient":4.27,"urssaf":5.65,"wallet":1.38,"inf":0,"benef":29.87},{"id":"FEV-018","date":"2026-02-25","nom":"Basile","prenom":"Soom","type":"particulier","ca":74.97,"revient":10.97,"urssaf":9.22,"wallet":2.11,"inf":0,"benef":47.88},{"id":"FEV-019","date":"2026-02-25","nom":"Erwan","prenom":"Rouet","type":"particulier","ca":154.98,"revient":20.0,"urssaf":19.06,"wallet":4.98,"inf":0,"benef":105.35},{"id":"FEV-020","date":"2026-02-26","nom":"La Poche","prenom":"Verte","type":"boutique_cbd","ca":810.0,"revient":500.0,"urssaf":99.63,"wallet":0,"inf":0,"benef":197.48},{"id":"FEV-021","date":"2026-02-26","nom":"GOLD LEAF","prenom":"H TOWN","type":"boutique_cbd","ca":1440.0,"revient":798.0,"urssaf":177.12,"wallet":120.0,"inf":0,"benef":321.88},{"id":"FEV-022","date":"2026-02-26","nom":"Elite","prenom":"CBD","type":"boutique_cbd","ca":360.0,"revient":156.0,"urssaf":44.28,"wallet":0,"inf":0,"benef":150.02},{"id":"MAR-001","date":"2026-03-02","nom":"Anthony","prenom":"Fournier","type":"particulier","ca":67.99,"revient":9.0,"urssaf":8.36,"wallet":2.03,"inf":0,"benef":42.3},{"id":"MAR-002","date":"2026-03-04","nom":"Augustin","prenom":"Jules","type":"particulier","ca":39.98,"revient":9.28,"urssaf":4.92,"wallet":1.23,"inf":0,"benef":19.71},{"id":"MAR-003","date":"2026-03-09","nom":"Valentin","prenom":"Lorenz","type":"particulier","ca":72.99,"revient":18.91,"urssaf":8.98,"wallet":2.06,"inf":0,"benef":37.94},{"id":"MAR-004","date":"2026-03-10","nom":"Seed's","prenom":"experience","type":"boutique_cbd","ca":775.0,"revient":418.0,"urssaf":95.33,"wallet":0,"inf":0,"benef":261.68},{"id":"MAR-005","date":"2026-03-10","nom":"Jerome","prenom":"Pastorino","type":"particulier","ca":454.96,"revient":63.18,"urssaf":55.96,"wallet":11.77,"inf":0,"benef":309.86},{"id":"MAR-006","date":"2026-03-10","nom":"VITAVI","prenom":"","type":"boutique_cbd","ca":239.0,"revient":174.2,"urssaf":29.4,"wallet":5.44,"inf":0,"benef":21.17},{"id":"MAR-007","date":"2026-03-10","nom":"Mehdi","prenom":"Redjil","type":"particulier","ca":145.24,"revient":30.41,"urssaf":17.86,"wallet":3.9,"inf":0,"benef":87.97},{"id":"MAR-008","date":"2026-03-12","nom":"Valentin","prenom":"lorthoire","type":"particulier","ca":48.99,"revient":18.32,"urssaf":6.03,"wallet":1.45,"inf":0,"benef":15.2},{"id":"MAR-009","date":"2026-03-12","nom":"Cyril","prenom":"Delvaque","type":"particulier","ca":124.94,"revient":17.25,"urssaf":15.37,"wallet":3.38,"inf":0,"benef":79.04},{"id":"MAR-010","date":"2026-03-13","nom":"Basile","prenom":"Soom","type":"particulier","ca":114.98,"revient":21.85,"urssaf":14.14,"wallet":3.13,"inf":0,"benef":69.26},{"id":"MAR-011","date":"2026-03-13","nom":"AMSTERDAM","prenom":"31","type":"boutique_cbd","ca":1370.0,"revient":836.0,"urssaf":168.51,"wallet":0,"inf":0,"benef":332.19},{"id":"MAR-012","date":"2026-03-13","nom":"SAS","prenom":"DOOBIES","type":"boutique_cbd","ca":550.0,"revient":313.0,"urssaf":67.65,"wallet":0,"inf":0,"benef":155.96},{"id":"MAR-013","date":"2026-03-14","nom":"Romeo","prenom":"lebeouf","type":"particulier","ca":59.98,"revient":8.2,"urssaf":7.38,"wallet":1.73,"inf":0,"benef":35.68},{"id":"MAR-014","date":"2026-03-16","nom":"Ellies","prenom":"Foudad","type":"particulier","ca":41.96,"revient":4.16,"urssaf":5.16,"wallet":1.28,"inf":0,"benef":23.96},{"id":"MAR-015","date":"2026-03-17","nom":"Ambrine","prenom":"Aleinou","type":"particulier","ca":134.97,"revient":17.71,"urssaf":16.6,"wallet":3.64,"inf":0,"benef":76.22},{"id":"MAR-016","date":"2026-03-17","nom":"CASA DI","prenom":"CANAPA","type":"boutique_cbd","ca":1425.0,"revient":869.5,"urssaf":175.28,"wallet":0,"inf":0,"benef":353.24},{"id":"MAR-017","date":"2026-03-18","nom":"NC Distrib","prenom":"","type":"particulier","ca":470.0,"revient":251.0,"urssaf":57.81,"wallet":0,"inf":0,"benef":150.4},{"id":"MAR-018","date":"2026-03-18","nom":"Client","prenom":"Google","type":"particulier","ca":72.98,"revient":9.85,"urssaf":8.98,"wallet":1.81,"inf":0,"benef":50.64},{"id":"MAR-019","date":"2026-03-18","nom":"Lucas","prenom":"DN","type":"particulier","ca":50.0,"revient":8.05,"urssaf":6.15,"wallet":1.31,"inf":0,"benef":29.39},{"id":"MAR-020","date":"2026-03-18","nom":"Vapourz","prenom":"LOUNG","type":"boutique_cbd","ca":2440.0,"revient":1664.5,"urssaf":300.12,"wallet":160.0,"inf":0,"benef":288.38},{"id":"MAR-021","date":"2026-03-19","nom":"ART OF","prenom":"WELLNESS","type":"boutique_cbd","ca":450.0,"revient":272.0,"urssaf":55.35,"wallet":0,"inf":0,"benef":112.86},{"id":"MAR-022","date":"2026-03-21","nom":"erwan","prenom":"Rouet","type":"particulier","ca":204.97,"revient":41.7,"urssaf":25.21,"wallet":5.42,"inf":0,"benef":124.04},{"id":"MAR-023","date":"2026-03-22","nom":"Ruben","prenom":"Madore","type":"particulier","ca":71.95,"revient":8.32,"urssaf":8.85,"wallet":2.04,"inf":0,"benef":45.64},{"id":"MAR-024","date":"2026-03-23","nom":"Arnoeld","prenom":"Aden","type":"particulier","ca":64.97,"revient":15.62,"urssaf":7.99,"wallet":1.86,"inf":0,"benef":33.39},{"id":"MAR-025","date":"2026-03-25","nom":"Yannick","prenom":"Jourdan","type":"particulier","ca":174.95,"revient":20.35,"urssaf":21.52,"wallet":4.65,"inf":0,"benef":123.13},{"id":"MAR-026","date":"2026-03-25","nom":"CBD BY","prenom":"CASA","type":"particulier","ca":270.0,"revient":156.0,"urssaf":33.21,"wallet":0,"inf":0,"benef":47.6},{"id":"MAR-027","date":"2026-03-25","nom":"Basile","prenom":"Soom","type":"particulier","ca":211.23,"revient":55.28,"urssaf":25.98,"wallet":5.58,"inf":0,"benef":109.79},{"id":"MAR-028","date":"2026-03-26","nom":"Merlier","prenom":"Theo","type":"particulier","ca":10.0,"revient":17.48,"urssaf":1.23,"wallet":0,"inf":0,"benef":-15.2},{"id":"MAR-029","date":"2026-03-26","nom":"Faustin","prenom":"Canei","type":"particulier","ca":97.48,"revient":25.95,"urssaf":11.99,"wallet":2.69,"inf":0,"benef":49.39},{"id":"MAR-030","date":"2026-03-27","nom":"Anthony","prenom":"Fournier","type":"particulier","ca":46.24,"revient":8.2,"urssaf":5.69,"wallet":1.38,"inf":0,"benef":24.87},{"id":"MAR-031","date":"2026-03-30","nom":"Coffe","prenom":"Bouledog","type":"boutique_cbd","ca":290.0,"revient":180.0,"urssaf":35.67,"wallet":0,"inf":0,"benef":64.54},{"id":"MAR-032","date":"2026-03-30","nom":"Mehdi","prenom":"Redjil","type":"particulier","ca":87.49,"revient":22.2,"urssaf":10.76,"wallet":2.43,"inf":0,"benef":47.7},{"id":"MAR-033","date":"2026-03-30","nom":"Corentin","prenom":"Pinel","type":"particulier","ca":119.48,"revient":15.56,"urssaf":14.7,"wallet":3.24,"inf":0,"benef":78.38},{"id":"AVR-001","date":"2026-04-01","nom":"Vanhuisse","prenom":"Corentin","type":"particulier","ca":270.0,"revient":164.83,"urssaf":33.21,"wallet":0,"inf":0,"benef":37.77},{"id":"AVR-002","date":"2026-04-01","nom":"Échantillons X2","prenom":"","type":"echantillon","ca":23.0,"revient":20.54,"urssaf":2.83,"wallet":0,"inf":0,"benef":-22.95},{"id":"AVR-003","date":"2026-04-06","nom":"Soler","prenom":"Alexis","type":"particulier","ca":-37.98,"revient":3.28,"urssaf":-4.67,"wallet":1.9,"inf":0,"benef":-43.59},{"id":"AVR-004","date":"2026-04-07","nom":"Gourdain","prenom":"Alexandra","type":"particulier","ca":130.49,"revient":17.0,"urssaf":16.05,"wallet":3.52,"inf":0,"benef":66.62},{"id":"AVR-005","date":"2026-04-07","nom":"Lesseine","prenom":"Louis","type":"particulier","ca":314.97,"revient":65.5,"urssaf":38.74,"wallet":8.21,"inf":0,"benef":193.92},{"id":"AVR-006","date":"2026-04-07","nom":"Beaubrun","prenom":"Tom","type":"particulier","ca":44.97,"revient":4.78,"urssaf":5.53,"wallet":1.35,"inf":0,"benef":26.21},{"id":"AVR-007","date":"2026-04-07","nom":"Chasseing","prenom":"Aloïs","type":"particulier","ca":109.97,"revient":12.14,"urssaf":13.53,"wallet":3.0,"inf":0,"benef":75.2},{"id":"AVR-008","date":"2026-04-07","nom":"Pochon Vert","prenom":"","type":"particulier","ca":160.0,"revient":86.0,"urssaf":19.68,"wallet":0,"inf":0,"benef":40.53},{"id":"AVR-009","date":"2026-04-07","nom":"CBD by Casa","prenom":"","type":"particulier","ca":462.5,"revient":320.5,"urssaf":56.89,"wallet":0,"inf":0,"benef":72.62},{"id":"AVR-010","date":"2026-04-07","nom":"H Corse","prenom":"G2Kush 25g→Acc","type":"particulier","ca":200.0,"revient":77.75,"urssaf":24.6,"wallet":0,"inf":0,"benef":92.55},{"id":"AVR-011","date":"2026-04-07","nom":"TS Store","prenom":"","type":"particulier","ca":340.0,"revient":203.0,"urssaf":41.82,"wallet":0,"inf":0,"benef":84.39},{"id":"AVR-012","date":"2026-04-08","nom":"Hessami","prenom":"Dariush","type":"particulier","ca":301.62,"revient":67.04,"urssaf":37.1,"wallet":11.4,"inf":0,"benef":161.09},{"id":"AVR-013","date":"2026-04-08","nom":"ADN Premium","prenom":"Paiement carte","type":"particulier","ca":195.0,"revient":144.75,"urssaf":23.98,"wallet":7.74,"inf":0,"benef":7.74},{"id":"AVR-014","date":"2026-04-09","nom":"Gelly","prenom":"Michel","type":"particulier","ca":49.97,"revient":3.14,"urssaf":6.15,"wallet":1.48,"inf":0,"benef":31.1},{"id":"AVR-015","date":"2026-04-09","nom":"Czyzak","prenom":"Sacha","type":"particulier","ca":126.15,"revient":18.3,"urssaf":15.52,"wallet":3.41,"inf":0,"benef":81.46},{"id":"AVR-016","date":"2026-04-09","nom":"Green Witch","prenom":"Herboriste","type":"particulier","ca":10.0,"revient":13.63,"urssaf":1.23,"wallet":0.62,"inf":0,"benef":-11.97},{"id":"AVR-017","date":"2026-04-10","nom":"Papa","prenom":"Alessandro","type":"particulier","ca":116.79,"revient":11.3,"urssaf":14.37,"wallet":4.72,"inf":0,"benef":61.41},{"id":"AVR-018","date":"2026-04-10","nom":"Uban CBD","prenom":"UK","type":"particulier","ca":20.0,"revient":16.64,"urssaf":2.46,"wallet":0.9,"inf":0,"benef":-18.98},{"id":"AVR-019","date":"2026-04-11","nom":"Evans","prenom":"Kieran","type":"particulier","ca":56.23,"revient":3.87,"urssaf":6.92,"wallet":2.33,"inf":0,"benef":20.13},{"id":"AVR-020","date":"2026-04-12","nom":"Rouet-Bosc","prenom":"Erwan","type":"particulier","ca":154.98,"revient":21.5,"urssaf":19.06,"wallet":4.15,"inf":0,"benef":104.17},{"id":"AVR-021","date":"2026-04-15","nom":"Lesseine","prenom":"Louis","type":"particulier","ca":114.98,"revient":22.0,"urssaf":14.14,"wallet":3.13,"inf":0,"benef":70.61},{"id":"AVR-022","date":"2026-04-15","nom":"Candyland Pots","prenom":"7 pots 5g Candyland","type":"particulier","ca":94.5,"revient":59.5,"urssaf":11.62,"wallet":0,"inf":0,"benef":15.38},{"id":"AVR-023","date":"2026-04-15","nom":"Commande Web","prenom":"","type":"particulier","ca":50.0,"revient":9.7,"urssaf":6.15,"wallet":0,"inf":0,"benef":33.45},{"id":"AVR-024","date":"2026-04-17","nom":"Azzedine","prenom":"","type":"particulier","ca":210.0,"revient":90.0,"urssaf":25.83,"wallet":0,"inf":0,"benef":83.38},{"id":"AVR-025","date":"2026-04-17","nom":"Terroir CBD","prenom":"Échantillons","type":"echantillon","ca":30.0,"revient":32.67,"urssaf":3.69,"wallet":0,"inf":0,"benef":-27.56},{"id":"AVR-026","date":"2026-04-17","nom":"MHA+Dispencherbe","prenom":"","type":"particulier","ca":15.0,"revient":15.64,"urssaf":1.84,"wallet":0,"inf":0,"benef":-8.97},{"id":"AVR-027","date":"2026-04-18","nom":"Franzke","prenom":"Constantin","type":"particulier","ca":49.98,"revient":5.6,"urssaf":6.15,"wallet":1.48,"inf":0,"benef":24.35},{"id":"AVR-028","date":"2026-04-20","nom":"Redjil","prenom":"Mehdi","type":"particulier","ca":78.59,"revient":14.12,"urssaf":9.67,"wallet":2.21,"inf":0,"benef":45.49},{"id":"AVR-029","date":"2026-04-20","nom":"Delville","prenom":"Elodie — Caramel Kush 5g→Acc","type":"particulier","ca":31.23,"revient":3.0,"urssaf":3.84,"wallet":1.0,"inf":0,"benef":16.79},{"id":"AVR-030","date":"2026-04-20","nom":"Choukroun","prenom":"Jeremy","type":"particulier","ca":84.99,"revient":24.57,"urssaf":10.45,"wallet":2.37,"inf":0,"benef":40.49},{"id":"AVR-031","date":"2026-04-20","nom":"Ploquin","prenom":"Deva — Espèces hors wallet","type":"particulier","ca":30.0,"revient":6.85,"urssaf":3.69,"wallet":0,"inf":0,"benef":16.46},{"id":"AVR-032","date":"2026-04-23","nom":"Soum","prenom":"Basile","type":"particulier","ca":249.97,"revient":71.7,"urssaf":30.75,"wallet":6.56,"inf":0,"benef":131.17},{"id":"AVR-033","date":"2026-04-23","nom":"Pugliese","prenom":"Lisandro","type":"particulier","ca":74.96,"revient":8.9,"urssaf":9.22,"wallet":2.11,"inf":0,"benef":46.13},{"id":"AVR-034","date":"2026-04-23","nom":"Caneï","prenom":"Faustin","type":"particulier","ca":114.98,"revient":48.3,"urssaf":14.14,"wallet":3.13,"inf":0,"benef":40.95},{"id":"AVR-035","date":"2026-04-24","nom":"Serres à Colas","prenom":"","type":"particulier","ca":208.7,"revient":90.0,"urssaf":25.67,"wallet":0,"inf":0,"benef":82.24},{"id":"AVR-036","date":"2026-04-25","nom":"Sweet H","prenom":"Espèces — Lemon Cheese 100g→Acc(~10€)","type":"particulier","ca":235.0,"revient":118.25,"urssaf":28.91,"wallet":0,"inf":0,"benef":87.84},{"id":"AVR-037","date":"2026-04-26","nom":"Woodward","prenom":"Jack","type":"particulier","ca":50.99,"revient":6.5,"urssaf":6.27,"wallet":2.14,"inf":0,"benef":17.09},{"id":"AVR-038","date":"2026-04-27","nom":"Bommet","prenom":"Adrien","type":"particulier","ca":94.98,"revient":9.96,"urssaf":11.68,"wallet":2.62,"inf":0,"benef":54.73},{"id":"AVR-039","date":"2026-04-27","nom":"Seed's Experience","prenom":"","type":"particulier","ca":725.0,"revient":410.0,"urssaf":89.17,"wallet":0,"inf":0,"benef":225.82},{"id":"AVR-040","date":"2026-04-27","nom":"Planta Verte","prenom":"Échantillons","type":"echantillon","ca":30.0,"revient":30.5,"urssaf":3.69,"wallet":0,"inf":0,"benef":-18.09},{"id":"AVR-041","date":"2026-04-27","nom":"Dépôt Seed's","prenom":"Dépôt vente 29 prerolls","type":"particulier","ca":49.3,"revient":0.0,"urssaf":6.06,"wallet":0,"inf":0,"benef":14.24},{"id":"AVR-042","date":"2026-04-28","nom":"CBD Carnon","prenom":"Espèces hors wallet — Gova 5€","type":"particulier","ca":140.0,"revient":87.0,"urssaf":17.22,"wallet":0,"inf":0,"benef":35.78},{"id":"AVR-043","date":"2026-04-29","nom":"Smoke Shop","prenom":"Dépôt","type":"particulier","ca":17.0,"revient":0.0,"urssaf":2.09,"wallet":0,"inf":0,"benef":4.91},{"id":"AVR-044","date":"2026-04-30","nom":"Musée Fumeur","prenom":"Cannabia 2.5g→Acc","type":"particulier","ca":410.0,"revient":196.99,"urssaf":50.43,"wallet":0,"inf":0,"benef":141.38}];
 
 const DEFAULT_PRODUCTS = [
-  // Fleurs principales
   {id:'lamponi',     name:'Lamponi',          price:0.82, cat:'Fleurs'},
   {id:'lemon_candy', name:'Lemon Candy',       price:0.82, cat:'Fleurs'},
   {id:'motorbreath', name:'Motorbreath',       price:0.90, cat:'Fleurs'},
@@ -417,7 +488,6 @@ const DEFAULT_PRODUCTS = [
   {id:'bubble_diesel',name:'Bubble Diesel',   price:0.90, cat:'Fleurs'},
   {id:'tropicana',   name:'Tropicana Cookies', price:0.90, cat:'Fleurs'},
   {id:'wedding_cake',name:'Wedding Cake',      price:0.82, cat:'Fleurs'},
-  // Premium
   {id:'acapulco',    name:'Acapulco Gold',     price:1.80, cat:'Premium'},
   {id:'jealousy',    name:'Jealousy',          price:1.325,cat:'Premium'},
   {id:'white_rhino', name:'White Rhino',       price:1.70, cat:'Premium'},
@@ -427,25 +497,21 @@ const DEFAULT_PRODUCTS = [
   {id:'strawnana',   name:'Strawnana',         price:1.27, cat:'Premium'},
   {id:'it9',         name:'IT #9',             price:1.27, cat:'Premium'},
   {id:'phantom_og',  name:'Phantom OG',        price:1.65, cat:'Premium'},
-  // Hash
   {id:'hash34',      name:'Hash 34',           price:0.90, cat:'Hash'},
   {id:'gelato_res',  name:'Gelato Résine',     price:0.82, cat:'Hash'},
-  // CBG / Spécial
   {id:'ozk_cbg',     name:'OZK CBG',          price:1.27, cat:'CBG'},
-  // Petites quantités
   {id:'mango_sb',    name:'Mango SB',          price:0.20, cat:'Petits prix'},
   {id:'small_buds',  name:'Small Buds',        price:0.20, cat:'Petits prix'},
   {id:'trim',        name:'Trim',              price:0.15, cat:'Petits prix'},
-  // Autres (€ directs, pas /g)
   {id:'accessoires', name:'Accessoires',       price:1.00, cat:'Autres', direct:true},
 ];
 
 const DEFAULT_FF = [
   {id:'ff1',nom:'Shopify',montant:150},
   {id:'ff2',nom:'Google Workspace',montant:9.72},
-  {id:'ff3',nom:'Box Stockage ×3',montant:97.83},
+  {id:'ff3',nom:'Box Stockage x3',montant:97.83},
   {id:'ff4',nom:'Spotify',montant:12.14},
-  {id:'ff5',nom:'Lycamobile ×2',montant:18.98},
+  {id:'ff5',nom:'Lycamobile x2',montant:18.98},
   {id:'ff6',nom:'Viva Wallet',montant:14.99},
 ];
 
@@ -459,24 +525,31 @@ const MONTH_LABELS = {
 let orders = [];
 let products = [];
 let fraisFixes = [];
+let monthlyFF = {};      // {'2026-01':[{id,nom,montant}], ...}
 let settings = {pin:'1234', seuil:77700, urssafRate:12.3, impotsRate:25};
 let filterMonth = 'all';
+let selectedFFMonth = null; // null = modèle global
+let editingOrderId = null;
+let editingOrderMode = 'add'; // 'add' or 'edit'
 
 function load(){
-  const o = localStorage.getItem('gaz_orders');
-  const p = localStorage.getItem('gaz_products');
-  const f = localStorage.getItem('gaz_ff');
-  const s = localStorage.getItem('gaz_settings');
-  orders   = o ? JSON.parse(o) : JSON.parse(JSON.stringify(SEED));
-  products = p ? JSON.parse(p) : JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
-  fraisFixes = f ? JSON.parse(f) : JSON.parse(JSON.stringify(DEFAULT_FF));
+  const o  = localStorage.getItem('gaz_orders');
+  const p  = localStorage.getItem('gaz_products');
+  const f  = localStorage.getItem('gaz_ff');
+  const mf = localStorage.getItem('gaz_monthly_ff');
+  const s  = localStorage.getItem('gaz_settings');
+  orders     = o  ? JSON.parse(o)  : JSON.parse(JSON.stringify(SEED));
+  products   = p  ? JSON.parse(p)  : JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+  fraisFixes = f  ? JSON.parse(f)  : JSON.parse(JSON.stringify(DEFAULT_FF));
+  monthlyFF  = mf ? JSON.parse(mf) : {};
   if(s) settings = {...settings, ...JSON.parse(s)};
 }
 function save(){
-  localStorage.setItem('gaz_orders',   JSON.stringify(orders));
-  localStorage.setItem('gaz_products', JSON.stringify(products));
-  localStorage.setItem('gaz_ff',       JSON.stringify(fraisFixes));
-  localStorage.setItem('gaz_settings', JSON.stringify(settings));
+  localStorage.setItem('gaz_orders',     JSON.stringify(orders));
+  localStorage.setItem('gaz_products',   JSON.stringify(products));
+  localStorage.setItem('gaz_ff',         JSON.stringify(fraisFixes));
+  localStorage.setItem('gaz_monthly_ff', JSON.stringify(monthlyFF));
+  localStorage.setItem('gaz_settings',   JSON.stringify(settings));
 }
 
 // ===================== HELPERS =====================
@@ -485,21 +558,26 @@ const fmt = (n, d=2) => {
   const v = typeof n==='string'?parseFloat(n):n;
   return v.toLocaleString('fr-FR',{minimumFractionDigits:d,maximumFractionDigits:d})+' €';
 };
-const fmtK = n => Math.abs(n)>=1000 ? (n/1000).toFixed(1).replace('.',',')+'k €' : fmt(n);
+const fmtK = n => Math.abs(n)>=1000 ? (n/1000).toFixed(1).replace('.',',')+' k€' : fmt(n);
 const colorVal = n => n>0?'pos':n<0?'neg':'';
 const months = () => [...new Set(orders.map(o=>o.date.slice(0,7)))].sort();
 const v = id => parseFloat(document.getElementById(id)?.value)||0;
 
-function calcMonthStats(mo, ff){
-  const ca        = mo.reduce((s,o)=>s+o.ca,0);
-  const revient   = mo.reduce((s,o)=>s+o.revient,0);
-  const urssaf    = mo.reduce((s,o)=>s+o.urssaf,0);
-  const wallet    = mo.reduce((s,o)=>s+o.wallet,0);
-  const inf       = mo.reduce((s,o)=>s+o.inf,0);
-  const benefBrut = mo.reduce((s,o)=>s+o.benef,0);
-  const benefNet  = benefBrut - ff;
-  const impots    = Math.max(0, benefNet * settings.impotsRate/100);
-  return {ca,revient,urssaf,wallet,inf,benefBrut,benefNet,impots,n:mo.length};
+function getFFForMonth(month){
+  return (monthlyFF[month] !== undefined) ? monthlyFF[month] : fraisFixes;
+}
+
+function calcMonthStats(mo, ffList){
+  const ffTotal = ffList.reduce((s,f)=>s+f.montant,0);
+  const ca       = mo.reduce((s,o)=>s+o.ca,0);
+  const revient  = mo.reduce((s,o)=>s+o.revient,0);
+  const urssaf   = mo.reduce((s,o)=>s+o.urssaf,0);
+  const wallet   = mo.reduce((s,o)=>s+o.wallet,0);
+  const inf      = mo.reduce((s,o)=>s+o.inf,0);
+  const benefBrut= mo.reduce((s,o)=>s+o.benef,0);
+  const benefNet = benefBrut - ffTotal;
+  const impots   = Math.max(0, benefNet * settings.impotsRate/100);
+  return {ca,revient,urssaf,wallet,inf,benefBrut,benefNet,impots,n:mo.length,ffTotal};
 }
 
 // ===================== PIN =====================
@@ -510,7 +588,7 @@ function buildKeypad(){
   ['1','2','3','4','5','6','7','8','9','','0','⌫'].forEach(k=>{
     const btn = document.createElement('button');
     btn.className='pin-btn'; btn.textContent=k;
-    if(k==='') btn.disabled=true, btn.style.cssText='background:transparent;border:none';
+    if(k==='') { btn.disabled=true; btn.style.cssText='background:transparent;border:none'; }
     btn.onclick=()=>pinKey(k);
     kp.appendChild(btn);
   });
@@ -546,18 +624,30 @@ function showTab(t, el){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('p-'+t).classList.add('active');
   (el||event?.currentTarget)?.classList.add('active');
-  if(t==='commandes') { renderTable(); buildMonthFilters(); }
+  if(t==='commandes'){ renderTable(); buildMonthFilters(); }
   if(t==='produits')  renderProducts();
-  if(t==='frais')     renderFF();
+  if(t==='frais')     { buildFFMonthTabs(); renderFF(); }
   if(t==='bilan')     renderBilan();
   if(t==='settings')  loadSettings();
 }
 
+function goToMonth(m){
+  filterMonth = m;
+  const btns = document.querySelectorAll('.tab-btn');
+  btns.forEach(b=>b.classList.remove('active'));
+  // find commandes tab button
+  const cmdBtn = [...btns].find(b=>b.textContent.trim()==='Commandes');
+  if(cmdBtn) cmdBtn.classList.add('active');
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('p-commandes').classList.add('active');
+  buildMonthFilters();
+  renderTable();
+}
+
 // ===================== DASHBOARD =====================
 function renderDashboard(){
-  const ffTotal = fraisFixes.reduce((s,f)=>s+f.montant,0);
   const ms = months();
-  const allStats = ms.map(m=>calcMonthStats(orders.filter(o=>o.date.startsWith(m)), ffTotal));
+  const allStats = ms.map(m => calcMonthStats(orders.filter(o=>o.date.startsWith(m)), getFFForMonth(m)));
   const totCA       = allStats.reduce((s,x)=>s+x.ca,0);
   const totBenefNet = allStats.reduce((s,x)=>s+x.benefNet,0);
   const totURSSAF   = allStats.reduce((s,x)=>s+x.urssaf,0);
@@ -567,33 +657,31 @@ function renderDashboard(){
 
   document.getElementById('hdr-date').textContent = new Date().toLocaleDateString('fr-FR',{day:'2-digit',month:'long',year:'numeric'}).toUpperCase();
 
-  document.getElementById('kpi-grid').innerHTML = `
-    <div class="kpi gold"><div class="kpi-label">CA Cumulé</div><div class="kpi-value gold">${fmtK(totCA)}</div><div class="kpi-sub">${orders.length} commandes</div></div>
-    <div class="kpi green"><div class="kpi-label">Bénéfice Net</div><div class="kpi-value green">${fmtK(totBenefNet)}</div><div class="kpi-sub">Après frais fixes</div></div>
-    <div class="kpi amber"><div class="kpi-label">URSSAF dû</div><div class="kpi-value amber">${fmtK(totURSSAF)}</div><div class="kpi-sub">12,3 % du CA</div></div>
-    <div class="kpi red"><div class="kpi-label">Provision impôts</div><div class="kpi-value red">${fmtK(totImpots)}</div><div class="kpi-sub">${settings.impotsRate} % bén. net</div></div>`;
+  document.getElementById('kpi-grid').innerHTML =
+    '<div class="kpi gold"><div class="kpi-label">CA Cumulé</div><div class="kpi-value gold">'+fmtK(totCA)+'</div><div class="kpi-sub">'+orders.length+' commandes</div></div>'+
+    '<div class="kpi green"><div class="kpi-label">Bénéfice Net</div><div class="kpi-value green">'+fmtK(totBenefNet)+'</div><div class="kpi-sub">Après frais fixes</div></div>'+
+    '<div class="kpi amber"><div class="kpi-label">URSSAF dû</div><div class="kpi-value amber">'+fmtK(totURSSAF)+'</div><div class="kpi-sub">'+settings.urssafRate+' % du CA</div></div>'+
+    '<div class="kpi red"><div class="kpi-label">Provision impôts</div><div class="kpi-value red">'+fmtK(totImpots)+'</div><div class="kpi-sub">'+settings.impotsRate+' % bén. net</div></div>';
 
-  document.getElementById('prog-section').innerHTML = `
-    <div class="prog-title">SEUIL AUTO-ENTREPRENEUR</div>
-    <div class="prog-row">
-      <div class="prog-label">CA / Seuil (${(settings.seuil/1000).toFixed(1)}k€/an)</div>
-      <div class="prog-bar"><div class="prog-fill ${seuilColor}" style="width:${seuilPct}%"></div></div>
-      <div class="prog-pct">${seuilPct.toFixed(1)}%</div>
-    </div>
-    <div style="font-size:12px;color:var(--muted);margin-top:.5rem">
-      ${fmt(totCA)} / ${fmt(settings.seuil,0)} — Restant : <span style="color:var(--${seuilColor})">${fmt(settings.seuil-totCA)}</span>
-    </div>`;
+  document.getElementById('prog-section').innerHTML =
+    '<div class="prog-title">SEUIL AUTO-ENTREPRENEUR</div>'+
+    '<div class="prog-row">'+
+    '<div class="prog-label">CA / Seuil ('+( settings.seuil/1000).toFixed(1)+'k€/an)</div>'+
+    '<div class="prog-bar"><div class="prog-fill '+seuilColor+'" style="width:'+seuilPct+'%"></div></div>'+
+    '<div class="prog-pct">'+seuilPct.toFixed(1)+'%</div></div>'+
+    '<div style="font-size:12px;color:var(--muted);margin-top:.5rem">'+
+    fmt(totCA)+' / '+fmt(settings.seuil,0)+' — Restant : <span style="color:var(--'+seuilColor+')">'+fmt(settings.seuil-totCA)+'</span></div>';
 
-  document.getElementById('month-grid').innerHTML = ms.map((m,i)=>{
-    const s=allStats[i];
-    return `<div class="month-card">
-      <div class="month-card-title">${MONTH_LABELS[m]||m}</div>
-      <div class="month-row"><span>CA</span><span>${fmt(s.ca,0)}</span></div>
-      <div class="month-row"><span>Revient</span><span>${fmt(s.revient,0)}</span></div>
-      <div class="month-row urssaf"><span>URSSAF</span><span>${fmt(s.urssaf,0)}</span></div>
-      <div class="month-row benef"><span>Bén. net</span><span>${fmt(s.benefNet,0)}</span></div>
-      <div class="month-row"><span>Commandes</span><span>${s.n}</span></div>
-    </div>`;
+  document.getElementById('month-grid').innerHTML = ms.map(function(m,i){
+    const s = allStats[i];
+    return '<div class="month-card" onclick="goToMonth(\'' + m + '\')" title="Voir les commandes de '+(MONTH_LABELS[m]||m)+'">'+
+      '<div class="month-card-title">'+(MONTH_LABELS[m]||m)+'</div>'+
+      '<div class="month-row"><span>CA</span><span>'+fmt(s.ca,0)+'</span></div>'+
+      '<div class="month-row"><span>Revient</span><span>'+fmt(s.revient,0)+'</span></div>'+
+      '<div class="month-row urssaf"><span>URSSAF</span><span>'+fmt(s.urssaf,0)+'</span></div>'+
+      '<div class="month-row benef"><span>Bén. net</span><span>'+fmt(s.benefNet,0)+'</span></div>'+
+      '<div class="month-row"><span>Commandes</span><span>'+s.n+'</span></div>'+
+      '</div>';
   }).join('');
 }
 
@@ -601,118 +689,93 @@ function renderDashboard(){
 function buildProductForm(){
   const grid = document.getElementById('prod-form-grid');
   if(!grid) return;
-  grid.innerHTML = products.map(p=>`
-    <div class="prod-cell" id="pc-${p.id}">
-      <label title="${p.name} — ${p.price.toFixed(3)} €/g">${p.name} <span>${p.direct?'€ direct':p.price.toFixed(3)+' €/g'}</span></label>
-      <input type="number" step="${p.direct?'0.01':'0.5'}" min="0" id="pf-${p.id}"
-        placeholder="${p.direct?'0.00':'0'}" oninput="liveCalc();updateProdCell('${p.id}')">
-    </div>`).join('');
+  grid.innerHTML = products.map(function(p){
+    const step = p.direct ? '0.01' : '0.5';
+    const ph = p.direct ? '0.00' : '0';
+    const lbl = p.direct ? '€ direct' : p.price.toFixed(3)+' €/g';
+    return '<div class="prod-cell" id="pc-'+p.id+'">'+
+      '<label title="'+p.name+'">'+p.name+' <span>'+lbl+'</span></label>'+
+      '<input type="number" step="'+step+'" min="0" id="pf-'+p.id+'" placeholder="'+ph+'" oninput="liveCalc();updateProdCell(\'' + p.id + '\'">'+
+      '</div>';
+  }).join('');
 }
 
 function updateProdCell(id){
   const inp = document.getElementById('pf-'+id);
   const cell = document.getElementById('pc-'+id);
-  if(inp && cell){
-    const hasVal = parseFloat(inp.value)>0;
-    cell.classList.toggle('has-val', hasVal);
-  }
+  if(inp && cell) cell.classList.toggle('has-val', parseFloat(inp.value)>0);
 }
 
 function liveCalc(){
-  // Prix de revient from products
-  let revient = 0;
-  const details = [];
-  products.forEach(p=>{
+  let revient=0; const details=[];
+  products.forEach(function(p){
     const qty = parseFloat(document.getElementById('pf-'+p.id)?.value)||0;
     if(qty>0){
-      const cost = p.direct ? qty : qty * p.price;
+      const cost = p.direct ? qty : qty*p.price;
       revient += cost;
-      details.push(`${p.name}: ${p.direct?qty+'€':qty+'g × '+p.price.toFixed(3)+'€'}`);
+      details.push(p.name+': '+(p.direct?qty+'€':qty+'g'));
     }
   });
   document.getElementById('calc-revient').textContent = fmt(revient);
   document.getElementById('prod-detail').textContent = details.slice(0,3).join(' | ')+(details.length>3?' + ...':'');
-
-  // Prix d'envoi
-  const carton   = v('f-carton');
-  const pochon   = v('f-pochon') * 0.70;
-  const jar      = v('f-jar');
-  const stickers = v('f-stickers');
-  const preroll  = v('f-preroll');
-  const pot      = v('f-pot');
-  const livraison= v('f-livraison');
-  const prixEnvoi = carton+pochon+jar+stickers+preroll+pot+livraison;
-  document.getElementById('calc-envoi').value = fmt(prixEnvoi);
-
-  // URSSAF
-  const ca = v('f-ca');
-  const urssaf = ca * settings.urssafRate/100;
-  document.getElementById('calc-urssaf').value = fmt(urssaf);
-
-  // Bénéfice
-  const wallet = v('f-wallet');
-  const inf    = v('f-inf');
-  const benef  = ca - revient - prixEnvoi - urssaf - wallet - inf;
-  const bEl = document.getElementById('calc-benef');
-  bEl.textContent = isNaN(benef)||ca===0 ? '—' : fmt(benef);
-  bEl.className = ca>0 ? colorVal(benef) : '';
+  const carton=v('f-carton'), pochon=v('f-pochon')*0.70, jar=v('f-jar'), stickers=v('f-stickers');
+  const preroll=v('f-preroll'), pot=v('f-pot'), livraison=v('f-livraison');
+  const prixEnvoi=carton+pochon+jar+stickers+preroll+pot+livraison;
+  document.getElementById('calc-envoi').value=fmt(prixEnvoi);
+  const ca=v('f-ca'), urssaf=ca*settings.urssafRate/100;
+  document.getElementById('calc-urssaf').value=fmt(urssaf);
+  const wallet=v('f-wallet'), inf=v('f-inf');
+  const benef=ca-revient-prixEnvoi-urssaf-wallet-inf;
+  const bEl=document.getElementById('calc-benef');
+  bEl.textContent=isNaN(benef)||ca===0?'—':fmt(benef);
+  bEl.className=ca>0?colorVal(benef):'';
 }
 
 function clearForm(){
+  editingOrderMode='add';
+  editingOrderId=null;
+  document.getElementById('form-add-title').textContent='+ NOUVELLE COMMANDE';
+  document.getElementById('form-submit-btn').textContent='Ajouter la commande';
   ['f-date','f-nom','f-prenom','f-ca','f-wallet','f-inf',
-   'f-carton','f-pochon','f-jar','f-stickers','f-preroll','f-pot','f-livraison'].forEach(id=>{
+   'f-carton','f-pochon','f-jar','f-stickers','f-preroll','f-pot','f-livraison'].forEach(function(id){
     const el=document.getElementById(id); if(el) el.value='';
   });
-  products.forEach(p=>{
+  products.forEach(function(p){
     const el=document.getElementById('pf-'+p.id); if(el) el.value='';
     const cell=document.getElementById('pc-'+p.id); if(cell) cell.classList.remove('has-val');
   });
-  ['calc-revient','calc-envoi','calc-urssaf','calc-benef','prod-detail'].forEach(id=>{
+  ['calc-revient','calc-envoi','calc-urssaf','calc-benef','prod-detail'].forEach(function(id){
     const el=document.getElementById(id);
-    if(el){if(id==='calc-revient') el.textContent='0,00 €'; else if(id==='calc-benef') el.textContent='—'; else if(id==='prod-detail') el.textContent=''; else el.value='';}
+    if(!el) return;
+    if(id==='calc-revient') el.textContent='0,00 €';
+    else if(id==='calc-benef') el.textContent='—';
+    else if(id==='prod-detail') el.textContent='';
+    else el.value='';
   });
 }
 
+function submitForm(){
+  if(editingOrderMode==='edit') updateOrderFromForm();
+  else addOrder();
+}
+
 function addOrder(){
-  const date = document.getElementById('f-date').value;
-  const nom  = document.getElementById('f-nom').value.trim();
-  const ca   = v('f-ca');
-  if(!date||!nom||ca===0){
-    document.getElementById('form-msg').textContent='Date, nom et CA sont requis.';
-    return;
-  }
-
-  // Recalculate all values
+  const date=document.getElementById('f-date').value;
+  const nom=document.getElementById('f-nom').value.trim();
+  const ca=v('f-ca');
+  if(!date||!nom||ca===0){ document.getElementById('form-msg').textContent='Date, nom et CA requis.'; return; }
   let revient=0;
-  products.forEach(p=>{
-    const qty=parseFloat(document.getElementById('pf-'+p.id)?.value)||0;
-    if(qty>0) revient += p.direct?qty:qty*p.price;
-  });
-  const carton  = v('f-carton');
-  const pochon  = v('f-pochon')*0.70;
-  const jar     = v('f-jar');
-  const stk     = v('f-stickers');
-  const preroll = v('f-preroll');
-  const pot     = v('f-pot');
-  const livr    = v('f-livraison');
-  const prixEnvoi = carton+pochon+jar+stk+preroll+pot+livr;
-  const urssaf  = ca * settings.urssafRate/100;
-  const wallet  = v('f-wallet');
-  const inf     = v('f-inf');
-  const benef   = ca - revient - prixEnvoi - urssaf - wallet - inf;
-
-  const r = (x) => Math.round(x*100)/100;
+  products.forEach(function(p){ const qty=parseFloat(document.getElementById('pf-'+p.id)?.value)||0; if(qty>0) revient+=p.direct?qty:qty*p.price; });
+  const carton=v('f-carton'), pochon=v('f-pochon')*0.70, jar=v('f-jar'), stk=v('f-stickers'), preroll=v('f-preroll'), pot=v('f-pot'), livr=v('f-livraison');
+  const prixEnvoi=carton+pochon+jar+stk+preroll+pot+livr;
+  const urssaf=ca*settings.urssafRate/100, wallet=v('f-wallet'), inf=v('f-inf');
+  const benef=ca-revient-prixEnvoi-urssaf-wallet-inf;
+  const r=x=>Math.round(x*100)/100;
   orders.push({
-    id: 'MAN-'+Date.now(),
-    date, nom,
-    prenom: document.getElementById('f-prenom').value.trim(),
-    type:   document.getElementById('f-type').value,
-    ca:      r(ca),
-    revient: r(revient + prixEnvoi),  // total cost (produits + envoi)
-    urssaf:  r(urssaf),
-    wallet:  r(wallet),
-    inf:     r(inf),
-    benef:   r(benef),
+    id:'MAN-'+Date.now(), date, nom,
+    prenom:document.getElementById('f-prenom').value.trim(),
+    type:document.getElementById('f-type').value,
+    ca:r(ca), revient:r(revient+prixEnvoi), urssaf:r(urssaf), wallet:r(wallet), inf:r(inf), benef:r(benef)
   });
   save();
   document.getElementById('form-msg').textContent='✓ Commande ajoutée';
@@ -721,13 +784,115 @@ function addOrder(){
   buildMonthFilters(); renderTable(); renderDashboard();
 }
 
-// ===================== COMMANDES — TABLE =====================
+// ===================== EDIT ORDER (inline form) =====================
+function editOrderInForm(id){
+  const o = orders.find(x=>x.id===id);
+  if(!o) return;
+  editingOrderId = id;
+  editingOrderMode = 'edit';
+  document.getElementById('form-add-title').textContent = 'MODIFIER — '+o.nom+(o.prenom?' '+o.prenom:'')+' ('+o.date+')';
+  document.getElementById('form-submit-btn').textContent = '✓ Enregistrer modification';
+  document.getElementById('f-date').value = o.date;
+  document.getElementById('f-nom').value = o.nom;
+  document.getElementById('f-prenom').value = o.prenom||'';
+  document.getElementById('f-type').value = o.type;
+  document.getElementById('f-ca').value = o.ca;
+  document.getElementById('f-wallet').value = o.wallet||'';
+  document.getElementById('f-inf').value = o.inf||'';
+  // Can't recover product breakdown, set revient manually note
+  document.getElementById('form-msg').textContent = '⚠ Revient non récupérable — utilisez le modal ✏ pour modifier les montants directement';
+  document.getElementById('form-add').scrollIntoView({behavior:'smooth'});
+}
+
+function updateOrderFromForm(){
+  const idx = orders.findIndex(o=>o.id===editingOrderId);
+  if(idx<0){ clearForm(); return; }
+  const date=document.getElementById('f-date').value;
+  const nom=document.getElementById('f-nom').value.trim();
+  const ca=v('f-ca');
+  if(!date||!nom||ca===0){ document.getElementById('form-msg').textContent='Date, nom et CA requis.'; return; }
+  const r=x=>Math.round(x*100)/100;
+  const urssaf=r(ca*settings.urssafRate/100), wallet=r(v('f-wallet')), inf=r(v('f-inf'));
+  // Recalculate revient from products if any set
+  let revientProd=0;
+  products.forEach(function(p){ const qty=parseFloat(document.getElementById('pf-'+p.id)?.value)||0; if(qty>0) revientProd+=p.direct?qty:qty*p.price; });
+  const carton=v('f-carton'), pochon=v('f-pochon')*0.70, jar=v('f-jar'), stk=v('f-stickers'), preroll=v('f-preroll'), pot=v('f-pot'), livr=v('f-livraison');
+  const prixEnvoi=carton+pochon+jar+stk+preroll+pot+livr;
+  const revient = revientProd+prixEnvoi > 0 ? r(revientProd+prixEnvoi) : orders[idx].revient;
+  const benef=r(ca-revient-urssaf-wallet-inf);
+  orders[idx] = {...orders[idx], date, nom,
+    prenom:document.getElementById('f-prenom').value.trim(),
+    type:document.getElementById('f-type').value,
+    ca:r(ca), revient, urssaf, wallet, inf, benef};
+  save();
+  document.getElementById('form-msg').textContent='✓ Commande mise à jour';
+  clearForm();
+  setTimeout(()=>document.getElementById('form-msg').textContent='',2500);
+  buildMonthFilters(); renderTable(); renderDashboard();
+}
+
+// ===================== EDIT MODAL (direct values) =====================
+function openEditModal(id){
+  const o = orders.find(x=>x.id===id);
+  if(!o) return;
+  editingOrderId = id;
+  document.getElementById('edit-modal-id').textContent = 'ID: '+o.id+' — Modification directe des montants';
+  document.getElementById('em-date').value   = o.date;
+  document.getElementById('em-nom').value    = o.nom;
+  document.getElementById('em-prenom').value = o.prenom||'';
+  document.getElementById('em-type').value   = o.type;
+  document.getElementById('em-ca').value     = o.ca;
+  document.getElementById('em-revient').value= o.revient;
+  document.getElementById('em-wallet').value = o.wallet||0;
+  document.getElementById('em-inf').value    = o.inf||0;
+  updateEditCalc();
+  document.getElementById('edit-modal').classList.add('open');
+}
+function closeEditModal(){
+  document.getElementById('edit-modal').classList.remove('open');
+  editingOrderId = null;
+}
+function updateEditCalc(){
+  const ca=parseFloat(document.getElementById('em-ca').value)||0;
+  const revient=parseFloat(document.getElementById('em-revient').value)||0;
+  const wallet=parseFloat(document.getElementById('em-wallet').value)||0;
+  const inf=parseFloat(document.getElementById('em-inf').value)||0;
+  const urssaf=ca*settings.urssafRate/100;
+  const benef=ca-revient-urssaf-wallet-inf;
+  document.getElementById('em-urssaf-disp').textContent=fmt(urssaf);
+  const bEl=document.getElementById('em-benef-disp');
+  bEl.textContent=fmt(benef);
+  bEl.style.color=benef>0?'var(--green)':benef<0?'var(--red)':'var(--text)';
+}
+function saveEditOrder(){
+  const idx=orders.findIndex(o=>o.id===editingOrderId);
+  if(idx<0){ closeEditModal(); return; }
+  const r=x=>Math.round(x*100)/100;
+  const ca=r(parseFloat(document.getElementById('em-ca').value)||0);
+  const revient=r(parseFloat(document.getElementById('em-revient').value)||0);
+  const wallet=r(parseFloat(document.getElementById('em-wallet').value)||0);
+  const inf=r(parseFloat(document.getElementById('em-inf').value)||0);
+  const urssaf=r(ca*settings.urssafRate/100);
+  const benef=r(ca-revient-urssaf-wallet-inf);
+  orders[idx]={...orders[idx],
+    date:document.getElementById('em-date').value,
+    nom:document.getElementById('em-nom').value.trim(),
+    prenom:document.getElementById('em-prenom').value.trim(),
+    type:document.getElementById('em-type').value,
+    ca, revient, urssaf, wallet, inf, benef};
+  save();
+  document.getElementById('edit-msg').textContent='✓ Enregistré';
+  setTimeout(()=>{ closeEditModal(); renderTable(); renderDashboard(); },600);
+}
+
+// ===================== COMMANDES TABLE =====================
 function buildMonthFilters(){
   const ms = ['all',...months()];
-  document.getElementById('month-filters').innerHTML = ms.map(m=>`
-    <button class="filter-btn${filterMonth===m?' active':''}" onclick="setMonth('${m}',this)">
-      ${m==='all'?'Tous':MONTH_LABELS[m]||m}
-    </button>`).join('');
+  document.getElementById('month-filters').innerHTML = ms.map(function(m){
+    const active = filterMonth===m ? ' active' : '';
+    const label  = m==='all' ? 'Tous' : (MONTH_LABELS[m]||m);
+    return '<button class="filter-btn'+active+'" onclick="setMonth(\'' + m + '\',this">'+label+'</button>';
+  }).join('');
 }
 function setMonth(m,el){
   filterMonth=m;
@@ -736,38 +901,46 @@ function setMonth(m,el){
   renderTable();
 }
 function renderTable(){
-  const q = document.getElementById('search-cmd').value.toLowerCase();
-  const filtered = orders.filter(o=>{
-    const matchMonth = filterMonth==='all'||o.date.startsWith(filterMonth);
-    const matchQ = !q||(o.nom+' '+o.prenom).toLowerCase().includes(q);
-    return matchMonth && matchQ;
+  const q=document.getElementById('search-cmd').value.toLowerCase();
+  const filtered=orders.filter(function(o){
+    const matchMonth=filterMonth==='all'||o.date.startsWith(filterMonth);
+    const matchQ=!q||(o.nom+' '+o.prenom).toLowerCase().includes(q);
+    return matchMonth&&matchQ;
   });
-  const totCA    = filtered.reduce((s,o)=>s+o.ca,0);
-  const totBenef = filtered.reduce((s,o)=>s+o.benef,0);
-  const totURSSAF= filtered.reduce((s,o)=>s+o.urssaf,0);
-  document.getElementById('sum-bar').innerHTML = `
-    <span>${filtered.length} commandes</span>
-    <span>CA : <b>${fmt(totCA)}</b></span>
-    <span class="g">Bénéfice : <b>${fmt(totBenef)}</b></span>
-    <span class="a">URSSAF : <b>${fmt(totURSSAF)}</b></span>`;
+  const totCA=filtered.reduce((s,o)=>s+o.ca,0);
+  const totBenef=filtered.reduce((s,o)=>s+o.benef,0);
+  const totURSSAF=filtered.reduce((s,o)=>s+o.urssaf,0);
+  document.getElementById('sum-bar').innerHTML=
+    '<span>'+filtered.length+' commandes</span>'+
+    '<span>CA : <b>'+fmt(totCA)+'</b></span>'+
+    '<span class="g">Bénéfice : <b>'+fmt(totBenef)+'</b></span>'+
+    '<span class="a">URSSAF : <b>'+fmt(totURSSAF)+'</b></span>';
   if(!filtered.length){
     document.getElementById('cmd-body').innerHTML='<tr><td colspan="10" class="empty">Aucune commande trouvée</td></tr>';
     return;
   }
-  document.getElementById('cmd-body').innerHTML = filtered
+  document.getElementById('cmd-body').innerHTML=filtered
     .sort((a,b)=>b.date.localeCompare(a.date))
-    .map(o=>`<tr>
-      <td class="mono">${o.date.split('-').reverse().join('/')}</td>
-      <td>${o.nom}${o.prenom?' <span style="color:var(--muted)">'+o.prenom+'</span>':''}</td>
-      <td><span class="badge ${o.type}">${typeLabel(o.type)}</span></td>
-      <td class="mono" style="text-align:right">${fmt(o.ca)}</td>
-      <td class="mono" style="text-align:right;color:var(--muted)">${fmt(o.revient)}</td>
-      <td class="mono" style="text-align:right;color:var(--amber)">${fmt(o.urssaf)}</td>
-      <td class="mono" style="text-align:right;color:var(--muted)">${o.wallet?fmt(o.wallet):'—'}</td>
-      <td class="mono" style="text-align:right;color:var(--muted)">${o.inf?fmt(o.inf):'—'}</td>
-      <td class="mono" style="text-align:right"><span class="${colorVal(o.benef)}">${fmt(o.benef)}</span></td>
-      <td><button class="btn btn-danger" style="padding:3px 8px;font-size:11px" onclick="deleteOrder('${o.id}')">×</button></td>
-    </tr>`).join('');
+    .map(function(o){
+      const prenomHtml = o.prenom ? ' <span style="color:var(--muted)">'+o.prenom+'</span>' : '';
+      const walletHtml = o.wallet ? fmt(o.wallet) : '—';
+      const infHtml    = o.inf ? fmt(o.inf) : '—';
+      return '<tr>'+
+        '<td class="mono">'+o.date.split('-').reverse().join('/')+'</td>'+
+        '<td>'+o.nom+prenomHtml+'</td>'+
+        '<td><span class="badge '+o.type+'">'+typeLabel(o.type)+'</span></td>'+
+        '<td class="mono" style="text-align:right">'+fmt(o.ca)+'</td>'+
+        '<td class="mono" style="text-align:right;color:var(--muted)">'+fmt(o.revient)+'</td>'+
+        '<td class="mono" style="text-align:right;color:var(--amber)">'+fmt(o.urssaf)+'</td>'+
+        '<td class="mono" style="text-align:right;color:var(--muted)">'+walletHtml+'</td>'+
+        '<td class="mono" style="text-align:right;color:var(--muted)">'+infHtml+'</td>'+
+        '<td class="mono" style="text-align:right"><span class="'+colorVal(o.benef)+'">'+fmt(o.benef)+'</span></td>'+
+        '<td style="white-space:nowrap">'+
+          '<button class="btn-icon edit" onclick="openEditModal(\'' + o.id + '\'" title="Modifier les montants">✏</button>'+
+          '<button class="btn btn-danger" style="padding:3px 8px;font-size:11px;margin-left:2px" onclick="deleteOrder(\'' + o.id + '\'">×</button>'+
+        '</td>'+
+      '</tr>';
+    }).join('');
 }
 function typeLabel(t){
   return {particulier:'Particulier',boutique_cbd:'Boutique',influenceur:'Influenceur',echantillon:'Échantillon'}[t]||t;
@@ -779,129 +952,354 @@ function deleteOrder(id){
 }
 
 // ===================== PRODUITS CATALOG =====================
-function renderProducts(){
-  const cats = [...new Set(DEFAULT_PRODUCTS.map(p=>p.cat))];
-  let html = '';
-  cats.forEach(cat=>{
-    const ps = products.filter(p=>p.cat===cat);
-    if(!ps.length) return;
-    html += `<div>
-      <div class="prod-cat-title">${cat}</div>
-      <div class="prod-list-grid">
-        ${ps.map(p=>`
-          <div class="prod-card">
-            <div class="prod-card-info">
-              <div class="prod-card-name">${p.name}</div>
-              <div class="prod-card-cat">${p.direct?'€ direct (pas €/g)':cat}</div>
-            </div>
-            <div class="prod-card-price">
-              <input class="prod-price-input" type="number" step="0.001" value="${p.price}"
-                onchange="updateProductPrice('${p.id}',this.value)" title="Modifier le prix">
-              <span class="prod-unit">${p.direct?'€':'€/g'}</span>
-            </div>
-          </div>`).join('')}
-      </div>
-    </div>`;
-  });
-  document.getElementById('produits-catalog').innerHTML = html;
-}
+function safeCatId(cat){ return cat.replace(/[^a-zA-Z0-9]/g,'_'); }
 
-function updateProductPrice(id, val){
-  const p = products.find(x=>x.id===id);
-  if(p){
-    p.price = parseFloat(val)||p.price;
-    save();
-    // Update form label too
-    const lbl = document.querySelector(`#pc-${id} label span`);
-    if(lbl) lbl.textContent = p.direct?'€ direct':p.price.toFixed(3)+' €/g';
-    // Refresh live calc
-    liveCalc();
+function toggleNewProdForm(){
+  const f=document.getElementById('new-prod-form');
+  const visible = f.style.display!=='none';
+  f.style.display = visible ? 'none' : 'block';
+  if(!visible){
+    // Populate category select
+    const cats=[...new Set(products.map(p=>p.cat))];
+    const sel=document.getElementById('np-cat');
+    sel.innerHTML=cats.map(c=>'<option value="'+c+'">'+c+'</option>').join('');
+    document.getElementById('np-name').focus();
   }
 }
+function toggleNewCatForm(){
+  const f=document.getElementById('new-cat-form');
+  f.style.display = f.style.display!=='none' ? 'none' : 'block';
+  if(f.style.display!=='none') document.getElementById('nc-name').focus();
+}
+function confirmAddProd(){
+  const name=document.getElementById('np-name').value.trim();
+  const price=parseFloat(document.getElementById('np-price').value)||0.80;
+  const cat=document.getElementById('np-cat').value;
+  const direct=document.getElementById('np-direct').checked;
+  if(!name){ alert('Entrez un nom de produit'); return; }
+  const id='p_'+Date.now();
+  products.push({id, name, price, cat, ...(direct?{direct:true}:{})});
+  save(); renderProducts(); buildProductForm();
+  document.getElementById('new-prod-form').style.display='none';
+  document.getElementById('np-name').value='';
+}
+function confirmAddCat(){
+  const name=document.getElementById('nc-name').value.trim();
+  if(!name){ alert('Entrez un nom de catégorie'); return; }
+  if(products.some(p=>p.cat===name)){ alert('Cette catégorie existe déjà'); return; }
+  // Add a placeholder product in the new category
+  products.push({id:'p_'+Date.now(), name:'Nouveau produit', price:0.80, cat:name});
+  save(); renderProducts(); buildProductForm();
+  document.getElementById('new-cat-form').style.display='none';
+  document.getElementById('nc-name').value='';
+}
 
+function renderProducts(){
+  const cats=[...new Set(products.map(p=>p.cat))];
+  let html='';
+  cats.forEach(function(cat){
+    const catPs=products.filter(p=>p.cat===cat);
+    const cid=safeCatId(cat);
+    html+='<div class="prod-cat-section">'+
+      '<div class="prod-cat-header">'+
+        '<span class="prod-cat-title" id="catname-'+cid+'">'+cat+'</span>'+
+        ' <span style="font-size:11px;color:var(--dim)">('+catPs.length+')</span>'+
+        '<button class="btn-icon edit" data-action="editcat" data-cid="'+cid+'" title="Renommer">✏</button>'+
+        '<button class="btn-icon del" data-action="deletecat" data-cid="'+cid+'" title="Supprimer catégorie">🗑</button>'+
+      '</div>'+
+      '<div class="prod-list-grid">'+
+      catPs.map(function(p){
+        const unit=p.direct?'€':'€/g';
+        return '<div class="prod-card" id="prodcard-'+p.id+'">'+
+          '<div class="prod-card-info">'+
+            '<span class="prod-card-name" id="pname-'+p.id+'" data-action="editprod" data-id="'+p.id+'" title="Cliquer pour renommer" style="cursor:pointer">'+p.name+'</span>'+
+            '<button class="btn-icon del" data-action="deleteprod" data-id="'+p.id+'" title="Supprimer">🗑</button>'+
+          '</div>'+
+          '<div class="prod-card-bottom">'+
+            '<input class="prod-price-input" type="number" step="0.001" value="'+p.price+'" data-action="priceprod" data-id="'+p.id+'" onchange="prodCatalogChange(this)" title="Modifier le prix">'+
+            '<span class="prod-unit">'+unit+'</span>'+
+          '</div>'+
+          '</div>';
+      }).join('')+
+      '</div>'+
+    '</div>';
+  });
+  document.getElementById('produits-catalog').innerHTML = html;
+  document.getElementById('produits-catalog').onclick = prodCatalogClick;
+}
+
+function prodCatalogClick(e){
+  const el=e.target.closest('[data-action]');
+  if(!el) return;
+  const action=el.dataset.action, id=el.dataset.id, cid=el.dataset.cid;
+  if(action==='editprod') editProdName(id);
+  if(action==='deleteprod') deleteProd(id);
+  if(action==='editcat'){
+    const span=document.getElementById('catname-'+cid);
+    if(span) editCatNameFromSpan(cid, span.textContent.trim());
+  }
+  if(action==='deletecat'){
+    const span=document.getElementById('catname-'+cid);
+    if(span) deleteCat(span.textContent.trim());
+  }
+}
+function prodCatalogChange(el){
+  if(el.dataset.action==='priceprod') updateProductPrice(el.dataset.id, el.value);
+}
+function editCatNameFromSpan(cid, cat){
+  editCatName(cid, cat);
+}
+function editProdName(id){
+  const span=document.getElementById('pname-'+id);
+  if(!span||span.querySelector('input')) return;
+  const p=products.find(x=>x.id===id);
+  if(!p) return;
+  const orig=p.name;
+  const inp=document.createElement('input');
+  inp.className='prod-name-inp'; inp.value=orig;
+  inp.onclick=e=>e.stopPropagation();
+  inp.onkeydown=function(e){
+    if(e.key==='Enter'){ e.preventDefault(); saveProdName(id,inp.value); }
+    if(e.key==='Escape'){ span.textContent=orig; }
+  };
+  inp.onblur=function(){ saveProdName(id,inp.value); };
+  span.textContent='';
+  span.appendChild(inp);
+  inp.focus(); inp.select();
+}
+function saveProdName(id,newName){
+  newName=(newName||'').trim();
+  const p=products.find(x=>x.id===id);
+  if(!p){ renderProducts(); return; }
+  if(newName && newName!==p.name){ p.name=newName; save(); }
+  renderProducts(); buildProductForm();
+}
+
+function editCatName(cid, cat){
+  const span=document.getElementById('catname-'+cid);
+  if(!span||span.querySelector('input')) return;
+  const inp=document.createElement('input');
+  inp.className='cat-name-inp'; inp.value=cat;
+  inp.onclick=e=>e.stopPropagation();
+  inp.onkeydown=function(e){
+    if(e.key==='Enter'){ e.preventDefault(); saveCatName(cat,inp.value); }
+    if(e.key==='Escape'){ renderProducts(); }
+  };
+  inp.onblur=function(){ saveCatName(cat,inp.value); };
+  span.textContent='';
+  span.appendChild(inp);
+  inp.focus(); inp.select();
+}
+function saveCatName(oldCat,newCat){
+  newCat=(newCat||'').trim();
+  if(!newCat||newCat===oldCat){ renderProducts(); return; }
+  products.forEach(p=>{ if(p.cat===oldCat) p.cat=newCat; });
+  save(); renderProducts(); buildProductForm();
+}
+
+function deleteCat(cat){
+  const n=products.filter(p=>p.cat===cat).length;
+  if(!confirm('Supprimer la catégorie "'+cat+'" et ses '+n+' produit(s) ?')) return;
+  products=products.filter(p=>p.cat!==cat);
+  save(); renderProducts(); buildProductForm();
+}
+function deleteProd(id){
+  const p=products.find(x=>x.id===id);
+  if(!p) return;
+  if(!confirm('Supprimer "'+p.name+'" ?')) return;
+  products=products.filter(x=>x.id!==id);
+  save(); renderProducts(); buildProductForm();
+}
+function updateProductPrice(id,val){
+  const p=products.find(x=>x.id===id);
+  if(p){ p.price=parseFloat(val)||p.price; save(); liveCalc(); }
+}
 function resetProducts(){
   if(!confirm('Réinitialiser tous les prix aux valeurs par défaut ?')) return;
-  products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+  products=JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
   save(); renderProducts(); buildProductForm(); liveCalc();
 }
 
 // ===================== FRAIS FIXES =====================
-function renderFF(){
-  const total = fraisFixes.reduce((s,f)=>s+f.montant,0);
-  document.getElementById('ff-list').innerHTML = fraisFixes.map(f=>`
-    <li class="ff-item">
-      <span class="ff-nom">${f.nom}</span>
-      <span class="ff-mont">${fmt(f.montant)}</span>
-      <button class="ff-del" onclick="deleteFF('${f.id}')">✕</button>
-    </li>`).join('')||'<li class="ff-item" style="color:var(--dim)">Aucun frais fixe</li>';
-  document.getElementById('ff-total').textContent = fmt(total);
-  document.getElementById('ff-annual').textContent = fmt(total*12)+' / an';
+function buildFFMonthTabs(){
+  const ms=months();
+  const all=[null,...ms];
+  document.getElementById('ff-month-tabs').innerHTML=all.map(function(m){
+    const label=m===null?'Modèle global':(MONTH_LABELS[m]||m);
+    const active=selectedFFMonth===m?' active':'';
+    const hasCustom=m!==null && monthlyFF[m]!==undefined;
+    const dot=hasCustom?' ●':'';
+    return '<button class="ff-month-btn'+active+'" onclick="selectFFMonth('+(m?"'"+m+"'":'null')+')">'+label+dot+'</button>';
+  }).join('');
 }
+function selectFFMonth(m){
+  selectedFFMonth=m;
+  buildFFMonthTabs();
+  renderFF();
+}
+
+function renderFF(){
+  const isGlobal=selectedFFMonth===null;
+  const hasCustom=!isGlobal && monthlyFF[selectedFFMonth]!==undefined;
+  const label=isGlobal?'Modèle global':(MONTH_LABELS[selectedFFMonth]||selectedFFMonth);
+
+  document.getElementById('ff-section-title').textContent='AJOUTER — '+label;
+  document.getElementById('ff-list-title').textContent='POSTES — '+label;
+
+  const statusNote=document.getElementById('ff-status-note');
+  const monthActions=document.getElementById('ff-month-actions');
+
+  if(!isGlobal && !hasCustom){
+    statusNote.style.display='block';
+    const ffTotal=fraisFixes.reduce((s,f)=>s+f.montant,0);
+    statusNote.innerHTML='ℹ Utilise le modèle global ('+fraisFixes.length+' postes, '+fmt(ffTotal)+'/mois). '+
+      '<button class="btn btn-ghost" style="font-size:11px;padding:.2rem .6rem;margin-left:.5rem" onclick="customizeMonthFF()">Personnaliser ce mois</button>';
+    monthActions.style.display='none';
+  } else {
+    statusNote.style.display='none';
+    monthActions.style.display=isGlobal?'none':'flex';
+  }
+
+  const ffList=isGlobal?fraisFixes:(monthlyFF[selectedFFMonth]||[]);
+  const scope=isGlobal?'global':selectedFFMonth;
+
+  document.getElementById('ff-list').innerHTML=ffList.map(function(f){
+    return '<li class="ff-item">'+
+      '<span class="ff-nom">'+f.nom+'</span>'+
+      '<input type="number" step="0.01" value="'+f.montant+'" style="width:80px;background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:.3rem .5rem;color:var(--gold);font-size:13px" '+
+        'data-ff-scope="'+scope+'" data-ff-id="'+f.id+'" onchange="updateFFItem(this)" oninput="updateFFItem(this)">'+
+      '<span style="font-size:11px;color:var(--muted)">€</span>'+
+      '<button class="ff-del" data-ff-id="'+f.id+'" onclick="deleteFF(this)">✕</button>'+
+    '</li>';
+  }).join('')||'<li class="ff-item" style="color:var(--dim)">Aucun frais fixe</li>';
+
+  const total=ffList.reduce((s,f)=>s+f.montant,0);
+  document.getElementById('ff-total').textContent=fmt(total);
+  document.getElementById('ff-annual').textContent=fmt(total*12)+' / an';
+}
+
 function addFF(){
   const nom=document.getElementById('ff-nom').value.trim();
   const mont=parseFloat(document.getElementById('ff-mont').value)||0;
   if(!nom||!mont) return;
-  fraisFixes.push({id:'ff'+Date.now(),nom,montant:mont});
+  const item={id:'ff'+Date.now(),nom,montant:mont};
+  if(selectedFFMonth===null){
+    fraisFixes.push(item);
+  } else {
+    if(!monthlyFF[selectedFFMonth]) monthlyFF[selectedFFMonth]=JSON.parse(JSON.stringify(fraisFixes)).map(function(f,i){ return {...f,id:'ffm_'+Date.now()+'_'+i}; });
+    monthlyFF[selectedFFMonth].push(item);
+  }
   document.getElementById('ff-nom').value='';
   document.getElementById('ff-mont').value='';
   save(); renderFF(); renderDashboard();
 }
-function deleteFF(id){
+
+function deleteFF(el){
   if(!confirm('Supprimer ce poste ?')) return;
-  fraisFixes=fraisFixes.filter(f=>f.id!==id);
+  const id=el.dataset.ffId;
+  if(selectedFFMonth===null){
+    fraisFixes=fraisFixes.filter(f=>f.id!==id);
+  } else if(monthlyFF[selectedFFMonth]){
+    monthlyFF[selectedFFMonth]=monthlyFF[selectedFFMonth].filter(f=>f.id!==id);
+  }
   save(); renderFF(); renderDashboard();
+}
+
+function updateFFItem(el){
+  const id=el.dataset.ffId, scope=el.dataset.ffScope;
+  const val=parseFloat(el.value)||0;
+  if(scope==='global'){
+    const f=fraisFixes.find(x=>x.id===id); if(f) f.montant=val;
+  } else if(monthlyFF[scope]){
+    const f=monthlyFF[scope].find(x=>x.id===id); if(f) f.montant=val;
+  }
+  save(); renderDashboard();
+}
+
+function customizeMonthFF(){
+  if(!selectedFFMonth) return;
+  monthlyFF[selectedFFMonth]=JSON.parse(JSON.stringify(fraisFixes)).map(function(f,i){
+    return {...f, id:'ffm_'+selectedFFMonth+'_'+i};
+  });
+  save(); buildFFMonthTabs(); renderFF();
+}
+function copyFromGlobal(){
+  if(!selectedFFMonth) return;
+  if(!confirm('Remplacer les frais de ce mois par le modèle global ?')) return;
+  customizeMonthFF();
+}
+function resetToGlobal(){
+  if(!selectedFFMonth) return;
+  if(!confirm('Supprimer la configuration spécifique de ce mois et utiliser le modèle global ?')) return;
+  delete monthlyFF[selectedFFMonth];
+  save(); buildFFMonthTabs(); renderFF();
 }
 
 // ===================== BILAN =====================
 function renderBilan(){
-  const ffTotal = fraisFixes.reduce((s,f)=>s+f.montant,0);
-  const ms = months();
+  const ms=months();
   let totCA=0,totRev=0,totURSSAF=0,totFF=0,totBenef=0,totImpots=0,totN=0;
-  const seuilPct = (orders.reduce((s,o)=>s+o.ca,0)/settings.seuil)*100;
-  const alerts = seuilPct>=80 ? [`<div class="alert alert-${seuilPct>=90?'red':'amber'}">⚠ Seuil AE atteint à ${seuilPct.toFixed(1)} % — ${fmt(settings.seuil-orders.reduce((s,o)=>s+o.ca,0))} restant avant ${fmt(settings.seuil,0)}.</div>`] : [];
-  document.getElementById('bilan-alerts').innerHTML = alerts.join('');
+  const globalCA=orders.reduce((s,o)=>s+o.ca,0);
+  const seuilPct=(globalCA/settings.seuil)*100;
+  const alerts=seuilPct>=80?['<div class="alert alert-'+(seuilPct>=90?'red':'amber')+'">⚠ Seuil AE atteint à '+seuilPct.toFixed(1)+' % — '+fmt(settings.seuil-globalCA)+' restant avant '+fmt(settings.seuil,0)+'.</div>']:[];
+  document.getElementById('bilan-alerts').innerHTML=alerts.join('');
 
-  const rows = ms.map(m=>{
-    const s=calcMonthStats(orders.filter(o=>o.date.startsWith(m)),ffTotal);
-    totCA+=s.ca; totRev+=s.revient; totURSSAF+=s.urssaf; totFF+=ffTotal;
+  const rows=ms.map(function(m){
+    const ffList=getFFForMonth(m);
+    const s=calcMonthStats(orders.filter(o=>o.date.startsWith(m)),ffList);
+    totCA+=s.ca; totRev+=s.revient; totURSSAF+=s.urssaf; totFF+=s.ffTotal;
     totBenef+=s.benefNet; totImpots+=s.impots; totN+=s.n;
-    return `<tr>
-      <td>${MONTH_LABELS[m]||m}</td>
-      <td class="mono" style="text-align:right">${s.n}</td>
-      <td class="mono" style="text-align:right;color:var(--gold)">${fmt(s.ca)}</td>
-      <td class="mono" style="text-align:right;color:var(--muted)">${fmt(s.revient)}</td>
-      <td class="mono" style="text-align:right">${fmt(s.ca-s.revient)}</td>
-      <td class="mono" style="text-align:right;color:var(--amber)">${fmt(s.urssaf)}</td>
-      <td class="mono" style="text-align:right;color:var(--muted)">${fmt(ffTotal)}</td>
-      <td class="mono" style="text-align:right"><span class="${colorVal(s.benefNet)}">${fmt(s.benefNet)}</span></td>
-      <td class="mono" style="text-align:right;color:var(--red)">${fmt(s.impots)}</td>
-    </tr>`;
+    return '<tr>'+
+      '<td><span class="bilan-month-link" onclick="goToMonth(\'' + m + '\'" style="color:var(--gold)" title="Voir les commandes">'+(MONTH_LABELS[m]||m)+'</span></td>'+
+      '<td class="mono" style="text-align:right">'+s.n+'</td>'+
+      '<td class="mono" style="text-align:right;color:var(--gold)">'+fmt(s.ca)+'</td>'+
+      '<td class="mono" style="text-align:right;color:var(--muted)">'+fmt(s.revient)+'</td>'+
+      '<td class="mono" style="text-align:right">'+fmt(s.ca-s.revient)+'</td>'+
+      '<td class="mono" style="text-align:right;color:var(--amber)">'+fmt(s.urssaf)+'</td>'+
+      '<td class="mono" style="text-align:right;color:var(--muted)">'+fmt(s.ffTotal)+'</td>'+
+      '<td class="mono" style="text-align:right"><span class="'+colorVal(s.benefNet)+'">'+fmt(s.benefNet)+'</span></td>'+
+      '<td class="mono" style="text-align:right;color:var(--red)">'+fmt(s.impots)+'</td>'+
+    '</tr>';
   });
-  document.getElementById('bilan-body').innerHTML = rows.join('');
-  document.getElementById('bilan-foot').innerHTML = `<tr class="bilan-foot">
-    <td>TOTAL</td>
-    <td class="mono" style="text-align:right">${totN}</td>
-    <td class="mono" style="text-align:right;color:var(--gold)">${fmt(totCA)}</td>
-    <td class="mono" style="text-align:right">${fmt(totRev)}</td>
-    <td class="mono" style="text-align:right">${fmt(totCA-totRev)}</td>
-    <td class="mono" style="text-align:right;color:var(--amber)">${fmt(totURSSAF)}</td>
-    <td class="mono" style="text-align:right">${fmt(totFF)}</td>
-    <td class="mono" style="text-align:right"><span class="${colorVal(totBenef)}">${fmt(totBenef)}</span></td>
-    <td class="mono" style="text-align:right;color:var(--red)">${fmt(totImpots)}</td>
-  </tr>`;
-  document.getElementById('bilan-kpi').innerHTML = `
-    <div class="kpi gold"><div class="kpi-label">CA Total</div><div class="kpi-value gold">${fmtK(totCA)}</div></div>
-    <div class="kpi green"><div class="kpi-label">Bénéfice net</div><div class="kpi-value green">${fmtK(totBenef)}</div></div>
-    <div class="kpi amber"><div class="kpi-label">URSSAF total</div><div class="kpi-value amber">${fmtK(totURSSAF)}</div></div>
-    <div class="kpi red"><div class="kpi-label">Provision impôts</div><div class="kpi-value red">${fmtK(totImpots)}</div></div>`;
+  document.getElementById('bilan-body').innerHTML=rows.join('');
+  document.getElementById('bilan-foot').innerHTML=
+    '<tr class="bilan-foot">'+
+    '<td>TOTAL</td>'+
+    '<td class="mono" style="text-align:right">'+totN+'</td>'+
+    '<td class="mono" style="text-align:right;color:var(--gold)">'+fmt(totCA)+'</td>'+
+    '<td class="mono" style="text-align:right">'+fmt(totRev)+'</td>'+
+    '<td class="mono" style="text-align:right">'+fmt(totCA-totRev)+'</td>'+
+    '<td class="mono" style="text-align:right;color:var(--amber)">'+fmt(totURSSAF)+'</td>'+
+    '<td class="mono" style="text-align:right">'+fmt(totFF)+'</td>'+
+    '<td class="mono" style="text-align:right"><span class="'+colorVal(totBenef)+'">'+fmt(totBenef)+'</span></td>'+
+    '<td class="mono" style="text-align:right;color:var(--red)">'+fmt(totImpots)+'</td>'+
+    '</tr>';
+  document.getElementById('bilan-kpi').innerHTML=
+    '<div class="kpi gold"><div class="kpi-label">CA Total</div><div class="kpi-value gold">'+fmtK(totCA)+'</div></div>'+
+    '<div class="kpi green"><div class="kpi-label">Bénéfice net</div><div class="kpi-value green">'+fmtK(totBenef)+'</div></div>'+
+    '<div class="kpi amber"><div class="kpi-label">URSSAF total</div><div class="kpi-value amber">'+fmtK(totURSSAF)+'</div></div>'+
+    '<div class="kpi red"><div class="kpi-label">Provision impôts</div><div class="kpi-value red">'+fmtK(totImpots)+'</div></div>';
+}
+
+function exportBilanCSV(){
+  const ms=months();
+  const rows=[['Mois','Commandes','CA','Revient','Marge brute','URSSAF','Frais fixes','Bénéfice net','Provision impôts']];
+  ms.forEach(function(m){
+    const s=calcMonthStats(orders.filter(o=>o.date.startsWith(m)),getFFForMonth(m));
+    rows.push([MONTH_LABELS[m]||m,s.n,s.ca.toFixed(2),s.revient.toFixed(2),(s.ca-s.revient).toFixed(2),s.urssaf.toFixed(2),s.ffTotal.toFixed(2),s.benefNet.toFixed(2),s.impots.toFixed(2)]);
+  });
+  const csv=rows.map(r=>r.join(';')).join('\n');
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='gaz_bilan_2026.csv'; a.click();
 }
 
 // ===================== SETTINGS =====================
 function loadSettings(){
-  document.getElementById('s-pin').value       = settings.pin||'1234';
-  document.getElementById('s-seuil').value     = settings.seuil||77700;
-  document.getElementById('s-urssaf-rate').value= settings.urssafRate||12.3;
-  document.getElementById('s-impots-rate').value= settings.impotsRate||25;
+  document.getElementById('s-pin').value        = settings.pin||'1234';
+  document.getElementById('s-seuil').value      = settings.seuil||77700;
+  document.getElementById('s-urssaf-rate').value = settings.urssafRate||12.3;
+  document.getElementById('s-impots-rate').value = settings.impotsRate||25;
 }
 function saveSettings(){
   settings.pin        = document.getElementById('s-pin').value||'1234';
@@ -914,15 +1312,16 @@ function saveSettings(){
   setTimeout(()=>msg.textContent='',2000);
 }
 function exportData(){
-  const blob=new Blob([JSON.stringify({orders,products,fraisFixes,settings},null,2)],{type:'application/json'});
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob); a.download='gaz_compta_export.json'; a.click();
+  const blob=new Blob([JSON.stringify({orders,products,fraisFixes,monthlyFF,settings},null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='gaz_compta_export.json'; a.click();
 }
 function resetData(){
-  if(!confirm('⚠ Réinitialiser toutes les données ? Les commandes ajoutées manuellement seront perdues.')) return;
-  orders     = JSON.parse(JSON.stringify(SEED));
-  products   = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
-  fraisFixes = JSON.parse(JSON.stringify(DEFAULT_FF));
+  if(!confirm('⚠ Réinitialiser toutes les données ?')) return;
+  orders=JSON.parse(JSON.stringify(SEED));
+  products=JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+  fraisFixes=JSON.parse(JSON.stringify(DEFAULT_FF));
+  monthlyFF={};
   save(); renderAll();
   alert('Données réinitialisées (Jan–Avr 2026).');
 }
