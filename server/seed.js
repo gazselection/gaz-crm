@@ -1,5 +1,8 @@
-// Données extraites du HTML v5 (seedData) — 69 clients, 77 factures.
+// Données extraites du HTML v5 (seedData) — 71 clients, 88 factures.
 // Mis à jour le 2026-05-24 : +5 clients (GAZ-065 à GAZ-069) + 6 factures mai 2026.
+// Mis à jour le 2026-05-25 : +2 clients (GAZ-081, GAZ-084) + 11 factures/devis mai 2026 (PDF collègue).
+// ATTENTION : FAC-2026-040 corrigée (Gold H-Town 1960€). L'ancienne entrée CBD BON MARCHE 1000€ rebaptisée FAC-2026-040b — à vérifier avec le collègue.
+// Devis N°49 best-terps : seed=400€ vs PDF=220€+CHRONO — montant à confirmer avec le collègue.
 
 const seedClients = [
   { id: "c01", code: "GAZ-001", nom: "La Foncedalle", contact: "", email: "contact@la-foncedalle.fr", tel: "", adresse: "118 rue Jean Jaures, 26800 Portes-les-Valence", pays: "France", statut: "actif", remise: 0, notes: "", relances: [] },
@@ -80,7 +83,10 @@ const seedClients = [
   { id: "c_pvSs5BE1", code: "GAZ-066", nom: "FAO Sol Smith Balance 156 Devonshire Street Sheffield S37SG UK", contact: "", email: "", tel: "", adresse: "156 Devonshire Street S3 7SG, Sheffield", pays: "Royaume-Uni", statut: "prospect", remise: 0, notes: "", relances: [] },
   { id: "c_xTT9vy4B", code: "GAZ-067", nom: "CBD BON MARCHE", contact: "77 routes de luchon 31440 ESTENOS France CbdBonMarche@gmail.com", email: "CbdBonMarche@gmail.com", tel: "", adresse: "77 routes de luchon, 31440 Estenos", pays: "France", statut: "prospect", remise: 0, notes: "", relances: [] },
   { id: "c_kU2NXVYr", code: "GAZ-068", nom: "NEZO/PALMAJOK", contact: "", email: "", tel: "", adresse: "", pays: "France", statut: "actif", remise: 0, notes: "", relances: [] },
-  { id: "c_z2YIuO_q", code: "GAZ-069", nom: "Josip Raji\u0107", contact: "Num\u00e9ro de TVA : HR52123541512", email: "vutricateam@gmail.com", tel: "+385955160453", adresse: "Dobrise Cesarica 4, 42000 Vara\u017edin", pays: "Croatie", statut: "prospect", remise: 0, notes: "Raison sociale : Legalica d.o.o.", relances: [] }
+  { id: "c_z2YIuO_q", code: "GAZ-069", nom: "Josip Rajić", contact: "Numéro de TVA : HR52123541512", email: "vutricateam@gmail.com", tel: "+385955160453", adresse: "Dobrise Cesarica 4, 42000 Varaždin", pays: "Croatie", statut: "prospect", remise: 0, notes: "Raison sociale : Legalica d.o.o.", relances: [] },
+  // GAZ-070 à GAZ-080 : clients potentiellement créés par le collègue entre mai et aujourd'hui — à compléter si nécessaire
+  { id: "c_gaz081", code: "GAZ-081", nom: "NEZO/PALMAJOK", contact: "", email: "", tel: "", adresse: "", pays: "France", statut: "actif", remise: 0, notes: "2ème entrée GAZ-081 créée par le collègue (FAC-2026-056). GAZ-068 existe aussi pour ce client.", relances: [] },
+  { id: "c_gaz084", code: "GAZ-084", nom: "Blaß Petra", contact: "", email: "", tel: "", adresse: "", pays: "France", statut: "actif", remise: 0, notes: "Client ajouté via PDF mai 2026 (FAC-2026-058). Adresse inconnue.", relances: [] }
 ];
 
 const seedFactures = [
@@ -105,7 +111,7 @@ const seedFactures = [
   { id: "f022", cid: "c19", num: "FAC-2026-020", date: "2026-03-05", type: "facture", lignes: [{ produit: "Huiles CBD", qte: "", unite: "", prix: 239 }], envoi: 0, remise: 0, paiement: "virement", statut: "payee", notes: "" },
   { id: "f023", cid: "c19", num: "FAC-2026-021", date: "2026-03-03", type: "facture", lignes: [{ produit: "Huiles CBD", qte: "", unite: "", prix: 254 }], envoi: 0, remise: 0, paiement: "virement", statut: "payee", notes: "" },
   { id: "f024", cid: "c20", num: "FAC-2026-022", date: "2026-04-06", type: "facture", lignes: [{ produit: "Cali Cream+Motorbreath 50g", qte: "", unite: "", prix: 160 }], envoi: 0, remise: 0, paiement: "virement", statut: "payee", notes: "" },
-  { id: "f027", cid: "c23", num: "FAC-2026-025", date: "2026-03-25", type: "facture", lignes: [{ produit: "Lemon Candy+Bubbaloo", qte: "", unite: "mix", prix: 270 }], envoi: 0, remise: 0, paiement: "virement", statut: "payee", notes: "" },
+  { id: "f027", cid: "c23", num: "FAC-2026-025", date: "2026-03-25", type: "facture", lignes: [{ produit: "Lemon Candy+Bubbaloo", qte: "", unite: "mix", prix: 270 }], envoi: 0, remise: 0, paiement: "virement", notes: "" },
   { id: "f028", cid: "c23", num: "FAC-2026-026", date: "2026-04-07", type: "facture", lignes: [{ produit: "Strawnana", qte: "250", unite: "g", prix: 462.5 }], envoi: 0, remise: 0, paiement: "virement", statut: "payee", notes: "" },
   { id: "f029", cid: "c24", num: "FAC-2026-027", date: "2026-03-26", type: "facture", lignes: [{ produit: "Motorbreath", qte: "200", unite: "g", prix: 290 }], envoi: 0, remise: 0, paiement: "virement", statut: "payee", notes: "" },
   { id: "f030", cid: "c26", num: "DEV-2026-013", date: "2026-02-05", type: "devis", lignes: [{ produit: "100g OZK CBG x3", qte: "300", unite: "g", prix: 570 }], envoi: 0, remise: 0, paiement: "virement", statut: "envoyee", notes: "Devis 13" },
@@ -171,12 +177,12 @@ const seedFactures = [
     { produit: "Frais viva", qte: "1", unite: "", prix: 25 }
   ], envoi: 20, remise: 0, paiement: "virement", statut: "envoyee", notes: "" },
 
-  { id: "f_wBuipocf", cid: "c_xTT9vy4B", num: "FAC-2026-040", date: "2026-05-24", type: "facture", lignes: [
+  { id: "f_wBuipocf", cid: "c_xTT9vy4B", num: "FAC-2026-040b", date: "2026-05-24", type: "facture", lignes: [
     { produit: "Gelato 41", qte: "500", unite: "g", prix: 1000 }
-  ], envoi: 0, remise: 0, paiement: "virement", statut: "envoyee", notes: "" },
+  ], envoi: 0, remise: 0, paiement: "virement", statut: "envoyee", notes: "⚠️ Numéro original incertain — renommé 040b car FAC-2026-040 appartient à Gold H-Town (PDF). À confirmer avec le collègue." },
 
   { id: "f_NBdprBBx", cid: "c_kU2NXVYr", num: "FAC-2026-041", date: "2026-05-24", type: "facture", lignes: [
-    { produit: "\u00c9tiquettes", qte: "30", unite: "u", prix: 90 },
+    { produit: "Étiquettes", qte: "30", unite: "u", prix: 90 },
     { produit: "Lamponi Frozen", qte: "200", unite: "g", prix: 150 },
     { produit: "Pack jars", qte: "1", unite: "", prix: 120 }
   ], envoi: 0, remise: 0, paiement: "virement", statut: "envoyee", notes: "" },
@@ -191,18 +197,84 @@ const seedFactures = [
     { produit: "Lamponi", qte: "100", unite: "g", prix: 150 },
     { produit: "Gelato", qte: "100", unite: "g", prix: 150 },
     { produit: "Bubbaloo", qte: "100", unite: "g", prix: 150 }
-  ], envoi: 10, remise: 0, paiement: "virement", statut: "envoyee", notes: "" }
+  ], envoi: 10, remise: 0, paiement: "virement", statut: "envoyee", notes: "" },
+
+  // --- Ajouts du 2026-05-25 (PDF collegue "FUSION DEVIS MOI DE MAI") ---
+
+  { id: "f_gold040", cid: "c45", num: "FAC-2026-040", date: "2026-05-02", type: "devis", lignes: [
+    { produit: "Z Lime", qte: "240", unite: "g", prix: 480 },
+    { produit: "Gelato 41", qte: "250", unite: "g", prix: 500 },
+    { produit: "Bubble Diesel", qte: "250", unite: "g", prix: 500 },
+    { produit: "Cali Cream", qte: "100", unite: "g", prix: 170 },
+    { produit: "Lamponi", qte: "100", unite: "g", prix: 150 },
+    { produit: "Gelato", qte: "100", unite: "g", prix: 150 }
+  ], envoi: 10, remise: 0, paiement: "virement", statut: "payee", notes: "Total 1960 euros. Devis PAYE." },
+
+  { id: "f_canna044", cid: "c36", num: "FAC-2026-044", date: "2026-05-11", type: "facture", lignes: [
+    { produit: "GELATO 41", qte: "300", unite: "g", prix: 600 }
+  ], envoi: 0, remise: 0, paiement: "virement", statut: "envoyee", notes: "" },
+
+  { id: "f_ambi045", cid: "c60", num: "FAC-2026-045", date: "2026-05-12", type: "facture", lignes: [
+    { produit: "Bubble diesel", qte: "100", unite: "g", prix: 200 },
+    { produit: "Allium OG", qte: "100", unite: "g", prix: 200 },
+    { produit: "Blue Cheese", qte: "20", unite: "g", prix: 40 },
+    { produit: "Interstellar", qte: "30", unite: "g", prix: 60 },
+    { produit: "Gelato 41", qte: "50", unite: "g", prix: 100 }
+  ], envoi: 15, remise: 0, paiement: "virement", statut: "envoyee", notes: "" },
+
+  { id: "f_cbdbm046", cid: "c_xTT9vy4B", num: "FAC-2026-046", date: "2026-05-15", type: "facture", lignes: [
+    { produit: "Lemon candy", qte: "100", unite: "g", prix: 200 }
+  ], envoi: 0, remise: 0, paiement: "virement", statut: "payee", notes: "" },
+
+  { id: "f_cbdbm_d60", cid: "c_xTT9vy4B", num: "DEV-2026-060", date: "2026-05-07", type: "devis", lignes: [
+    { produit: "Weeding Cake", qte: "100", unite: "g", prix: 200 },
+    { produit: "Caramel Kush", qte: "100", unite: "g", prix: 110 },
+    { produit: "Lemon candy", qte: "100", unite: "g", prix: 180 },
+    { produit: "Pack echantillons", qte: "1", unite: "", prix: 0 }
+  ], envoi: 0, remise: 0, paiement: "virement", statut: "envoyee", notes: "Devis N60. Statut a confirmer." },
+
+  { id: "f_cbdbm050", cid: "c_xTT9vy4B", num: "FAC-2026-050", date: "2026-05-18", type: "facture", lignes: [
+    { produit: "Lemon candy", qte: "100", unite: "g", prix: 170 },
+    { produit: "Eggs weeding cake", qte: "100", unite: "g", prix: 170 }
+  ], envoi: 0, remise: 0, paiement: "virement", statut: "payee", notes: "" },
+
+  { id: "f_jcbc051", cid: "c38", num: "FAC-2026-051", date: "2026-05-19", type: "devis", lignes: [
+    { produit: "Oreo cake", qte: "250", unite: "g", prix: 238 },
+    { produit: "Small buds oreo cake", qte: "1000", unite: "g", prix: 350 }
+  ], envoi: 10, remise: 0, paiement: "virement", statut: "envoyee", notes: "Document intitule DEVIS dans le PDF." },
+
+  { id: "f_ts053", cid: "c28", num: "FAC-2026-053", date: "2026-05-19", type: "facture", lignes: [
+    { produit: "Allium OG", qte: "100", unite: "g", prix: 190 },
+    { produit: "Diesel Bubble", qte: "100", unite: "g", prix: 200 }
+  ], envoi: 0, remise: 0, paiement: "virement", statut: "envoyee", notes: "" },
+
+  { id: "f_nezo056", cid: "c_gaz081", num: "FAC-2026-056", date: "2026-05-20", type: "facture", lignes: [
+    { produit: "Etiquettes", qte: "30", unite: "u", prix: 90 },
+    { produit: "Lamponi Frozen", qte: "200", unite: "g", prix: 300 },
+    { produit: "Pack Jars", qte: "2", unite: "", prix: 120 }
+  ], envoi: 0, remise: 0, paiement: "virement", statut: "envoyee", notes: "Client GAZ-081. Voir aussi FAC-2026-041 GAZ-068 meme societe." },
+
+  { id: "f_blass058", cid: "c_gaz084", num: "FAC-2026-058", date: "2026-05-21", type: "facture", lignes: [
+    { produit: "Nothern Light", qte: "3", unite: "g", prix: 15.83 },
+    { produit: "Critical kush", qte: "3", unite: "g", prix: 15.83 },
+    { produit: "Gorille glue", qte: "3", unite: "g", prix: 15.83 },
+    { produit: "Amnesia Haze", qte: "3", unite: "g", prix: 15.83 },
+    { produit: "White widow", qte: "3", unite: "g", prix: 15.83 },
+    { produit: "OG Kush", qte: "3", unite: "g", prix: 15.85 }
+  ], envoi: 0, remise: 0, paiement: "virement", statut: "envoyee", notes: "Client GAZ-084. Pots 3g x6 varietes." }
 ];
 
 const seedSettings = {
-  nom: "Gaz S\u00e9lection CBD",
-  siret: "92030948100017",
-  adresse: "494 rue L\u00e9on Blum, 34000 Montpellier",
+  nom: "Gaz Selection CBD",
+  adresse: "494 rue Leon Blum, 34000 Montpellier",
   email: "gazselection.sav@gmail.com",
   tel: "+33 7 49 12 25 01",
-  site: "https://gazselection.fr",
-  iban: "GR9070100000001792815126022",
-  mentions: "Auto-entrepreneur \u2014 Dispens\u00e9 de TVA, art. 293 B du CGI."
+  siret: "92030948100017",
+  iban: "GR90 7010 0000 0017 9281 5126 022",
+  tva: false,
+  mentionTva: "Auto-entrepreneur - Dispense de TVA, art. 293 B du CGI.",
+  devise: "EUR",
+  logo: ""
 };
 
 module.exports = { seedClients, seedFactures, seedSettings };
